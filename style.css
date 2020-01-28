@@ -1,0 +1,164 @@
+body {
+    background-color: null;
+}
+
+#title {  
+    background-image: url("https://image.shutterstock.com/image-vector/modern-city-skyline-vector-260nw-341808632.jpg");
+    border-bottom: rgb(26, 112, 170);
+    border-width: 1em;
+    border-block-end-style: solid;
+    color: rgb(26, 112, 170);
+    margin-bottom: 0em;
+}
+
+#selections {
+    padding: 0em;
+    margin-bottom: 0em;
+}
+
+#login-btn {
+    background-color: #84A7D8;
+    color: white;
+    font-size: 1.25em;
+}
+
+#login-form-body {
+    background-color: #EDF4FF;
+}
+
+#login-form-btn {
+    background-color: #84A7D8;
+}
+
+#welcome {
+    background-color: #EDF4FF;
+    padding: 0em;
+}
+
+#random-btn {
+    background-color: #84A7D8;
+    margin: 1em 0 1em;
+    padding-bottom: 0em;
+}
+
+#random-btn-text {
+    color: white;
+    font-size: 1.25em;
+    font-weight: 500;
+}
+
+.event {
+    background-color: #EDF4FF;
+}
+
+span {
+    color: black;
+}
+
+#cty-img {
+    padding-bottom: 0em;
+}
+
+#options {
+    padding-top: .75em;
+    width: 95%;
+    background-color: #EDF4FF;
+}
+
+#options-box {
+    border:rgb(26, 112, 170);
+    border-width: .75em;
+    border-block-end-style: solid;
+}
+
+#checkboxes {
+    padding-left: 9em;
+} 
+
+#option-confirm, #cancel {
+   font-size: 1.25em;
+   font-weight: 900;
+   color: #ADCDFF;
+}
+
+#option-confirm:hover, #cancel:hover {
+    color: rgb(26, 112, 170);  
+}
+
+#or {
+    color: rgb(26, 112, 170);
+    font-size: 1.25em;
+}
+
+.denver {
+    background-image: url("https://theknow.denverpost.com/wp-content/uploads/2016/03/cdxxDENVERSKYLINE__HHR7835-001.jpg");
+}
+
+.seattle {
+    background-image: url("https://d56b293rhv8dp.cloudfront.net/locations/20/cover_images/xlarge_w/EagleRider_Seattle.jpg?1561413002");  
+}
+
+.miami {
+    background-image: url("https://m.fourseasons.com/alt/img-opt/~70.1530.0,0000-156,2500-3000,0000-1687,5000/publish/content/dam/fourseasons/images/web/MIA/MIA_664_original.jpg");
+}
+
+.losangeles {
+    background-image: url("https://cdn.britannica.com/97/100097-050-7E411D6F/Harbor-Freeway-Los-Angeles.jpg");
+}
+
+.atlanta {
+    background-image: url("https://cdn.vox-cdn.com/thumbor/ZtUjPlkmX-ytiq2ZoV6k23s-D6Y=/0x0:1500x772/1200x900/filters:focal(630x266:870x506)/cdn.vox-cdn.com/uploads/chorus_image/image/65960721/Midtown_Jonathan_Phillips_Curbed_Atlanta.0.jpg");
+}
+
+.newyork {
+    background-image: url("https://www.nationalgeographic.com/content/dam/travel/Guide-Pages/north-america/united-states/newyork/newyork_NationalGeographic_2328428.adapt.1900.1.jpg");
+}   
+.houston {
+    background-image: url("https://lp-cms-production.imgix.net/2019-06/5f0b645e20e3a4e4cae6ce133e276b04-houston.jpg?fit=crop&q=40&sharp=10&vib=20&auto=format&ixlib=react-8.6.4");
+}
+
+#featured {
+    background-color: #EDF4FF;
+}
+
+.no-margin-bottom {
+    margin-bottom: 0em;
+}
+
+.label {
+    font-size: 1.75em;
+    color: rgb(26, 112, 170);
+    padding-left: 1em;
+    padding-top: .5em;
+}
+
+#landmarks {
+    background-color: #EDF4FF;
+    margin-top: 1.5em;
+}
+
+#trip-1, #trip-2, #trip-3, #trip-4 {
+    width: 100%;
+    background-color: rgba(26, 112, 170, 0.3);
+    color: #84A7D8;
+    font-weight: 600;
+    font-size: 1em;
+}
+
+/* for sticky footer */
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+ }
+
+main {
+    flex: 1 0 auto;
+}
+
+#foot {
+    background-color: rgb(26, 112, 170);
+    padding: 1em;
+    color: white;
+    text-align: center;
+}

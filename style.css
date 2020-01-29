@@ -56,12 +56,12 @@ span {
 }
 
 #cty-img {
-    padding-bottom: 0em;
+    padding: 5em 0 5em 0;
 }
 
 #options {
     padding-top: .75em;
-    width: 95%;
+    width: 70%;
     background-color: #EDF4FF;
 }
 

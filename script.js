@@ -1,4 +1,3 @@
-
 // Initializing city dropdown
 $(document).ready(function () {
     $("select").formSelect();
@@ -17,7 +16,7 @@ $(document).ready(function () {
       ["Times Square", "Statue of Liberty", "Central Park", "Empire State Building"],
       ["Space Center Houston", "The Museum of Fine Arts, Houston", "Kemah Boardwalk", "Buffalo Bayou Park"]
     ];
-    $("#landmarks").attr("style", "display: block");
+    
   
     function showLandmarks() {
       $("#land-1").text(cityLandmarks[x][0]);
@@ -25,6 +24,8 @@ $(document).ready(function () {
       $("#land-3").text(cityLandmarks[x][2]);
       $("#land-4").text(cityLandmarks[x][3]);
       $("#landmark-city").text(selectedCity + " Landmarks");
+      $("#landmarks").attr("style", "display: block");
+      console.log(" show landmarks");
     };
   
     if ($(this).val() == "1") {

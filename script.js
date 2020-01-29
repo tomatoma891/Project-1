@@ -153,3 +153,15 @@ $(document).ready(function () {
     e.preventDefault();
     window.location.href = "index.html"
   });
+
+
+var APIKey = "g5rWtTbqzNo8URXzTL6NIcTooO2lU25G"
+
+var queryURL = `https://app.ticketmaster.com/discovery/v2/events.json?apikey=${APIKey}`
+
+$.ajax({
+    url: queryURL,
+    method: "GET"
+  }).then(function(response) {
+      console.log(response);
+  })

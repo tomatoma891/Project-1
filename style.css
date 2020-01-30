@@ -1,5 +1,9 @@
 body {
-    background-color: null;
+    background-color: black;
+}
+.container {
+    width: 100%;
+    margin: 0;
 }
 
 #title {  

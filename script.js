@@ -1,5 +1,10 @@
-var venueQueryUrl;
+// hide bck button on inital screen load
+$("#back").hide();
+
+//var venueQueryUrl;  --  NEEDED?
+var queryURL;
 var zipcode;
+let eventType;
 
 // Initializing city dropdown
 $(document).ready(function () {
@@ -26,7 +31,6 @@ $("select").on("change", function () {
     $("#land-4").text(cityLandmarks[x][3]);
     $("#landmark-city").text(selectedCity + " Landmarks");
     $("#landmarks").attr("style", "display: block");
-    console.log(" show landmarks");
   };
 
   if ($(this).val() == "1") {
@@ -39,7 +43,6 @@ $("select").on("change", function () {
     $("#land-pic2").attr("src", "https://www.nba.com/nuggets/sites/nuggets/files/dn-pepsicenter.jpg?w=756&h=503");
     $("#land-pic3").attr("src", "https://www.colorado.com/sites/default/files/styles/1000x685/public/BH_Image5.jpg?itok=Fscq9MgL");
     $("#land-pic4").attr("src", "https://www.outtherecolorado.com/wp-content/uploads/2019/01/iStock-925781864-1024x683.jpg");
-    console.log(zipcode);
   }
 
   if ($(this).val() == "2") {
@@ -117,70 +120,76 @@ $("select").on("change", function () {
 
   hideMainPage()
   //var queryURL = `https://app.ticketmaster.com/discovery/v2/events.json?classificationName=music&dmaId=` + zipcode + `&apikey=${apiKey}`;
-  var queryURL = (`https://app.ticketmaster.com/discovery/v2/events.json?classificationName=music&dmaId=${zipcode}&apikey=${apiKey}`);
+  //var queryURL = (`https://app.ticketmaster.com/discovery/v2/events.json?classificationName=music&dmaId=${zipcode}&apikey=${apiKey}`);
+  queryURL = (`https://app.ticketmaster.com/discovery/v2/events.json?classificationName=${eventType}&dmaId=${zipcode}&apikey=${apiKey}`);
 
   // https://app.ticketmaster.com/discovery/v2/events.json?classificationName=music&dmaId=324&
 
   // `postalCode=${zipcode}classificationName=music&&apikey=${apiKey}`;
 
+  // ticketmaster API call
   $.ajax({
     url: queryURL,
     method: "GET"
-  }).then(function (response) {
-    artistName = response._embedded.events[0].name;
-    venue = response._embedded.events[0]._embedded.venues[0].name;
-    date = response._embedded.events[0].dates.start.localDate;
-    time = response._embedded.events[0].dates.start.localTime;
-    image = response._embedded.events[0].images[0].url;
-    artistName2 = response._embedded.events[1].name;
-    venue2 = response._embedded.events[1]._embedded.venues[0].name;
-    date2 = response._embedded.events[1].dates.start.localDate;
-    time2 = response._embedded.events[1].dates.start.localTime;
-    image2 = response._embedded.events[1].images[0].url;
-    artistName3 = response._embedded.events[2].name;
-    venue3 = response._embedded.events[2]._embedded.venues[0].name;
-    date3 = response._embedded.events[2].dates.start.localDate;
-    time3 = response._embedded.events[2].dates.start.localTime;
-    image3 = response._embedded.events[2].images[0].url;
-    artistName4 = response._embedded.events[3].name;
-    venue4 = response._embedded.events[3]._embedded.venues[0].name;
-    date4 = response._embedded.events[3].dates.start.localDate;
-    time4 = response._embedded.events[3].dates.start.localTime;
-    image4 = response._embedded.events[03].images[0].url;
-    artistName5 = response._embedded.events[4].name;
-    venue5 = response._embedded.events[4]._embedded.venues[0].name;
-    date5 = response._embedded.events[4].dates.start.localDate;
-    time5 = response._embedded.events[4].dates.start.localTime;
-    image5 = response._embedded.events[4].images[0].url;
-    console.log("query", queryURL);
-    console.log(response);
-    venueQueryUrl = response._embedded.events[0]._links.venues[0].href;
-    console.log("venue call", venueQueryUrl);
-    console.log(queryURL);
-    console.log(zipcode);
-
-
-    //make the api call to return venue info
-  }).then(function () {
-    queryURL = `https://app.ticketmaster.com/${venueQueryUrl}&apikey=${apiKey}`
-    $.ajax({
-      url: queryURL,
-      method: "GET"
-    }).then(function (response) {
-      console.log("venue response", response);
-      // console.log(response.name);
-    })
   })
+
+    .then(function (response) {
+      artistName = response._embedded.events[0].name;
+      venue = response._embedded.events[0]._embedded.venues[0].name;
+      date = response._embedded.events[0].dates.start.localDate;
+      time = response._embedded.events[0].dates.start.localTime;
+      image = response._embedded.events[0].images[0].url;
+      artistName2 = response._embedded.events[1].name;
+      venue2 = response._embedded.events[1]._embedded.venues[0].name;
+      date2 = response._embedded.events[1].dates.start.localDate;
+      time2 = response._embedded.events[1].dates.start.localTime;
+      image2 = response._embedded.events[1].images[0].url;
+      artistName3 = response._embedded.events[2].name;
+      venue3 = response._embedded.events[2]._embedded.venues[0].name;
+      date3 = response._embedded.events[2].dates.start.localDate;
+      time3 = response._embedded.events[2].dates.start.localTime;
+      image3 = response._embedded.events[2].images[0].url;
+      artistName4 = response._embedded.events[3].name;
+      venue4 = response._embedded.events[3]._embedded.venues[0].name;
+      date4 = response._embedded.events[3].dates.start.localDate;
+      time4 = response._embedded.events[3].dates.start.localTime;
+      image4 = response._embedded.events[03].images[0].url;
+      artistName5 = response._embedded.events[4].name;
+      venue5 = response._embedded.events[4]._embedded.venues[0].name;
+      date5 = response._embedded.events[4].dates.start.localDate;
+      time5 = response._embedded.events[4].dates.start.localTime;
+      image5 = response._embedded.events[4].images[0].url;
+      console.log("query", queryURL);
+      console.log(response);
+      venueQueryUrl = response._embedded.events[0]._links.venues[0].href;
+      // console.log("venue call", venueQueryUrl);
+      console.log("queryURL", queryURL);
+      console.log("dma id", zipcode);
+
+
+
+      //make the api call to return venue info --- DO WE NEED TO SEARH VENUES??
+    });//.then(function () {
+  // queryURL = `https://app.ticketmaster.com/${venueQueryUrl}&apikey=${apiKey}`
+  // $.ajax({
+  //url: queryURL,
+  //method: "GET"
+  //}).then(function (response) {
+  //         console.log("venue response", response);
+  // console.log(response.name);
+  // })
+  //  }) 
 });
 
 // function to hide main page elements
 function hideMainPage() {
-  $("#welcome").attr("class", "hide");
-  $("#cities").attr("class", "hide");
-  $("#or").attr("class", "hide");
-  $("#adventure").attr("class", "hide");
-  $("#random-btn").attr("class", "hide");
-  $("#featured").attr("class", "hide");
+  $("#welcome").hide();
+  $("#cities").hide();
+  $("#or").hide();
+  $("#adventure").hide();
+  $("#random-btn").hide();
+  $("#featured").hide();
+  $("#back").hide();
 };
 
 // function to display checkbox options after a city is chosen
@@ -190,8 +199,6 @@ $("#select").change(function () {
 });
 
 // event listeners for checkboxes
-
-let eventType;
 $("#music").change(function () {
   eventType = "music";
 });
@@ -208,14 +215,10 @@ $("#food").change(function () {
   eventType = "food";
 });
 
-let artistName;
-let venue;
-let date;
-let time;
-let image;
 // accept input and display search results
 $("#option-confirm").on("click", function () {
   $("#options").hide();
+  $("#landmarks").hide();
   $("#artist-1").text(artistName);
   $("#venue-1").text(venue);
   $("#date-1").text(date);
@@ -242,8 +245,9 @@ $("#option-confirm").on("click", function () {
   $("#time-5").text(time5);
   $("#image-5").attr("src", image5);
   $("#results").show();
+  $("#back").show();
   console.log("artist" + artistName);
-
+  console.log("event type", eventType);
 });
 
 // cancel from options screen
@@ -255,22 +259,116 @@ $("#cancel").on("click", function () {
 $("#login-btn").click(function () {
   const login = $("#login-form"); // pointer to login form
   login.toggle();
-  $("#welcome").attr("class", "hide");
-  $("#cities").attr("class", "hide");
-  $("#or").attr("class", "hide");
-  $("#adventure").attr("class", "hide");
-  $("#random-btn").attr("class", "hide");
+  hideMainPage();
+  //$("#welcome").hide();
+  //$("#cities").hide();
+  //$("#or").hide();
+  //$("#adventure").hide();
+  //$("#random-btn").hide();
+  
 });
 
 // function to accept login input and hide form
 $("#login-form-btn").on("click", function (e) {
   e.preventDefault();
-  window.location.href = "index.html"
+  window.location.href = "index.html" //temporarily just goes back to homepage
 });
 
 
+// event listener for GO button
+$("#random-btn").on("click", function (e) {
+  e.preventDefault();
+
+  // map API --- Get user location and show events in the area
+  function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition, showError);
+    } else {
+      var x = document.getElementById("location");
+      x.innerHTML = "Geolocation is not supported by this browser.";
+    };
+  }
+
+  function showError(error) {
+    switch (error.code) {
+      case error.PERMISSION_DENIED:
+        x.innerHTML = "User denied the request for Geolocation."
+        break;
+      case error.POSITION_UNAVAILABLE:
+        x.innerHTML = "Location information is unavailable."
+        break;
+      case error.TIMEOUT:
+        x.innerHTML = "The request to get user location timed out."
+        break;
+      case error.UNKNOWN_ERROR:
+        x.innerHTML = "An unknown error occurred."
+        break;
+    }
+  }
+
+  function showPosition(position) {
+    //var x = document.getElementById("location");
+    //x.innerHTML = "Latitude: " + position.coords.latitude +
+    //      "<br>Longitude: " + position.coords.longitude;
+    var latlon = position.coords.latitude + "," + position.coords.longitude;
+
+
+    $.ajax({
+      type: "GET",
+      url: "https://app.ticketmaster.com/discovery/v2/events.json?&apikey=" + apiKey + "&latlong=" + latlon,
+      async: true,
+      dataType: "json",
+      success: function (json) {
+        console.log(json);
+        var e = document.getElementById("events");
+        e.innerHTML = json.page.totalElements + " events found in your area.";
+        showEvents(json);
+        initMap(position, json);
+      },
+      error: function (xhr, status, err) {
+      }
+    });
+  };
+
+  function showEvents(json) {
+    for (var i = 0; i < json.page.size; i++) {
+      $("#events").append("<p>" + json._embedded.events[i].name + "</p>");
+      $("#cities").hide();
+      $("#or").hide();
+      $("#welcome").hide();
+      $("#random-btn").hide();
+      $("#featured").hide();
+    }
+  }
+
+  function initMap(position, json) {
+    var mapDiv = document.getElementById('map');
+    var map = new google.maps.Map(mapDiv, {
+      center: { lat: position.coords.latitude, lng: position.coords.longitude },
+      zoom: 10
+    });
+    for (var i = 0; i < json.page.size; i++) {
+      addMarker(map, json._embedded.events[i]);
+    }
+  }
+
+  function addMarker(map, event) {
+    var marker = new google.maps.Marker({
+      position: new google.maps.LatLng(event._embedded.venues[0].location.latitude, event._embedded.venues[0].location.longitude),
+      map: map
+    });
+    marker.setIcon('http://maps.google.com/mapfiles/ms/icons/red-dot.png');
+    console.log(marker);
+  }
+
+  getLocation();
+
+});
+
+// back button  - clears results from GO button
+$("#back").on("click", function (e) {
+  e.preventDefault();
+  window.location.href = "index.html" //temporarily just goes back to homepage
+});
+
 var apiKey = "g5rWtTbqzNo8URXzTL6NIcTooO2lU25G"
-
-// var queryURL = `https://app.ticketmaster.com/discovery/v2/events.postalCode=60431&json?classificationName=music&&apikey=${apiKey}`;
-
-

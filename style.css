@@ -12,7 +12,7 @@ body {
 }
 
 #selections {
-    padding: 0em;
+    padding: 5em 0;
     margin-bottom: 0em;
 }
 
@@ -56,13 +56,15 @@ span {
 }
 
 #cty-img {
-    padding: 5em 0 5em 0;
+    padding: 2em 0;
+    width: 100%;
 }
 
 #options {
     padding-top: .75em;
     width: 70%;
     background-color: #EDF4FF;
+    margin-bottom: 10em;
 }
 
 #options-box {
@@ -72,7 +74,7 @@ span {
 }
 
 #checkboxes {
-    padding-left: 9em;
+    padding-left: 3em;
 } 
 
 #option-confirm, #cancel {
@@ -161,4 +163,19 @@ main {
     padding: 1em;
     color: white;
     text-align: center;
+}
+
+.event-results {
+    text-align: center;
+    height: 21em;
+  
+}
+
+.event-title {
+    font-weight: 700;
+}
+
+.event-pic {
+    width: 9em;
+    height: 7em;
 }

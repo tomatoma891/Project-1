@@ -14,7 +14,7 @@
 
     <div class="container">
         <div class="row no-margin-bottom">
-            <div class="col s12">
+            <div class="col s12" id="hoh">
                 <div class="card">
                     <div class="card-panel center-align" id="title">
                         <h1>LET'S GO...</h1>
@@ -29,7 +29,7 @@
                 <div class="card" id="welcome">
                     <div class="card-content">
                         <p class="card-title">New In Town?</p>
-                        <p>Select a city below to find out what's going on in the area. Click GO to find out whats
+                        <p>Select a city below to find out what's going on in the area. Click GO! to find out what's
                             happening in your neck of the woods.</p>
                     </div>
                 </div>
@@ -73,7 +73,7 @@
                     <div class="btn buttons" id="back"><span class="buttons">BACK</span></div>
                 </div>
                 <div class="col s1 pull-s1 m3 pull-m1 le pull-l1">
-                    <div class="btn buttons" id="random-btn"><span class="buttons">GO!</span></div>
+                    <div class="btn buttons" id="random-btn">GO!</div>
                 </div>
             </div>
             <div class="col s1 m2 l3"></div>
@@ -191,8 +191,27 @@
                     </a>
                 </div>
             </div>
-        </div>
 
+            <!-- Modal Structure -->
+
+            <div id="modal1" class="modal">
+                <div class="modal-content" id="error">
+                    <div class="center-align">
+                        <h4>OOOPS!</h4>
+                        <p>You forgot to tell us what you want to do.</p><a href="#!" class="modal-close btn-flat"
+                            id="modal-ok">OK</a>
+                    </div>
+                </div>
+                <div class="modal-footer">
+
+                </div>
+                <div class="center-align">
+                    <img src="https://pbs.twimg.com/profile_images/2162709407/Jackie_Chan_400x400.png" alt="Oops!"
+                        id="jackie">
+                </div>
+            </div>
+        </div>
+        <audio id="play" src="Its not right.mp3"></audio>
         <!-- login form -->
 
         <div class="container center-align" id="login-form" style="display: none">
@@ -207,14 +226,14 @@
 
                     <div class="row">
                         <div class="input-field col s12">
-                            <input class='validate' type="email" name="email" id="email" />
-                            <label for="email">Enter your email</label>
+                            <input type="text" name="username" id="username" />
+                            <label for="username">Enter your username</label>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="input-field col s12">
-                            <input class="validate" type="password" name="password" id="password" />
+                            <input type="password" name="password" id="password" />
                             <label for="password">Enter your password</label>
                         </div>
                         <label style="float: right;">
@@ -239,40 +258,48 @@
             <div class="row no-margin-bottom">
                 <div class="label">FEATURED</div>
                 <div class="col s12 m6 xl3">
-                    <div class="card hoverable">
-                        <div class="card-image">
-                            <img src="https://q-cf.bstatic.com/images/hotel/max1024x768/170/170504164.jpg"
-                                alt="Las Vegas">
-                            <span class="card-title ribbon" id="trip-1">Viva Las Vegas</span>
+                    <a href="https://www.visitlasvegas.com/" target="_blank" id="feat-1">
+                        <div class="card hoverable">
+                            <div class="card-image">
+                                <img src="https://q-cf.bstatic.com/images/hotel/max1024x768/170/170504164.jpg"
+                                    alt="Las Vegas">
+                                <span class="card-title ribbon" id="trip-1">Viva Las Vegas</span>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="col s12 m6 xl3">
-                    <div class="card hoverable">
-                        <div class="card-image">
-                            <img src="https://images.vailresorts.com/image/upload/c_scale,dpr_3.0,f_auto,q_auto,w_400/v1/Breckenridge/Heros/201902_brk_maguire_yi_7133.jpg"
-                                alt="Breckenridge, Colorado">
-                            <span class="card-title ribbon" id="trip-2">Rocky Mountain High</span>
+                    <a href="https://www.coloradoski.com/" target="_blank" id="feat-2">
+                        <div class="card hoverable">
+                            <div class="card-image">
+                                <img src="https://images.vailresorts.com/image/upload/c_scale,dpr_3.0,f_auto,q_auto,w_400/v1/Breckenridge/Heros/201902_brk_maguire_yi_7133.jpg"
+                                    alt="Breckenridge, Colorado">
+                                <span class="card-title ribbon" id="trip-2">Rocky Mountain High</span>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="col s12 m6 xl3">
-                    <div class="card hoverable">
-                        <div class="card-image">
-                            <img src="https://www.laweekly.com/wp-content/uploads/2019/05/los-angeles-hates-hollywood-759x500.jpg"
-                                alt="Los Angeles">
-                            <span class="card-title ribbon" id="trip-3">It's Hollywood, Baby</span>
+                    <a href="" target="_blank" id="feat-3">
+                        <div class="card hoverable">
+                            <div class="card-image">
+                                <img src="https://www.laweekly.com/wp-content/uploads/2019/05/los-angeles-hates-hollywood-759x500.jpg"
+                                    alt="Los Angeles">
+                                <span class="card-title ribbon" id="trip-3">It's Hollywood, Baby</span>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="col s12 m6 xl3">
-                    <div class="card hoverable">
-                        <div class="card-image">
-                            <img src="https://img.bleacherreport.net/img/images/photos/003/840/550/hi-res-451920753732d221297db742d38157fd_crop_north.jpg?h=533&w=800&q=70&crop_x=center&crop_y=top"
-                                alt="NFL">
-                            <span class="card-title ribbon" id="trip-4">Hit The Gridiron</span>
+                    <a href="" target="_blank" id="feat-4">
+                        <div class="card hoverable">
+                            <div class="card-image">
+                                <img src="https://img.bleacherreport.net/img/images/photos/003/840/550/hi-res-451920753732d221297db742d38157fd_crop_north.jpg?h=533&w=800&q=70&crop_x=center&crop_y=top"
+                                    alt="NFL">
+                                <span class="card-title ribbon" id="trip-4">Hit The Gridiron</span>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -320,19 +347,6 @@
         <div class="card">
             <div id="map"></div>
             <div id="events"></div>
-        </div>
-
-
-        <!-- Modal Structure -->
-
-        <div id="modal1" class="modal">
-            <div class="modal-content">
-                <h4>Modal Header</h4>
-                <p>A bunch of text</p>
-            </div>
-            <div class="modal-footer">
-                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-            </div>
         </div>
 
         <footer class="footer-copyright" id="foot">

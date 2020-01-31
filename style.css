@@ -137,12 +137,10 @@ span {
     margin-top: 1.5em;
 }
 
-#trip-1, #trip-2, #trip-3, #trip-4 {
+.ribbon {
     width: 100%;
     background-color: rgba(26, 112, 170, 0.3);
-    color: white;
-    font-weight: 600;
-    font-size: 1em;
+    color: white;  
 }
 
 /* for sticky footer */
@@ -165,7 +163,7 @@ main {
 
 .event-results {
     text-align: center;
-    height: 30em;
+    min-height: 20em;
     padding: .25em; 
 }
 
@@ -183,4 +181,9 @@ span.test::after {
     color: white;
     font-size: 1.25em;
     font-weight: 500;
+}
+
+.floattest {
+    position: fixed;
+    bottom: 0;
 }

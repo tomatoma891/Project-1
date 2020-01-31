@@ -152,26 +152,31 @@ $("#select").change(function () {
     date = response._embedded.events[0].dates.start.localDate;
     time = response._embedded.events[0].dates.start.localTime;
     image = response._embedded.events[0].images[0].url;
+    info = response._embedded.events[0].url;
     artistName2 = response._embedded.events[1].name;
     venue2 = response._embedded.events[1]._embedded.venues[0].name;
     date2 = response._embedded.events[1].dates.start.localDate;
     time2 = response._embedded.events[1].dates.start.localTime;
     image2 = response._embedded.events[1].images[0].url;
+    info2 = response._embedded.events[0].url;
     artistName3 = response._embedded.events[2].name;
     venue3 = response._embedded.events[2]._embedded.venues[0].name;
     date3 = response._embedded.events[2].dates.start.localDate;
     time3 = response._embedded.events[2].dates.start.localTime;
     image3 = response._embedded.events[2].images[0].url;
+    info3 = response._embedded.events[0].url;
     artistName4 = response._embedded.events[3].name;
     venue4 = response._embedded.events[3]._embedded.venues[0].name;
     date4 = response._embedded.events[3].dates.start.localDate;
     time4 = response._embedded.events[3].dates.start.localTime;
     image4 = response._embedded.events[03].images[0].url;
+    info4 = response._embedded.events[0].url;
     artistName5 = response._embedded.events[4].name;
     venue5 = response._embedded.events[4]._embedded.venues[0].name;
     date5 = response._embedded.events[4].dates.start.localDate;
     time5 = response._embedded.events[4].dates.start.localTime;
     image5 = response._embedded.events[4].images[0].url;
+    info5 = response._embedded.events[0].url;
 
 
   });
@@ -206,7 +211,6 @@ $("#option-confirm").on("click", function () {
 
   getEvent();
 
-
   return;
 
 });
@@ -221,12 +225,7 @@ $("#login-btn").click(function () {
   const login = $("#login-form"); // pointer to login form
   login.toggle();
   hideMainPage();
-  //$("#welcome").hide();
-  //$("#cities").hide();
-  //$("#or").hide();
-  //$("#adventure").hide();
-  //$("#random-btn").hide();
-
+  $("#cty-img").hide();
 });
 
 // function to accept login input and hide form
@@ -356,27 +355,27 @@ function getEvent() {
       artistName = response._embedded.events[0].name;
       venue = response._embedded.events[0]._embedded.venues[0].name;
       date = response._embedded.events[0].dates.start.localDate;
-      time = response._embedded.events[0].dates.start.localTime;
+      time = response._embedded.events[0].dates.start.dateTime;
       image = response._embedded.events[0].images[0].url;
       artistName2 = response._embedded.events[1].name;
       venue2 = response._embedded.events[1]._embedded.venues[0].name;
       date2 = response._embedded.events[1].dates.start.localDate;
-      time2 = response._embedded.events[1].dates.start.localTime;
+      time2 = response._embedded.events[1].dates.start.dateTime;
       image2 = response._embedded.events[1].images[0].url;
       artistName3 = response._embedded.events[2].name;
       venue3 = response._embedded.events[2]._embedded.venues[0].name;
       date3 = response._embedded.events[2].dates.start.localDate;
-      time3 = response._embedded.events[2].dates.start.localTime;
+      time3 = response._embedded.events[2].dates.start.dateTime;
       image3 = response._embedded.events[2].images[0].url;
       artistName4 = response._embedded.events[3].name;
       venue4 = response._embedded.events[3]._embedded.venues[0].name;
       date4 = response._embedded.events[3].dates.start.localDate;
-      time4 = response._embedded.events[3].dates.start.localTime;
+      time4 = response._embedded.events[3].dates.start.dateTime;
       image4 = response._embedded.events[03].images[0].url;
       artistName5 = response._embedded.events[4].name;
       venue5 = response._embedded.events[4]._embedded.venues[0].name;
       date5 = response._embedded.events[4].dates.start.localDate;
-      time5 = response._embedded.events[4].dates.start.localTime;
+      time5 = response._embedded.events[4].dates.start.dateTime;
       image5 = response._embedded.events[4].images[0].url;
       console.log("query", queryURL);
       console.log(response);
@@ -386,33 +385,39 @@ function getEvent() {
       console.log("dma id", zipcode);
       $("#artist-1").text(artistName);
       $("#venue-1").text(venue);
-      $("#date-1").text(date);
-      $("#time-1").text(time);
+      $("#date-1").text(moment(date).format("MMM Do, YYYY"));
+      $("#time-1").text(moment(time).format("h:mma"));
       $("#image-1").attr("src", image);
+      $("#info-1").attr("href", info);
       $("#artist-2").text(artistName2);
       $("#venue-2").text(venue2);
-      $("#date-2").text(date2);
-      $("#time-2").text(time2);
+      $("#date-2").text(moment(date2).format("MMM Do, YYYY"));
+      $("#time-2").text(moment(time2).format("h:mma"));
       $("#image-2").attr("src", image2);
+      $("#info-2").attr("href", info2);
       $("#artist-3").text(artistName3);
       $("#venue-3").text(venue3);
-      $("#date-3").text(date3);
-      $("#time-3").text(time3);
+      $("#date-3").text(moment(date3).format("MMM Do, YYYY"));
+      $("#time-3").text(moment(time3).format("h:mma"));
       $("#image-3").attr("src", image3);
+      $("#info-3").attr("href", info3);
       $("#artist-4").text(artistName4);
       $("#venue-4").text(venue4);
-      $("#date-4").text(date4);
-      $("#time-4").text(time4);
+      $("#date-4").text(moment(date4).format("MMM Do, YYYY"));
+      $("#time-4").text(moment(time4).format("h:mma"));
       $("#image-4").attr("src", image4);
+      $("#info-4").attr("href", info4);
       $("#artist-5").text(artistName5);
       $("#venue-5").text(venue5);
-      $("#date-5").text(date5);
-      $("#time-5").text(time5);
+      $("#date-5").text(moment(date5).format("MMM Do, YYYY"));
+      $("#time-5").text(moment(time5).format("h:mma"));
       $("#image-5").attr("src", image5);
+      $("#info-5").attr("href", info5);
       $("#results").show();
       $("#back").show();
 
+    });
 
-      //make the api call to return venue info --- DO WE NEED TO SEARH VENUES??
-    });//.then(function () {
+
+
 }

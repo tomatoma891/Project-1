@@ -18,7 +18,7 @@
                 <div class="card">
                     <div class="card-panel center-align" id="title">
                         <h1>LET'S GO...</h1>
-                        <div class="btn right" id="login-btn">LOGIN / REGISTER</div>
+                        <div class="btn buttons right">LOGIN / REGISTER</div>
                     </div>
                 </div>
             </div>
@@ -38,7 +38,7 @@
         <div id="cty-img">
             <div class="row" id="selections">
                 <div class="col s1 m2"></div>
-                <div class="col s7 m4">
+                <div class="col s7 pull-s1 m4">
                     <div class="input-field" id="cities">
                         <select id="select">
                             <option value="" disabled selected> -- choose a city --</option>
@@ -66,95 +66,59 @@
                         </select>
                     </div>
                 </div>
-                <div class="col s1 m2 l2 push-l1">
+                <div class="col s1 pull-s1 m2 ">
                     <p id="or">OR</p>
                 </div>
-                <div class="col s2">
-                    <a class="btn" id="random-btn"><span id="random-btn-text">GO!</span></a>
+                <div class="col s1 pull-s1 l1 push-l2" id="back-btn">
+                    <div class="btn buttons" id="back"><span class="buttons">BACK</span></div>
                 </div>
-                <div class="col s1 m2"></div>
-            </div>
-
-            <!-- login form -->
-
-            <div class="container center-align" id="login-form" style="display: none">
-                <div class="z-depth-1 grey lighten-4 row"
-                    style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
-
-                    <form class="col s12" method="post">
-                        <div class="row">
-                            <div class='col s12'>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <input class='validate' type="email" name="email" id="email" />
-                                <label for="email">Enter your email</label>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <input class="validate" type="password" name="password" id="password" />
-                                <label for="password">Enter your password</label>
-                            </div>
-                            <label style="float: right;">
-                                <a href="#!"><b>Forgot Password?</b></a>
-                            </label>
-                        </div>
-
-                        <div class="row">
-                            <button type="submit" name="btn_login" class="col s12 btn btn-large"
-                                id="login-form-btn">Login</button>
-                        </div>
-                        <div class="center-align">
-                            <a href="#!">Create account</a>
-                        </div>
-                    </form>
+                <div class="col s1 pull-s1 l2">
+                    <div class="btn buttons" id="random-btn"><span class="buttons">GO!</span></div>
                 </div>
             </div>
+            <div class="col s1 m2"></div>
 
             <!-- select options  -->
 
             <div id="options" class="row valign-wrapper" style="display: none">
                 <div class="col s12" id="options-box">
                     <div class="" id="selectedCityDiv"></div>
-                    <form action="#">
-                        <div id="checkboxes">
+                    <div id="radio-buttons">
+                        <form action="#">
                             <p>
                                 <label>
-                                    <input type="checkbox" id="music" />
+                                    <input name="group1" class="test" type="radio" id="music" />
                                     <span>Music</span>
                                 </label>
                             </p>
                             <p>
                                 <label>
-                                    <input type="checkbox" id="sports" />
+                                    <input name="group1" type="radio" id="sports" />
                                     <span>Sports</span>
                                 </label>
                             </p>
                             <p>
                                 <label>
-                                    <input type="checkbox" id="art" />
+                                    <input name="group1" type="radio" id="art" />
                                     <span>Art</span>
                                 </label>
                             </p>
                             <p>
                                 <label>
-                                    <input type="checkbox" />
+                                    <input name="group1" type="radio" id="food" />
                                     <span>Food</span>
                                 </label>
                             </p>
-                        </div>
-                        <span class="btn-flat" id="cancel">CANCEL</span>
-                        <span class="btn-flat right" id="option-confirm">OK</span>
-                    </form>
+                        </form>
+                    </div>
+
+                    <span class="btn-flat" id="cancel">CANCEL</span>
+                    <span class="btn-flat right" id="option-confirm">OK</span>
                 </div>
             </div>
 
-
             <!-- search results displayed here -->
+
             <div class="row" id="results" style="display: none">
                 <div class="col m1"></div>
                 <div class="col s12 m2">
@@ -165,7 +129,18 @@
                             <span id="date-1"></span><br>
                             <span id="time-1"></span>
                             <div class="card-image">
-                                <img class="event-pic" id="image-1"></img>
+                                <img class="event-pic" id="image-1">
+                            </div>
+                            <div class="food">
+                                <form action="#">
+                                    <p>
+                                        <label>
+                                            <input type="checkbox" />
+                                            <span>Search Restaurants</span>
+                                        </label>
+                                        <div class="btn buttons" id="select-1">SELECT</div>
+                                    </p>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -180,6 +155,17 @@
                             <div class="card-image">
                                 <img class="event-pic" id="image-2"></img>
                             </div>
+                            <div class="food">
+                                <form action="#">
+                                    <p>
+                                        <label>
+                                            <input type="checkbox" />
+                                            <span>Search Restaurants</span>
+                                        </label>
+                                        <div class="btn buttons" id="select-2">SELECT</div>
+                                    </p>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -192,6 +178,17 @@
                             <span id="time-3"></span>
                             <div class="card-image">
                                 <img class="event-pic" id="image-3"></img>
+                            </div>
+                            <div class="food">
+                                <form action="#">
+                                    <p>
+                                        <label>
+                                            <input type="checkbox" />
+                                            <span>Search Restaurants</span>
+                                        </label>
+                                        <div class="btn buttons" id="select-3">SELECT</div>
+                                    </p>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -206,6 +203,17 @@
                             <div class="card-image">
                                 <img class="event-pic" id="image-4"></img>
                             </div>
+                            <div class="food">
+                                <form action="#">
+                                    <p>
+                                        <label>
+                                            <input type="checkbox" />
+                                            <span>Search Restaurants</span>
+                                        </label>
+                                        <div class="btn buttons" id="select-4">SELECT</div>
+                                    </p>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -219,50 +227,101 @@
                             <div class="card-image">
                                 <img class="event-pic" id="image-5"></img>
                             </div>
+                            <div class="food">
+                                <form action="#">
+                                    <p>
+                                        <label>
+                                            <input type="checkbox" />
+                                            <span>Search Restaurants</span>
+                                        </label>
+                                        <div class="btn buttons" id="select-5">SELECT</div>
+                                    </p>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- featured destinations -->
+        </div>
 
-            <div id="featured">
-                <div class="row no-margin-bottom">
-                    <div class="label">FEATURED</div>
-                    <div class="col s12 m3">
-                        <div class="card hoverable">
-                            <div class="card-image">
-                                <img src="https://q-cf.bstatic.com/images/hotel/max1024x768/170/170504164.jpg"
-                                    alt="Las Vegas">
-                                <span class="card-title" id="trip-1">Viva Las Vegas</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col s12 m3">
-                        <div class="card hoverable">
-                            <div class="card-image">
-                                <img src="https://images.vailresorts.com/image/upload/c_scale,dpr_3.0,f_auto,q_auto,w_400/v1/Breckenridge/Heros/201902_brk_maguire_yi_7133.jpg"
-                                    alt="Breckenridge, Colorado">
-                                <span class="card-title" id="trip-2">Rocky Mountain High</span>
-                            </div>
+        <!-- login form -->
+
+        <div class="container center-align" id="login-form" style="display: none">
+            <div class="z-depth-1 grey lighten-4 row"
+                style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
+
+                <form class="col s12" method="post">
+                    <div class="row">
+                        <div class='col s12'>
                         </div>
                     </div>
 
-                    <div class="col s12 m3">
-                        <div class="card hoverable">
-                            <div class="card-image">
-                                <img src="https://www.laweekly.com/wp-content/uploads/2019/05/los-angeles-hates-hollywood-759x500.jpg"
-                                    alt="Los Angeles">
-                                <span class="card-title" id="trip-3">It's Hollywood, Baby</span>
-                            </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input class='validate' type="email" name="email" id="email" />
+                            <label for="email">Enter your email</label>
                         </div>
                     </div>
-                    <div class="col s12 m3">
-                        <div class="card hoverable">
-                            <div class="card-image">
-                                <img src="https://img.bleacherreport.net/img/images/photos/003/840/550/hi-res-451920753732d221297db742d38157fd_crop_north.jpg?h=533&w=800&q=70&crop_x=center&crop_y=top"
-                                    alt="NFL">
-                                <span class="card-title" id="trip-4">Hit The Gridiron</span>
-                            </div>
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input class="validate" type="password" name="password" id="password" />
+                            <label for="password">Enter your password</label>
+                        </div>
+                        <label style="float: right;">
+                            <a href="#!"><b>Forgot Password?</b></a>
+                        </label>
+                    </div>
+
+                    <div class="row">
+                        <button type="submit" name="btn_login" class="col s12 btn btn-large"
+                            id="login-form-btn">Login</button>
+                    </div>
+                    <div class="center-align">
+                        <a href="#!">Create account</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- featured destinations -->
+
+        <div id="featured">
+            <div class="row no-margin-bottom">
+                <div class="label">FEATURED</div>
+                <div class="col s12 m3">
+                    <div class="card hoverable">
+                        <div class="card-image">
+                            <img src="https://q-cf.bstatic.com/images/hotel/max1024x768/170/170504164.jpg"
+                                alt="Las Vegas">
+                            <span class="card-title" id="trip-1">Viva Las Vegas</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m3">
+                    <div class="card hoverable">
+                        <div class="card-image">
+                            <img src="https://images.vailresorts.com/image/upload/c_scale,dpr_3.0,f_auto,q_auto,w_400/v1/Breckenridge/Heros/201902_brk_maguire_yi_7133.jpg"
+                                alt="Breckenridge, Colorado">
+                            <span class="card-title" id="trip-2">Rocky Mountain High</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m3">
+                    <div class="card hoverable">
+                        <div class="card-image">
+                            <img src="https://www.laweekly.com/wp-content/uploads/2019/05/los-angeles-hates-hollywood-759x500.jpg"
+                                alt="Los Angeles">
+                            <span class="card-title" id="trip-3">It's Hollywood, Baby</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m3">
+                    <div class="card hoverable">
+                        <div class="card-image">
+                            <img src="https://img.bleacherreport.net/img/images/photos/003/840/550/hi-res-451920753732d221297db742d38157fd_crop_north.jpg?h=533&w=800&q=70&crop_x=center&crop_y=top"
+                                alt="NFL">
+                            <span class="card-title" id="trip-4">Hit The Gridiron</span>
                         </div>
                     </div>
                 </div>
@@ -292,7 +351,6 @@
             <div class="col s12 m3">
                 <div class="card hoverable">
                     <div class="card-image">
-                        <img id="land-pic3" src="">
                         <span class="card-title" id="land-3"></span>
                     </div>
                 </div>
@@ -306,18 +364,26 @@
                 </div>
             </div>
         </div>
-    </div>
 
-    <footer class="footer-copyright" id="foot">
-        <div class="container">
-            © 2014 Copyright Code Warriors
+        <!-- GO button results -->
+
+        <div class="card">
+            <div id="map"></div>
+            <div id="events"></div>
         </div>
-    </footer>
 
+        <footer class="footer-copyright" id="foot">
+            <div class="container">
+                © 2014 Copyright Code Warriors
+            </div>
+        </footer>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7VBLGOeT9U8vZksR7T8F1EiPK7nkyGvw" async
+        defer></script>
 
 </body>
 

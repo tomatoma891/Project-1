@@ -1,11 +1,3 @@
-body {
-    background-color: black;
-}
-.container {
-    width: 100%;
-    margin: 0;
-}
-
 #title {  
     background-image: url("https://image.shutterstock.com/image-vector/modern-city-skyline-vector-260nw-341808632.jpg");
     border-bottom: rgb(26, 112, 170);
@@ -13,17 +5,12 @@ body {
     border-block-end-style: solid;
     color: rgb(26, 112, 170);
     margin-bottom: 0em;
+    width: 100%;
 }
 
 #selections {
     padding: 5em 0;
     margin-bottom: 0em;
-}
-
-#login-btn {
-    background-color: #84A7D8;
-    color: white;
-    font-size: 1.25em;
 }
 
 #login-form-body {
@@ -32,6 +19,9 @@ body {
 
 #login-form-btn {
     background-color: #84A7D8;
+}
+#login-form-btn:hover {
+    background-color: rgb(26, 112, 170);;
 }
 
 #welcome {
@@ -45,7 +35,7 @@ body {
     padding-bottom: 0em;
 }
 
-#random-btn-text {
+.btn-text {
     color: white;
     font-size: 1.25em;
     font-weight: 500;
@@ -77,7 +67,7 @@ span {
     border-block-end-style: solid;
 }
 
-#checkboxes {
+#radio-buttons {
     padding-left: 3em;
 } 
 
@@ -131,6 +121,10 @@ span {
     margin-bottom: 0em;
 }
 
+#results {
+    padding-bottom: 2.25em;
+}
+
 .label {
     font-size: 1.75em;
     color: rgb(26, 112, 170);
@@ -171,15 +165,22 @@ main {
 
 .event-results {
     text-align: center;
-    height: 21em;
-  
+    height: 30em;
+    padding: .25em; 
 }
 
 .event-title {
     font-weight: 700;
 }
 
-.event-pic {
-    width: 9em;
-    height: 7em;
+/* change the color of the selected radio button to match the site theme is not working */
+span.test::after {
+    background-color: rgb(26, 112, 170);
+}
+
+.buttons {
+    background-color: #84A7D8;
+    color: white;
+    font-size: 1.25em;
+    font-weight: 500;
 }

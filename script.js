@@ -118,9 +118,6 @@ $("select").on("change", function () {
   };
 
   hideMainPage()
-  //var queryURL = `https://app.ticketmaster.com/discovery/v2/events.json?classificationName=music&dmaId=` + zipcode + `&apikey=${apiKey}`;
-  //var queryURL = (`https://app.ticketmaster.com/discovery/v2/events.json?classificationName=music&dmaId=${zipcode}&apikey=${apiKey}`);
-
 });
 
 // function to hide main page elements
@@ -203,35 +200,15 @@ $("#food").change(function () {
 $("#option-confirm").on("click", function () {
   $("#options").hide();
   $("#landmarks").hide();
-  $("#artist-1").text(artistName);
-  $("#venue-1").text(venue);
-  $("#date-1").text(date);
-  $("#time-1").text(time);
-  $("#image-1").attr("src", image);
-  $("#artist-2").text(artistName2);
-  $("#venue-2").text(venue2);
-  $("#date-2").text(date2);
-  $("#time-2").text(time2);
-  $("#image-2").attr("src", image2);
-  $("#artist-3").text(artistName3);
-  $("#venue-3").text(venue3);
-  $("#date-3").text(date3);
-  $("#time-3").text(time3);
-  $("#image-3").attr("src", image3);
-  $("#artist-4").text(artistName4);
-  $("#venue-4").text(venue4);
-  $("#date-4").text(date4);
-  $("#time-4").text(time4);
-  $("#image-4").attr("src", image4);
-  $("#artist-5").text(artistName5);
-  $("#venue-5").text(venue5);
-  $("#date-5").text(date5);
-  $("#time-5").text(time5);
-  $("#image-5").attr("src", image5);
-  $("#results").show();
-  $("#back").show();
-  console.log("artist" + artistName);
-  console.log("event type", eventType);
+
+
+  queryURL = (`https://app.ticketmaster.com/discovery/v2/events.json?classificationName=${eventType}&dmaId=${zipcode}&apikey=${apiKey}`);
+
+  getEvent();
+
+
+  return;
+
 });
 
 // cancel from options screen
@@ -356,3 +333,86 @@ $("#back").on("click", function (e) {
 });
 
 var apiKey = "g5rWtTbqzNo8URXzTL6NIcTooO2lU25G"
+
+
+function getEvent() {
+
+
+  if (!eventType) return;
+
+  // https://app.ticketmaster.com/discovery/v2/events.json?classificationName=music&dmaId=324&
+
+  // `postalCode=${zipcode}classificationName=music&&apikey=${apiKey}`;
+
+  // ticketmaster API call
+
+
+  $.ajax({
+    url: queryURL,
+    method: "GET"
+  })
+
+    .then(function (response) {
+      artistName = response._embedded.events[0].name;
+      venue = response._embedded.events[0]._embedded.venues[0].name;
+      date = response._embedded.events[0].dates.start.localDate;
+      time = response._embedded.events[0].dates.start.localTime;
+      image = response._embedded.events[0].images[0].url;
+      artistName2 = response._embedded.events[1].name;
+      venue2 = response._embedded.events[1]._embedded.venues[0].name;
+      date2 = response._embedded.events[1].dates.start.localDate;
+      time2 = response._embedded.events[1].dates.start.localTime;
+      image2 = response._embedded.events[1].images[0].url;
+      artistName3 = response._embedded.events[2].name;
+      venue3 = response._embedded.events[2]._embedded.venues[0].name;
+      date3 = response._embedded.events[2].dates.start.localDate;
+      time3 = response._embedded.events[2].dates.start.localTime;
+      image3 = response._embedded.events[2].images[0].url;
+      artistName4 = response._embedded.events[3].name;
+      venue4 = response._embedded.events[3]._embedded.venues[0].name;
+      date4 = response._embedded.events[3].dates.start.localDate;
+      time4 = response._embedded.events[3].dates.start.localTime;
+      image4 = response._embedded.events[03].images[0].url;
+      artistName5 = response._embedded.events[4].name;
+      venue5 = response._embedded.events[4]._embedded.venues[0].name;
+      date5 = response._embedded.events[4].dates.start.localDate;
+      time5 = response._embedded.events[4].dates.start.localTime;
+      image5 = response._embedded.events[4].images[0].url;
+      console.log("query", queryURL);
+      console.log(response);
+      venueQueryUrl = response._embedded.events[0]._links.venues[0].href;
+      // console.log("venue call", venueQueryUrl);
+      console.log("queryURL", queryURL);
+      console.log("dma id", zipcode);
+      $("#artist-1").text(artistName);
+      $("#venue-1").text(venue);
+      $("#date-1").text(date);
+      $("#time-1").text(time);
+      $("#image-1").attr("src", image);
+      $("#artist-2").text(artistName2);
+      $("#venue-2").text(venue2);
+      $("#date-2").text(date2);
+      $("#time-2").text(time2);
+      $("#image-2").attr("src", image2);
+      $("#artist-3").text(artistName3);
+      $("#venue-3").text(venue3);
+      $("#date-3").text(date3);
+      $("#time-3").text(time3);
+      $("#image-3").attr("src", image3);
+      $("#artist-4").text(artistName4);
+      $("#venue-4").text(venue4);
+      $("#date-4").text(date4);
+      $("#time-4").text(time4);
+      $("#image-4").attr("src", image4);
+      $("#artist-5").text(artistName5);
+      $("#venue-5").text(venue5);
+      $("#date-5").text(date5);
+      $("#time-5").text(time5);
+      $("#image-5").attr("src", image5);
+      $("#results").show();
+      $("#back").show();
+
+
+      //make the api call to return venue info --- DO WE NEED TO SEARH VENUES??
+    });//.then(function () {
+}

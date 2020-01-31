@@ -140,7 +140,7 @@ span {
 #trip-1, #trip-2, #trip-3, #trip-4 {
     width: 100%;
     background-color: rgba(26, 112, 170, 0.3);
-    color: #84A7D8;
+    color: white;
     font-weight: 600;
     font-size: 1em;
 }

@@ -39,7 +39,7 @@ $("select").on("change", function () {
     $("#selectedCityDiv").text("What do you want to check out in " + selectedCity + " tonight?");
     $("#cty-img").attr("class", "denver");
     showLandmarks(x = 0);
-    $("#land-pic1").attr("src", "https://assets.simpleviewinc.com/simpleview/image/fetch/c_fill,h_465,q_50,w_698/https://assets.simpleviewinc.com/simpleview/image/upload/crm/denver/12438_553x300_ff398a80-f965-875c-826da7bfec4e981f.jpg");
+    $("#land-pic1").attr("src", "./Denver/colorful-denver.png");
     $("#land-pic2").attr("src", "https://www.nba.com/nuggets/sites/nuggets/files/dn-pepsicenter.jpg?w=756&h=503");
     $("#land-pic3").attr("src", "https://www.colorado.com/sites/default/files/styles/1000x685/public/BH_Image5.jpg?itok=Fscq9MgL");
     $("#land-pic4").attr("src", "https://www.outtherecolorado.com/wp-content/uploads/2019/01/iStock-925781864-1024x683.jpg");
@@ -265,7 +265,7 @@ $("#login-btn").click(function () {
   //$("#or").hide();
   //$("#adventure").hide();
   //$("#random-btn").hide();
-  
+
 });
 
 // function to accept login input and hide form

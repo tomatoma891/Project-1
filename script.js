@@ -1,9 +1,9 @@
 // hide bck button on inital screen load
 $("#back").hide();
-
 var queryURL;
 var zipcode;
 let eventType;
+let x = "default";
 
 // Initializing city dropdown
 $(document).ready(function () {
@@ -178,10 +178,7 @@ $("#select").change(function () {
     image5 = response._embedded.events[4].images[0].url;
     info5 = response._embedded.events[0].url;
 
-
   });
-
-
 });
 
 // event listeners for checkboxes
@@ -195,18 +192,34 @@ $("#sports").change(function () {
 
 $("#art").change(function () {
   eventType = "art";
+  $("#modal").hide();
 });
 
 $("#food").change(function () {
   eventType = "food";
 });
 
+
+function playSound () {
+  document.getElementById("play").play();
+}
+
 // accept input and display search results
 $("#option-confirm").on("click", function () {
   $("#options").hide();
   $("#landmarks").hide();
 
+  $(document).ready(function () {
+    $('.modal').modal();
+  });
 
+  if (eventType) {
+    $("#modal1").hide()
+  } else {
+    playSound();
+    $("#modal1").show()
+    $("#landmarks").show();
+  };
   queryURL = (`https://app.ticketmaster.com/discovery/v2/events.json?classificationName=${eventType}&dmaId=${zipcode}&apikey=${apiKey}`);
 
   getEvent();
@@ -214,6 +227,14 @@ $("#option-confirm").on("click", function () {
   return;
 
 });
+
+// close modal and return to 
+
+$("#modal-ok").on("click", function(){
+  $("#options").show();
+  $("#modal1").hide();
+});
+
 
 // cancel from options screen
 $("#cancel").on("click", function () {
@@ -229,9 +250,15 @@ $("#login-btn").click(function () {
 });
 
 // function to accept login input and hide form
+let email;
+let password;
 $("#login-form-btn").on("click", function (e) {
   e.preventDefault();
-  window.location.href = "index.html" //temporarily just goes back to homepage
+  //window.location.href = "index.html" //temporarily just goes back to homepage
+  email = JSON.stringify($("#email"));
+  password = $("#password");
+  console.log("email: ", email);
+  console.log("password: ", password);
 });
 
 

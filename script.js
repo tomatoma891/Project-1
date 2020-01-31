@@ -1,7 +1,6 @@
 // hide bck button on inital screen load
 $("#back").hide();
 
-//var venueQueryUrl;  --  NEEDED?
 var queryURL;
 var zipcode;
 let eventType;
@@ -121,64 +120,7 @@ $("select").on("change", function () {
   hideMainPage()
   //var queryURL = `https://app.ticketmaster.com/discovery/v2/events.json?classificationName=music&dmaId=` + zipcode + `&apikey=${apiKey}`;
   //var queryURL = (`https://app.ticketmaster.com/discovery/v2/events.json?classificationName=music&dmaId=${zipcode}&apikey=${apiKey}`);
-  queryURL = (`https://app.ticketmaster.com/discovery/v2/events.json?classificationName=${eventType}&dmaId=${zipcode}&apikey=${apiKey}`);
 
-  // https://app.ticketmaster.com/discovery/v2/events.json?classificationName=music&dmaId=324&
-
-  // `postalCode=${zipcode}classificationName=music&&apikey=${apiKey}`;
-
-  // ticketmaster API call
-  $.ajax({
-    url: queryURL,
-    method: "GET"
-  })
-
-    .then(function (response) {
-      artistName = response._embedded.events[0].name;
-      venue = response._embedded.events[0]._embedded.venues[0].name;
-      date = response._embedded.events[0].dates.start.localDate;
-      time = response._embedded.events[0].dates.start.localTime;
-      image = response._embedded.events[0].images[0].url;
-      artistName2 = response._embedded.events[1].name;
-      venue2 = response._embedded.events[1]._embedded.venues[0].name;
-      date2 = response._embedded.events[1].dates.start.localDate;
-      time2 = response._embedded.events[1].dates.start.localTime;
-      image2 = response._embedded.events[1].images[0].url;
-      artistName3 = response._embedded.events[2].name;
-      venue3 = response._embedded.events[2]._embedded.venues[0].name;
-      date3 = response._embedded.events[2].dates.start.localDate;
-      time3 = response._embedded.events[2].dates.start.localTime;
-      image3 = response._embedded.events[2].images[0].url;
-      artistName4 = response._embedded.events[3].name;
-      venue4 = response._embedded.events[3]._embedded.venues[0].name;
-      date4 = response._embedded.events[3].dates.start.localDate;
-      time4 = response._embedded.events[3].dates.start.localTime;
-      image4 = response._embedded.events[03].images[0].url;
-      artistName5 = response._embedded.events[4].name;
-      venue5 = response._embedded.events[4]._embedded.venues[0].name;
-      date5 = response._embedded.events[4].dates.start.localDate;
-      time5 = response._embedded.events[4].dates.start.localTime;
-      image5 = response._embedded.events[4].images[0].url;
-      console.log("query", queryURL);
-      console.log(response);
-      venueQueryUrl = response._embedded.events[0]._links.venues[0].href;
-      // console.log("venue call", venueQueryUrl);
-      console.log("queryURL", queryURL);
-      console.log("dma id", zipcode);
-
-
-
-      //make the api call to return venue info --- DO WE NEED TO SEARH VENUES??
-    });//.then(function () {
-  // queryURL = `https://app.ticketmaster.com/${venueQueryUrl}&apikey=${apiKey}`
-  // $.ajax({
-  //url: queryURL,
-  //method: "GET"
-  //}).then(function (response) {
-  //         console.log("venue response", response);
-  // console.log(response.name);
-  // })
-  //  }) 
 });
 
 // function to hide main page elements
@@ -196,6 +138,48 @@ function hideMainPage() {
 $("#select").change(function () {
   const selectEvent = $("#options"); // pointer to the checkboxes
   selectEvent.toggle();
+
+  queryURL = (`https://app.ticketmaster.com/discovery/v2/events.json?classificationName=${eventType}&dmaId=${zipcode}&apikey=${apiKey}`);
+
+  // https://app.ticketmaster.com/discovery/v2/events.json?classificationName=music&dmaId=324&
+
+  // `postalCode=${zipcode}classificationName=music&&apikey=${apiKey}`;
+
+  // ticketmaster API call
+  $.ajax({
+    url: queryURL,
+    method: "GET"
+  }).then(function (response) {
+    artistName = response._embedded.events[0].name;
+    venue = response._embedded.events[0]._embedded.venues[0].name;
+    date = response._embedded.events[0].dates.start.localDate;
+    time = response._embedded.events[0].dates.start.localTime;
+    image = response._embedded.events[0].images[0].url;
+    artistName2 = response._embedded.events[1].name;
+    venue2 = response._embedded.events[1]._embedded.venues[0].name;
+    date2 = response._embedded.events[1].dates.start.localDate;
+    time2 = response._embedded.events[1].dates.start.localTime;
+    image2 = response._embedded.events[1].images[0].url;
+    artistName3 = response._embedded.events[2].name;
+    venue3 = response._embedded.events[2]._embedded.venues[0].name;
+    date3 = response._embedded.events[2].dates.start.localDate;
+    time3 = response._embedded.events[2].dates.start.localTime;
+    image3 = response._embedded.events[2].images[0].url;
+    artistName4 = response._embedded.events[3].name;
+    venue4 = response._embedded.events[3]._embedded.venues[0].name;
+    date4 = response._embedded.events[3].dates.start.localDate;
+    time4 = response._embedded.events[3].dates.start.localTime;
+    image4 = response._embedded.events[03].images[0].url;
+    artistName5 = response._embedded.events[4].name;
+    venue5 = response._embedded.events[4]._embedded.venues[0].name;
+    date5 = response._embedded.events[4].dates.start.localDate;
+    time5 = response._embedded.events[4].dates.start.localTime;
+    image5 = response._embedded.events[4].images[0].url;
+
+
+  });
+
+
 });
 
 // event listeners for checkboxes
@@ -265,7 +249,7 @@ $("#login-btn").click(function () {
   //$("#or").hide();
   //$("#adventure").hide();
   //$("#random-btn").hide();
-  
+
 });
 
 // function to accept login input and hide form

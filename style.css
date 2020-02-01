@@ -26,7 +26,12 @@
 #login-form-btn {
     background-color: #84A7D8;
 }
-#login-form-btn:hover {
+
+.reserve {
+    margin-top: .5em;
+}
+
+#login-form-btn:hover, .reserve:hover {
     background-color: rgb(26, 112, 170);
 }
 
@@ -179,7 +184,7 @@ main {
 
 .event-results {
     text-align: center;
-    min-height: 20em;
+    min-height: 25em;
     padding: .25em; 
 }
 
@@ -214,3 +219,14 @@ span.test::after {
     height: 25%;
 }
 
+.bold {
+    font-weight: 600;
+}
+
+hr {
+    border-color: rgb(26, 112, 170);  
+}
+
+#tm { 
+ text-align: center;
+}

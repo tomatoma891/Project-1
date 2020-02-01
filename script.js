@@ -3,9 +3,21 @@ $("#back").hide();
 
 //var venueQueryUrl;  --  NEEDED?
 var queryURL;
+var foodQueryURL
 var zipcode;
-let eventType;
-let x = "default";
+var state;
+var city;
+var price;
+var price2;
+var price3;
+var price4;
+var price5;
+var eventType;
+var dinner;
+var prices;
+var priceDivs;
+
+
 
 // Initializing city dropdown
 $(document).ready(function () {
@@ -25,15 +37,15 @@ $("select").on("change", function () {
     ["Space Center Houston", "The Museum of Fine Arts, Houston", "Kemah Boardwalk", "Buffalo Bayou Park"]
   ];
 
-let cityLandmarksInfo = [
-  ["https://www.botanicgardens.org/", "https://denverartmuseum.org/", "https://www.aquariumrestaurants.com/downtownaquariumdenver/", "https://www.redrocksonline.com/the-park"],
-  ["https://www.spaceneedle.com/", "https://www.seattle.gov/parks/find/parks/gas-works-park", "https://www.mopop.org/", "https://seattlegreatwheel.com/"],
-  ["https://www.baysidemarketplace.com/", "https://www.jungleisland.com/", "https://www.pamm.org/", "https://www.coralgables.com/departments/CommunityRecreation/venetian-pool"],
-  ["https://disneyland.disney.go.com/", "https://www.walkoffame.com/", "https://santamonicapier.org/", "https://www.getty.edu/"],
-  ["https://www.gwcca.org/centennial-olympic-park/", "https://www.georgiaaquarium.org/", "https://www.worldofcoca-cola.com/", "https://www.foxtheatre.org/"],
-  ["https://www.timessquarenyc.org/", "https://www.nps.gov/stli/index.htm", "https://www.centralparknyc.org/", "https://www.esbnyc.com/"],
-  ["https://spacecenter.org/", "https://www.mfah.org/", "https://www.kemahboardwalk.com/", "https://buffalobayou.org/"],
-];
+  let cityLandmarksInfo = [
+    ["https://www.botanicgardens.org/", "https://denverartmuseum.org/", "https://www.aquariumrestaurants.com/downtownaquariumdenver/", "https://www.redrocksonline.com/the-park"],
+    ["https://www.spaceneedle.com/", "https://www.seattle.gov/parks/find/parks/gas-works-park", "https://www.mopop.org/", "https://seattlegreatwheel.com/"],
+    ["https://www.baysidemarketplace.com/", "https://www.jungleisland.com/", "https://www.pamm.org/", "https://www.coralgables.com/departments/CommunityRecreation/venetian-pool"],
+    ["https://disneyland.disney.go.com/", "https://www.walkoffame.com/", "https://santamonicapier.org/", "https://www.getty.edu/"],
+    ["https://www.gwcca.org/centennial-olympic-park/", "https://www.georgiaaquarium.org/", "https://www.worldofcoca-cola.com/", "https://www.foxtheatre.org/"],
+    ["https://www.timessquarenyc.org/", "https://www.nps.gov/stli/index.htm", "https://www.centralparknyc.org/", "https://www.esbnyc.com/"],
+    ["https://spacecenter.org/", "https://www.mfah.org/", "https://www.kemahboardwalk.com/", "https://buffalobayou.org/"],
+  ];
 
   function showLandmarks() {
     $("#land-1").text(cityLandmarks[x][0]);
@@ -42,7 +54,7 @@ let cityLandmarksInfo = [
     $("#land-info2").attr("href", cityLandmarksInfo[x][1]);
     $("#land-3").text(cityLandmarks[x][2]);
     $("#land-info3").attr("href", cityLandmarksInfo[x][2]);
-    $("#land-4").text(cityLandmarks[x][3]);  
+    $("#land-4").text(cityLandmarks[x][3]);
     $("#land-info4").attr("href", cityLandmarksInfo[x][3]);
     $("#landmark-city").text(selectedCity + " Landmarks");
     $("#landmarks").attr("style", "display: block");
@@ -149,7 +161,7 @@ function hideMainPage() {
 
 // function to display checkbox options after a city is chosen
 $("#select").change(function () {
-  const selectEvent = $("#options"); // pointer to the checkboxes
+  const selectEvent = $("#options"); // pointer to the radio buttons
   selectEvent.toggle();
 
   queryURL = (`https://app.ticketmaster.com/discovery/v2/events.json?classificationName=${eventType}&dmaId=${zipcode}&apikey=${apiKey}`);
@@ -169,31 +181,42 @@ $("#select").change(function () {
     time = response._embedded.events[0].dates.start.localTime;
     image = response._embedded.events[0].images[0].url;
     info = response._embedded.events[0].url;
+    state = response._embedded.events[0]._embedded.venues[0].state.stateCode;
+    city = response._embedded.events[0]._embedded.venues[0].city.name;
     artistName2 = response._embedded.events[1].name;
     venue2 = response._embedded.events[1]._embedded.venues[0].name;
     date2 = response._embedded.events[1].dates.start.localDate;
     time2 = response._embedded.events[1].dates.start.localTime;
     image2 = response._embedded.events[1].images[0].url;
-    info2 = response._embedded.events[0].url;
+    info2 = response._embedded.events[1].url;
+    state2 = response._embedded.events[1]._embedded.venues[0].state.stateCode;
+    city2 = response._embedded.events[1]._embedded.venues[0].city.name;
     artistName3 = response._embedded.events[2].name;
     venue3 = response._embedded.events[2]._embedded.venues[0].name;
     date3 = response._embedded.events[2].dates.start.localDate;
     time3 = response._embedded.events[2].dates.start.localTime;
     image3 = response._embedded.events[2].images[0].url;
-    info3 = response._embedded.events[0].url;
+    info3 = response._embedded.events[2].url;
+    state3 = response._embedded.events[2]._embedded.venues[0].state.stateCode;
+    city3 = response._embedded.events[2]._embedded.venues[0].city.name;
     artistName4 = response._embedded.events[3].name;
     venue4 = response._embedded.events[3]._embedded.venues[0].name;
     date4 = response._embedded.events[3].dates.start.localDate;
     time4 = response._embedded.events[3].dates.start.localTime;
-    image4 = response._embedded.events[03].images[0].url;
-    info4 = response._embedded.events[0].url;
+    image4 = response._embedded.events[3].images[0].url;
+    info4 = response._embedded.events[3].url;
+    state4 = response._embedded.events[3]._embedded.venues[0].state.stateCode;
+    city4 = response._embedded.events[3]._embedded.venues[0].city.name;
     artistName5 = response._embedded.events[4].name;
     venue5 = response._embedded.events[4]._embedded.venues[0].name;
     date5 = response._embedded.events[4].dates.start.localDate;
     time5 = response._embedded.events[4].dates.start.localTime;
     image5 = response._embedded.events[4].images[0].url;
-    info5 = response._embedded.events[0].url;
-
+    info5 = response._embedded.events[4].url;
+    state5 = response._embedded.events[4]._embedded.venues[0].state.stateCode;
+    city5 = response._embedded.events[4]._embedded.venues[0].city.name;
+    console.log("state", state);
+    console.log("city", city);
   });
 });
 
@@ -211,12 +234,7 @@ $("#art").change(function () {
   $("#modal").hide();
 });
 
-$("#food").change(function () {
-  eventType = "food";
-});
-
-
-function playSound () {
+function playSound() {
   document.getElementById("play").play();
 }
 
@@ -230,10 +248,11 @@ $("#option-confirm").on("click", function () {
   });
 
   if (eventType) {
-    $("#modal1").hide()
+    $("#modal1").hide();
+    restaurants();
   } else {
     playSound();
-    $("#modal1").show()
+    $("#modal1").show();
     $("#landmarks").show();
   };
   queryURL = (`https://app.ticketmaster.com/discovery/v2/events.json?classificationName=${eventType}&dmaId=${zipcode}&apikey=${apiKey}`);
@@ -246,7 +265,7 @@ $("#option-confirm").on("click", function () {
 
 // close modal and return to 
 
-$("#modal-ok").on("click", function(){
+$("#modal-ok").on("click", function () {
   $("#options").show();
   $("#modal1").hide();
 });
@@ -456,15 +475,83 @@ function getEvent() {
       $("#info-5").attr("href", info5);
       $("#results").show();
       $("#back").show();
-
     });
-console.log(date);
-endDate = moment().add(7, 'days').calendar();
-console.log(endDate);
-if (date2 < endDate) {
-  console.log("weather available")
-} else {
-  console.log("weather unavailable");
-};
 
+  // started trying to get weather for events
+  console.log(date);
+  endDate = moment().add(7, 'days').calendar();
+  console.log(endDate);
+  if (date2 < endDate) {
+    console.log("weather available")
+  } else {
+    console.log("weather unavailable");
+  };
+
+  // opentable API call
+
+  var foodQueryURL = (`https://opentable.herokuapp.com/api/restaurants?city=${city}`);
+  console.log("foodQueryURL", foodQueryURL);
+
+  $.ajax({
+    url: foodQueryURL,
+    method: "GET"
+  })
+    .then(function (response) {
+      food = response.restaurants[0].name;
+      price = response.restaurants[0].price;
+      foodRSV = response.restaurants[0].reserve_url;
+      food2 = response.restaurants[1].name;
+      price2 = response.restaurants[1].price;
+      foodRSV2 = response.restaurants[1].reserve_url;
+      food3 = response.restaurants[2].name;
+      price3 = response.restaurants[2].price;
+      foodRSV3 = response.restaurants[2].reserve_url;
+      food4 = response.restaurants[3].name;
+      price4 = response.restaurants[3].price;
+      foodRSV4 = response.restaurants[3].reserve_url;
+      food5 = response.restaurants[4].name;
+      price5 = response.restaurants[4].price;
+      foodRSV5 = response.restaurants[4].reserve_url;
+      $("#restaurant-1").text(food);
+      $("#restaurant-info1").attr("href", foodRSV);
+      $("#restaurant-2").text(food2);
+      $("#restaurant-info2").attr("href", foodRSV2);
+      $("#restaurant-3").text(food3);
+      $("#restaurant-info3").attr("href", foodRSV3);
+      $("#restaurant-4").text(food4);
+      $("#restaurant-info4").attr("href", foodRSV4);
+      $("#restaurant-5").text(food5);
+      $("#restaurant-info5").attr("href", foodRSV5);
+      console.log(response);
+      console.log("price", price);
+      
+
+ // Include price if resturant search is selected
+      prices = [price, price2, price3, price4, price5];
+      console.log("price using array", prices[0]);
+      priceDivs = ["price-1", "price-2", "price-3", "price-4", "price-5"];
+
+      for (var i = 0; i < prices.length; i++) {
+        if (prices[i] == 1) {
+          $("#price1").text("three");
+        } else if (prices[i] == 2) {
+        //$(priceDivs[i]).attr("two");
+        } else if (prices[i] == 3) {
+          $(priceDivs[i]).attr("class", "fa fa-star");
+        } else if (prices[i] >= 4) {
+          $(priceDivs[i]).attr("class", "fa fa-star");
+        }
+      }
+      console.log("last price", price);
+    });
+}
+
+function restaurants() {
+  // Get the checkbox
+  var checkBox = document.getElementById("dinner");
+
+  // If the checkbox is checked, display the output text
+  if (checkBox.checked == false) {
+    $(".dinner-plans").html("<hr><span>No restaurant selected.</span>");
+  };
 }

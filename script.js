@@ -66,10 +66,10 @@ $("select").on("change", function () {
     $("#selectedCityDiv").text("What do you want to check out in " + selectedCity + " tonight?");
     $("#cty-img").attr("class", "denver");
     showLandmarks(x = 0);
-    $("#land-pic1").attr("src", "./images/landmarks/colorful-denver.png");
-    $("#land-pic2").attr("src", "./images/landmarks/art.jpg");
-    $("#land-pic3").attr("src", "./images/landmarks/aquarium.jpg");
-    $("#land-pic4").attr("src", "./images/landmarks/poi_gallery_image-image-f901ff25-261a-4163-a727-5f2c315d0d53.jpg");
+    $("#land-pic1").attr("src", "colorful-denver.png");
+    $("#land-pic2").attr("src", "art.jpg");
+    $("#land-pic3").attr("src", "aquarium.jpg");
+    $("#land-pic4").attr("src", "poi_gallery_image-image-f901ff25-261a-4163-a727-5f2c315d0d53.jpg");
   }
 
   if ($(this).val() == "2") {
@@ -79,10 +79,10 @@ $("select").on("change", function () {
     $("#selectedCityDiv").text("What do you want to check out in " + selectedCity + " tonight?");
     $("div#cty-img").attr("class", "seattle")
     showLandmarks(x = 1);
-    $("#land-pic1").attr("src", "./images/landmarks/Seattle-Famous-Landmarks.jpg");
-    $("#land-pic2").attr("src", "./images/landmarks/f497b4381be03c88098dfb50c4e8e786.jpg");
-    $("#land-pic3").attr("src", "./images/landmarks/pike_place_market_entrance.jpg");
-    $("#land-pic4").attr("src", "./images/landmarks/348s.jpg");
+    $("#land-pic1").attr("src", "Seattle-Famous-Landmarks.jpg");
+    $("#land-pic2").attr("src", "f497b4381be03c88098dfb50c4e8e786.jpg");
+    $("#land-pic3").attr("src", "pike_place_market_entrance.jpg");
+    $("#land-pic4").attr("src", "348s.jpg");
   };
 
   if ($(this).val() == "3") {
@@ -91,10 +91,10 @@ $("select").on("change", function () {
     $("#selectedCityDiv").text("What do you want to check out in " + selectedCity + " tonight?");
     $("div#cty-img").attr("class", "miami")
     showLandmarks(x = 2);
-    $("#land-pic1").attr("src", "./images/landmarks/bal-harbour-beach-aerial-340x232.jpg");
-    $("#land-pic2").attr("src", "./images/landmarks/jungle-island-miami-eco-adventure-zip-line.jpg");
-    $("#land-pic3").attr("src", "./images/landmarks/ug_1.jpg");
-    $("#land-pic4").attr("src", "./images/landmarks/IMG_9480 by Fabio.png");
+    $("#land-pic1").attr("src", "bal-harbour-beach-aerial-340x232.jpg");
+    $("#land-pic2").attr("src", "jungle-island-miami-eco-adventure-zip-line.jpg");
+    $("#land-pic3").attr("src", "ug_1.jpg");
+    $("#land-pic4").attr("src", "IMG_9480 by Fabio.png");
   };
 
   if ($(this).val() == "4") {
@@ -103,10 +103,10 @@ $("select").on("change", function () {
     $("#selectedCityDiv").text("What do you want to check out in " + selectedCity + " tonight?");
     $("div#cty-img").attr("class", "losangeles")
     showLandmarks(x = 3);
-    $("#land-pic1").attr("src", "./images/landmarks/OCR-L-DIS-DISNEYLAND-01-JAG-1.jpg");
-    $("#land-pic2").attr("src", "./images/landmarks/unnamed.jpg");
-    $("#land-pic3").attr("src", "./images/landmarks/Daniel-Malikyar-740x482.jpg");
-    $("#land-pic4").attr("src", "./images/landmarks/image.jpg");
+    $("#land-pic1").attr("src", "OCR-L-DIS-DISNEYLAND-01-JAG-1.jpg");
+    $("#land-pic2").attr("src", "unnamed.jpg");
+    $("#land-pic3").attr("src", "Daniel-Malikyar-740x482.jpg");
+    $("#land-pic4").attr("src", "image.jpg");
   };
 
   if ($(this).val() == "5") {
@@ -115,10 +115,10 @@ $("select").on("change", function () {
     $("#selectedCityDiv").text("What do you want to check out in " + selectedCity + " tonight?");
     $("div#cty-img").attr("class", "atlanta")
     showLandmarks(x = 4);
-    $("#land-pic1").attr("src", "./images/landmarks/olympicpark.jpg");
-    $("#land-pic2").attr("src", "./images/landmarks/c700x420.jpg");
-    $("#land-pic3").attr("src", "./images/landmarks/cocacola.jpg");
-    $("#land-pic4").attr("src", "./images/landmarks/foxtheater-750x480.jpg");
+    $("#land-pic1").attr("src", "olympicpark.jpg");
+    $("#land-pic2").attr("src", "c700x420.jpg");
+    $("#land-pic3").attr("src", "cocacola.jpg");
+    $("#land-pic4").attr("src", "foxtheater-750x480.jpg");
   };
 
   if ($(this).val() == "6") {
@@ -127,10 +127,10 @@ $("select").on("change", function () {
     $("#selectedCityDiv").text("What do you want to check out in " + selectedCity + " tonight?");
     $("div#cty-img").attr("class", "newyork")
     showLandmarks(x = 5);
-    $("#land-pic1").attr("src", "./images/landmarks/Times-Square-New-York-City.jpg");
-    $("#land-pic2").attr("src", "./images/landmarks/topic-statue-of-liberty-gettyimages-960610006-feature.jpg");
-    $("#land-pic3").attr("src", "./images/landmarks/central-park.jpg");
-    $("#land-pic4").attr("src", "./images/landmarks/https___www.kitano.com_resourcefiles_snippet-main-img_empire-state-building-in-new-york-top.jpg");
+    $("#land-pic1").attr("src", "Times-Square-New-York-City.jpg");
+    $("#land-pic2").attr("src", "topic-statue-of-liberty-gettyimages-960610006-feature.jpg");
+    $("#land-pic3").attr("src", "central-park.jpg");
+    $("#land-pic4").attr("src", "https___www.kitano.com_resourcefiles_snippet-main-img_empire-state-building-in-new-york-top.jpg");
   };
 
   if ($(this).val() == "7") {
@@ -139,10 +139,10 @@ $("select").on("change", function () {
     $("#selectedCityDiv").text("What do you want to check out in " + selectedCity + " tonight?");
     $("div#cty-img").attr("class", "houston")
     showLandmarks(x = 6);
-    $("#land-pic1").attr("src", "./images/landmarks/Space-Center-Houston-70-6af8c645af6e550_6af8c71b-e678-ba18-17a904130de6ed3f.jpg");
-    $("#land-pic2").attr("src", "./images/landmarks/museum-of-fine-arts-houston-Beck-Interior-Gallery.jpeg");
-    $("#land-pic3").attr("src", "./images/landmarks/kemah-boardwalk-houston.jpg");
-    $("#land-pic4").attr("src", "./images/landmarks/1904036_042217-ktrk-buffalo-bayou-cover-img.jpg");
+    $("#land-pic1").attr("src", "Space-Center-Houston-70-6af8c645af6e550_6af8c71b-e678-ba18-17a904130de6ed3f.jpg");
+    $("#land-pic2").attr("src", "museum-of-fine-arts-houston-Beck-Interior-Gallery.jpeg");
+    $("#land-pic3").attr("src", "kemah-boardwalk-houston.jpg");
+    $("#land-pic4").attr("src", "1904036_042217-ktrk-buffalo-bayou-cover-img.jpg");
   };
 
   hideMainPage()
@@ -217,6 +217,7 @@ $("#select").change(function () {
     city5 = response._embedded.events[4]._embedded.venues[0].city.name;
     console.log("state", state);
     console.log("city", city);
+
   });
 });
 
@@ -414,67 +415,9 @@ function getEvent() {
   })
 
     .then(function (response) {
-      artistName = response._embedded.events[0].name;
-      venue = response._embedded.events[0]._embedded.venues[0].name;
-      date = response._embedded.events[0].dates.start.localDate;
-      time = response._embedded.events[0].dates.start.dateTime;
-      image = response._embedded.events[0].images[0].url;
-      artistName2 = response._embedded.events[1].name;
-      venue2 = response._embedded.events[1]._embedded.venues[0].name;
-      date2 = response._embedded.events[1].dates.start.localDate;
-      time2 = response._embedded.events[1].dates.start.dateTime;
-      image2 = response._embedded.events[1].images[0].url;
-      artistName3 = response._embedded.events[2].name;
-      venue3 = response._embedded.events[2]._embedded.venues[0].name;
-      date3 = response._embedded.events[2].dates.start.localDate;
-      time3 = response._embedded.events[2].dates.start.dateTime;
-      image3 = response._embedded.events[2].images[0].url;
-      artistName4 = response._embedded.events[3].name;
-      venue4 = response._embedded.events[3]._embedded.venues[0].name;
-      date4 = response._embedded.events[3].dates.start.localDate;
-      time4 = response._embedded.events[3].dates.start.dateTime;
-      image4 = response._embedded.events[03].images[0].url;
-      artistName5 = response._embedded.events[4].name;
-      venue5 = response._embedded.events[4]._embedded.venues[0].name;
-      date5 = response._embedded.events[4].dates.start.localDate;
-      time5 = response._embedded.events[4].dates.start.dateTime;
-      image5 = response._embedded.events[4].images[0].url;
-      console.log("query", queryURL);
-      console.log(response);
-      console.log("queryURL", queryURL);
-      console.log("dma id", zipcode);
-      $("#artist-1").text(artistName);
-      $("#venue-1").text(venue);
-      $("#date-1").text(moment(date).format("MMM Do, YYYY"));
-      $("#time-1").text(moment(time).format("h:mma"));
-      $("#image-1").attr("src", image);
-      $("#info-1").attr("href", info);
-      $("#artist-2").text(artistName2);
-      $("#venue-2").text(venue2);
-      $("#date-2").text(moment(date2).format("MMM Do, YYYY"));
-      $("#time-2").text(moment(time2).format("h:mma"));
-      $("#image-2").attr("src", image2);
-      $("#info-2").attr("href", info2);
-      $("#artist-3").text(artistName3);
-      $("#venue-3").text(venue3);
-      $("#date-3").text(moment(date3).format("MMM Do, YYYY"));
-      $("#time-3").text(moment(time3).format("h:mma"));
-      $("#image-3").attr("src", image3);
-      $("#info-3").attr("href", info3);
-      $("#artist-4").text(artistName4);
-      $("#venue-4").text(venue4);
-      $("#date-4").text(moment(date4).format("MMM Do, YYYY"));
-      $("#time-4").text(moment(time4).format("h:mma"));
-      $("#image-4").attr("src", image4);
-      $("#info-4").attr("href", info4);
-      $("#artist-5").text(artistName5);
-      $("#venue-5").text(venue5);
-      $("#date-5").text(moment(date5).format("MMM Do, YYYY"));
-      $("#time-5").text(moment(time5).format("h:mma"));
-      $("#image-5").attr("src", image5);
-      $("#info-5").attr("href", info5);
-      $("#results").show();
-      $("#back").show();
+
+      makeDivs(response)
+ 
     });
 
   // started trying to get weather for events

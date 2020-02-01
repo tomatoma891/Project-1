@@ -66,10 +66,10 @@ $("select").on("change", function () {
     $("#selectedCityDiv").text("What do you want to check out in " + selectedCity + " tonight?");
     $("#cty-img").attr("class", "denver");
     showLandmarks(x = 0);
-    $("#land-pic1").attr("src", "colorful-denver.png");
-    $("#land-pic2").attr("src", "art.jpg");
-    $("#land-pic3").attr("src", "aquarium.jpg");
-    $("#land-pic4").attr("src", "poi_gallery_image-image-f901ff25-261a-4163-a727-5f2c315d0d53.jpg");
+    $("#land-pic1").attr("src", "./images/landmarks/colorful-denver.png");
+    $("#land-pic2").attr("src", "./images/landmarks/art.jpg");
+    $("#land-pic3").attr("src", "./images/landmarks/aquarium.jpg");
+    $("#land-pic4").attr("src", "./images/landmarks/poi_gallery_image-image-f901ff25-261a-4163-a727-5f2c315d0d53.jpg");
   }
 
   if ($(this).val() == "2") {
@@ -79,10 +79,10 @@ $("select").on("change", function () {
     $("#selectedCityDiv").text("What do you want to check out in " + selectedCity + " tonight?");
     $("div#cty-img").attr("class", "seattle")
     showLandmarks(x = 1);
-    $("#land-pic1").attr("src", "Seattle-Famous-Landmarks.jpg");
-    $("#land-pic2").attr("src", "f497b4381be03c88098dfb50c4e8e786.jpg");
-    $("#land-pic3").attr("src", "pike_place_market_entrance.jpg");
-    $("#land-pic4").attr("src", "348s.jpg");
+    $("#land-pic1").attr("src", "./images/landmarks/Seattle-Famous-Landmarks.jpg");
+    $("#land-pic2").attr("src", "./images/landmarks/f497b4381be03c88098dfb50c4e8e786.jpg");
+    $("#land-pic3").attr("src", "./images/landmarks/pike_place_market_entrance.jpg");
+    $("#land-pic4").attr("src", "./images/landmarks/348s.jpg");
   };
 
   if ($(this).val() == "3") {
@@ -91,10 +91,10 @@ $("select").on("change", function () {
     $("#selectedCityDiv").text("What do you want to check out in " + selectedCity + " tonight?");
     $("div#cty-img").attr("class", "miami")
     showLandmarks(x = 2);
-    $("#land-pic1").attr("src", "bal-harbour-beach-aerial-340x232.jpg");
-    $("#land-pic2").attr("src", "jungle-island-miami-eco-adventure-zip-line.jpg");
-    $("#land-pic3").attr("src", "ug_1.jpg");
-    $("#land-pic4").attr("src", "IMG_9480 by Fabio.png");
+    $("#land-pic1").attr("src", "./images/landmarks/bal-harbour-beach-aerial-340x232.jpg");
+    $("#land-pic2").attr("src", "./images/landmarks/jungle-island-miami-eco-adventure-zip-line.jpg");
+    $("#land-pic3").attr("src", "./images/landmarks/ug_1.jpg");
+    $("#land-pic4").attr("src", "./images/landmarks/IMG_9480 by Fabio.png");
   };
 
   if ($(this).val() == "4") {
@@ -103,10 +103,10 @@ $("select").on("change", function () {
     $("#selectedCityDiv").text("What do you want to check out in " + selectedCity + " tonight?");
     $("div#cty-img").attr("class", "losangeles")
     showLandmarks(x = 3);
-    $("#land-pic1").attr("src", "OCR-L-DIS-DISNEYLAND-01-JAG-1.jpg");
-    $("#land-pic2").attr("src", "unnamed.jpg");
-    $("#land-pic3").attr("src", "Daniel-Malikyar-740x482.jpg");
-    $("#land-pic4").attr("src", "image.jpg");
+    $("#land-pic1").attr("src", "./images/landmarks/OCR-L-DIS-DISNEYLAND-01-JAG-1.jpg");
+    $("#land-pic2").attr("src", "./images/landmarks/unnamed.jpg");
+    $("#land-pic3").attr("src", "./images/landmarks/Daniel-Malikyar-740x482.jpg");
+    $("#land-pic4").attr("src", "./images/landmarks/image.jpg");
   };
 
   if ($(this).val() == "5") {
@@ -115,10 +115,10 @@ $("select").on("change", function () {
     $("#selectedCityDiv").text("What do you want to check out in " + selectedCity + " tonight?");
     $("div#cty-img").attr("class", "atlanta")
     showLandmarks(x = 4);
-    $("#land-pic1").attr("src", "olympicpark.jpg");
-    $("#land-pic2").attr("src", "c700x420.jpg");
-    $("#land-pic3").attr("src", "cocacola.jpg");
-    $("#land-pic4").attr("src", "foxtheater-750x480.jpg");
+    $("#land-pic1").attr("src", "./images/landmarks/olympicpark.jpg");
+    $("#land-pic2").attr("src", "./images/landmarks/c700x420.jpg");
+    $("#land-pic3").attr("src", "./images/landmarks/cocacola.jpg");
+    $("#land-pic4").attr("src", "./images/landmarks/foxtheater-750x480.jpg");
   };
 
   if ($(this).val() == "6") {
@@ -127,10 +127,10 @@ $("select").on("change", function () {
     $("#selectedCityDiv").text("What do you want to check out in " + selectedCity + " tonight?");
     $("div#cty-img").attr("class", "newyork")
     showLandmarks(x = 5);
-    $("#land-pic1").attr("src", "Times-Square-New-York-City.jpg");
-    $("#land-pic2").attr("src", "topic-statue-of-liberty-gettyimages-960610006-feature.jpg");
-    $("#land-pic3").attr("src", "central-park.jpg");
-    $("#land-pic4").attr("src", "https___www.kitano.com_resourcefiles_snippet-main-img_empire-state-building-in-new-york-top.jpg");
+    $("#land-pic1").attr("src", "./images/landmarks/Times-Square-New-York-City.jpg");
+    $("#land-pic2").attr("src", "./images/landmarks/topic-statue-of-liberty-gettyimages-960610006-feature.jpg");
+    $("#land-pic3").attr("src", "./images/landmarks/central-park.jpg");
+    $("#land-pic4").attr("src", "./images/landmarks/https___www.kitano.com_resourcefiles_snippet-main-img_empire-state-building-in-new-york-top.jpg");
   };
 
   if ($(this).val() == "7") {
@@ -139,10 +139,10 @@ $("select").on("change", function () {
     $("#selectedCityDiv").text("What do you want to check out in " + selectedCity + " tonight?");
     $("div#cty-img").attr("class", "houston")
     showLandmarks(x = 6);
-    $("#land-pic1").attr("src", "Space-Center-Houston-70-6af8c645af6e550_6af8c71b-e678-ba18-17a904130de6ed3f.jpg");
-    $("#land-pic2").attr("src", "museum-of-fine-arts-houston-Beck-Interior-Gallery.jpeg");
-    $("#land-pic3").attr("src", "kemah-boardwalk-houston.jpg");
-    $("#land-pic4").attr("src", "1904036_042217-ktrk-buffalo-bayou-cover-img.jpg");
+    $("#land-pic1").attr("src", "./images/landmarks/Space-Center-Houston-70-6af8c645af6e550_6af8c71b-e678-ba18-17a904130de6ed3f.jpg");
+    $("#land-pic2").attr("src", "./images/landmarks/museum-of-fine-arts-houston-Beck-Interior-Gallery.jpeg");
+    $("#land-pic3").attr("src", "./images/landmarks/kemah-boardwalk-houston.jpg");
+    $("#land-pic4").attr("src", "./images/landmarks/1904036_042217-ktrk-buffalo-bayou-cover-img.jpg");
   };
 
   hideMainPage()

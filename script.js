@@ -23,11 +23,25 @@ $("select").on("change", function () {
     ["Space Center Houston", "The Museum of Fine Arts, Houston", "Kemah Boardwalk", "Buffalo Bayou Park"]
   ];
 
+let cityLandmarksInfo = [
+  ["https://www.botanicgardens.org/", "https://denverartmuseum.org/", "https://www.aquariumrestaurants.com/downtownaquariumdenver/", "https://www.redrocksonline.com/the-park"],
+  ["https://www.spaceneedle.com/", "https://www.seattle.gov/parks/find/parks/gas-works-park", "https://www.mopop.org/", "https://seattlegreatwheel.com/"],
+  ["https://www.baysidemarketplace.com/", "https://www.jungleisland.com/", "https://www.pamm.org/", "https://www.coralgables.com/departments/CommunityRecreation/venetian-pool"],
+  ["https://disneyland.disney.go.com/", "https://www.walkoffame.com/", "https://santamonicapier.org/", "https://www.getty.edu/"],
+  ["https://www.gwcca.org/centennial-olympic-park/", "https://www.georgiaaquarium.org/", "https://www.worldofcoca-cola.com/", "https://www.foxtheatre.org/"],
+  ["https://www.timessquarenyc.org/", "https://www.nps.gov/stli/index.htm", "https://www.centralparknyc.org/", "https://www.esbnyc.com/"],
+  ["https://spacecenter.org/", "https://www.mfah.org/", "https://www.kemahboardwalk.com/", "https://buffalobayou.org/"],
+];
+
   function showLandmarks() {
     $("#land-1").text(cityLandmarks[x][0]);
+    $("#land-info1").attr("href", cityLandmarksInfo[x][0]);
     $("#land-2").text(cityLandmarks[x][1]);
+    $("#land-info2").attr("href", cityLandmarksInfo[x][1]);
     $("#land-3").text(cityLandmarks[x][2]);
-    $("#land-4").text(cityLandmarks[x][3]);
+    $("#land-info3").attr("href", cityLandmarksInfo[x][2]);
+    $("#land-4").text(cityLandmarks[x][3]);  
+    $("#land-info4").attr("href", cityLandmarksInfo[x][3]);
     $("#landmark-city").text(selectedCity + " Landmarks");
     $("#landmarks").attr("style", "display: block");
   };
@@ -406,8 +420,6 @@ function getEvent() {
       image5 = response._embedded.events[4].images[0].url;
       console.log("query", queryURL);
       console.log(response);
-      venueQueryUrl = response._embedded.events[0]._links.venues[0].href;
-      // console.log("venue call", venueQueryUrl);
       console.log("queryURL", queryURL);
       console.log("dma id", zipcode);
       $("#artist-1").text(artistName);
@@ -444,7 +456,13 @@ function getEvent() {
       $("#back").show();
 
     });
-
-
+console.log(date);
+endDate = moment().add(7, 'days').calendar();
+console.log(endDate);
+if (date2 < endDate) {
+  console.log("weather available")
+} else {
+  console.log("weather unavailable");
+};
 
 }

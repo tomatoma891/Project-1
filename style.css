@@ -89,8 +89,12 @@ span {
    color: #ADCDFF;
 }
 
-#option-confirm:hover, #cancel:hover, .modal-close:hover {
+#option-confirm:hover, #cancel:hover {
     color: rgb(26, 112, 170);  
+}
+
+.modal-close:hover {
+    font-size: 1.75em;
 }
 
 #or {
@@ -195,16 +199,14 @@ span.test::after {
     font-weight: 500;
 }
 
-.floattest {
-    position: fixed;
-    bottom: 0;
-}
 #modal1 {
     z-index: 10;
+    background-color: red;
+    border: 5px white solid;
 }
 
-#error {
-    color: rgb(26, 112, 170); 
+.error {
+    color: white;
 }
 
 #jackie {

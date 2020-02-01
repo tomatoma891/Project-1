@@ -184,12 +184,12 @@ main {
 
 .event-results {
     text-align: center;
-    min-height: 25em;
+    max-height: 40em;
     padding: .25em; 
 }
 
 .event-title {
-    font-weight: 700;
+    font-size: 1.5em;
 }
 
 /* change the color of the selected radio button to match the site theme is not working */
@@ -229,4 +229,8 @@ hr {
 
 #tm { 
  text-align: center;
+}
+
+h2 {
+    font-size: 1.25em;
 }

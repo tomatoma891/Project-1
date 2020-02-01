@@ -1,5 +1,7 @@
 // hide bck button on inital screen load
 $("#back").hide();
+
+//var venueQueryUrl;  --  NEEDED?
 var queryURL;
 var foodQueryURL
 var zipcode;
@@ -528,16 +530,30 @@ function getEvent() {
       prices = [price, price2, price3, price4, price5];
       console.log("price using array", prices[0]);
       priceDivs = ["price-1", "price-2", "price-3", "price-4", "price-5"];
+      function convertToDollarSigns (num) {
+        var dollarSigns = "";
+        for (var i = 0; i < num; i++) {
+          dollarSigns += "$"
+        }
+        return dollarSigns;
+      }
+
 
       for (var i = 0; i < prices.length; i++) {
-        if (prices[i] == 1) {
-          $("#price1").text("three");
-        } else if (prices[i] == 2) {
-        //$(priceDivs[i]).attr("two");
-        } else if (prices[i] == 3) {
-          $(priceDivs[i]).attr("class", "fa fa-star");
-        } else if (prices[i] >= 4) {
-          $(priceDivs[i]).attr("class", "fa fa-star");
+        
+        prices[i] = convertToDollarSigns(prices[i])
+        if (i === 0) {
+          console.log("adding price 1")
+          $("#price-1").text(prices[0]);
+        } else if (i === 1) {
+          $("#price-2").text(prices[1]);
+        } else if (i === 2) {
+          $("#price-3").text(prices[2]);
+        } else if (i === 3) {
+          $("#price-4").text(prices[3]);
+        } 
+        else if (i === 4) {
+          $("#price-5").text(prices[4]);
         }
       }
       console.log("last price", price);

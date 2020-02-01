@@ -17,8 +17,11 @@
             <div class="col s12" id="hoh">
                 <div class="card">
                     <div class="card-panel center-align" id="title">
-                        <h1>LET'S GO...</h1>
-                        <div class="btn buttons right" id="login-btn">LOGIN / REGISTER</div>
+                        <h1>YOUR CITY GUIDE</h1>
+                        <div class="text-center">
+                            powered by <img src="Ticketmaster.png" style="width: 10em; height: 1.5em">
+                        </div>
+                        <a class="btn buttons right" id="login-btn">LOGIN / REGISTER</a>
                     </div>
                 </div>
             </div>
@@ -70,10 +73,10 @@
                     <p id="or">OR</p>
                 </div>
                 <div class="col s1 pull-s1 l1 push-l2" id="back-btn">
-                    <div class="btn buttons" id="back"><span class="buttons">BACK</span></div>
+                    <a class="btn buttons" id="back"><span class="buttons">BACK</span></a>
                 </div>
                 <div class="col s1 pull-s1 m3 pull-m1 le pull-l1">
-                    <div class="btn buttons" id="random-btn">GO!</div>
+                    <a class="btn buttons" id="random-btn">GO!</a>
                 </div>
             </div>
             <div class="col s1 m2 l3"></div>
@@ -103,9 +106,14 @@
                                     <span>Art</span>
                                 </label>
                             </p>
+                            <p>
+                                <label>
+                                    <input type="checkbox" id="dinner" />
+                                    <span>Want to add dinner?</span>
+                                </label>
+                            </p>
                         </form>
                     </div>
-
                     <span class="btn-flat" id="cancel">CANCEL</span>
                     <a class="btn-flat right modal-trigger" id="option-confirm" href="#modal1">OK</a>
                 </div>
@@ -116,79 +124,106 @@
             <div class="row" id="results" style="display: none">
                 <div class="col m1"></div>
                 <div class="col s12 m2">
-                    <a href="" target="_blank" id="info-1">
-                        <div class="card hoverable">
-                            <div class="card-panel event-results">
-                                <span id="artist-1" class="event-title"></span><br>
-                                <span id="venue-1"></span><br>
-                                <span id="date-1"></span><br>
-                                <span id="time-1"></span>
-                                <div class="card-image" id="test">
+                    <div class="card">
+                        <div class="card-panel event-results">
+                            <span id="artist-1" class="event-title"></span><br>
+                            <span id="venue-1"></span><br>
+                            <span id="date-1"></span><br>
+                            <span id="time-1"></span>
+                            <a href="" target="_blank" id="info-1">
+                                <div class="card-image hoverable" id="test">
                                     <img class="event-pic" id="image-1">
                                 </div>
+                            </a>
+                            <div class="dinner-plans">
+                                <hr>
+                                <span id="restaurant-1" class="bold"></span><br>
+                                <a class="btn buttons reserve" target="_blank" id="restaurant-info1">RESERVE</a>
                             </div>
                         </div>
+                    </div>
                     </a>
                 </div>
                 <div class="col s12 m2">
-                    <a href="" target="_blank" id="info-2">
-                        <div class="card hoverable">
-                            <div class="card-panel event-results">
-                                <span id="artist-2" class="event-title"></span><br>
-                                <span id="venue-2"></span><br>
-                                <span id="date-2"></span><br>
-                                <span id="time-2"></span>
-                                <div class="card-image">
+                    <div class="card">
+                        <div class="card-panel event-results">
+                            <span id="artist-2" class="event-title"></span><br>
+                            <span id="venue-2"></span><br>
+                            <span id="date-2"></span><br>
+                            <span id="time-2"></span>
+                            <a href="" target="_blank" id="info-2">
+                                <div class="card-image hoverable">
                                     <img class="event-pic" id="image-2"></img>
                                 </div>
+                            </a>
+                            <div class="dinner-plans">
+                                <hr>
+                                <span id="restaurant-2" class="bold"></span><br>
+                                <a class="btn buttons reserve" target="_blank" id="restaurant-info2">RESERVE</a>
                             </div>
                         </div>
-                    </a>
+                    </div>
                 </div>
                 <div class="col s12 m2">
-                    <a href="" target="_blank" id="info-3">
-                        <div class="card hoverable">
-                            <div class="card-panel event-results">
-                                <span id="artist-3" class="event-title"></span><br>
-                                <span id="venue-3"></span><br>
-                                <span id="date-3"></span><br>
-                                <span id="time-3"></span>
-                                <div class="card-image">
-                                    <img class="event-pic" id="image-3"></img>
-                                </div>
+                    <div class="card">
+                        <div class="card-panel event-results">
+                            <span id="artist-3" class="event-title"></span><br>
+                            <span id="venue-3"></span><br>
+                            <span id="date-3"></span><br>
+                            <span id="time-3"></span>
+                            <a href="" target="_blank" id="info-3"></a>
+                            <div class="card-image hoverable">
+                                <img class="event-pic" id="image-3"></img>
+                            </div>
+                            </a>
+                            <div class="dinner-plans">
+                                <hr>
+                                <span id="restaurant-3" class="bold"></span><br>
+                                <a class="btn buttons reserve" target="_blank" id="restaurant-info3">RESERVE</a>
                             </div>
                         </div>
-                    </a>
+                    </div>
+
                 </div>
                 <div class="col s12 m2">
-                    <a href="" target="_blank" id="info-4">
-                        <div class="card hoverable">
-                            <div class="card-panel event-results">
-                                <span id="artist-4" class="event-title"></span><br>
-                                <span id="venue-4"></span><br>
-                                <span id="date-4"></span><br>
-                                <span id="time-4"></span>
-                                <div class="card-image">
+                    <div class="card">
+                        <div class="card-panel event-results">
+                            <span id="artist-4" class="event-title"></span><br>
+                            <span id="venue-4"></span><br>
+                            <span id="date-4"></span><br>
+                            <span id="time-4"></span>
+                            <a href="" target="_blank" id="info-4">
+                                <div class="card-image hoverable">
                                     <img class="event-pic" id="image-4"></img>
                                 </div>
+                            </a>
+                            <div class="dinner-plans">
+                                <hr>
+                                <span id="restaurant-4" class="bold"></span><br>
+                                <a class="btn buttons reserve" target="_blank" id="restaurant-info4">RESERVE</a>
                             </div>
                         </div>
-                    </a>
+                    </div>
                 </div>
                 <div class="col s12 m2">
-                    <a href="" target="_blank" id="info-5">
-                        <div class="card hoverable">
-                            <div class="card-panel event-results">
-                                <span id="artist-5" class="event-title"></span><br>
-                                <span id="venue-5"></span><br>
-                                <span id="date-5"></span><br>
-                                <span id="time-5"></span>
-                                <div class="card-image">
+                    <div class="card">
+                        <div class="card-panel event-results">
+                            <span id="artist-5" class="event-title"></span><br>
+                            <span id="venue-5"></span><br>
+                            <span id="date-5"></span><br>
+                            <span id="time-5"></span>
+                            <a href="" target="_blank" id="info-5">
+                                <div class="card-image hoverable">
                                     <img class="event-pic" id="image-5"></img>
                                 </div>
+                            </a>
+                            <div class="dinner-plans">
+                                <hr>
+                                <span id="restaurant-5" class="bold"></span><br>
+                                <a class="btn buttons reserve" target="_blank" id="restaurant-info5">RESERVE</a>
                             </div>
                         </div>
-                    </a>
+                    </div>
                 </div>
             </div>
 
@@ -197,7 +232,7 @@
             <div id="modal1" class="modal">
                 <div class="modal-content error">
                     <div class="center-align">
-                        <h4>OOOPS!</h4>
+                        <h4>OOPS!</h4>
                         <p>You forgot to tell us what you want to do. Go back and make a selection.</p><a href="#!"
                             class="modal-close btn-flat error" id="modal-ok">OK</a>
                     </div>

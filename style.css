@@ -1,10 +1,16 @@
+.container {
+    width: 100%;
+    margin: auto;
+}
+
 #title {  
     background-image: url("https://image.shutterstock.com/image-vector/modern-city-skyline-vector-260nw-341808632.jpg");
     border-bottom: rgb(26, 112, 170);
     border-width: 1em;
     border-block-end-style: solid;
     color: rgb(26, 112, 170);
-    margin-bottom: 0em;
+    margin-top: 0;
+    margin-bottom: 0;
     width: 100%;
 }
 
@@ -21,18 +27,24 @@
     background-color: #84A7D8;
 }
 #login-form-btn:hover {
-    background-color: rgb(26, 112, 170);;
+    background-color: rgb(26, 112, 170);
 }
 
 #welcome {
     background-color: #EDF4FF;
     padding: 0em;
+    text-align: center;
 }
 
-#random-btn {
+#random-btn, #login-btn {
     background-color: #84A7D8;
     margin: 1em 0 1em;
     padding-bottom: 0em;
+}
+
+#random-btn:hover, #login-btn:hover {
+    background-color: #84A7D8;
+    background-color: rgb(26, 112, 170);
 }
 
 .btn-text {
@@ -71,7 +83,7 @@ span {
     padding-left: 3em;
 } 
 
-#option-confirm, #cancel {
+#option-confirm, #cancel, .modal-close {
    font-size: 1.25em;
    font-weight: 900;
    color: #ADCDFF;
@@ -79,6 +91,10 @@ span {
 
 #option-confirm:hover, #cancel:hover {
     color: rgb(26, 112, 170);  
+}
+
+.modal-close:hover {
+    font-size: 1.75em;
 }
 
 #or {
@@ -137,12 +153,10 @@ span {
     margin-top: 1.5em;
 }
 
-#trip-1, #trip-2, #trip-3, #trip-4 {
+.ribbon {
     width: 100%;
     background-color: rgba(26, 112, 170, 0.3);
-    color: white;
-    font-weight: 600;
-    font-size: 1em;
+    color: white;  
 }
 
 /* for sticky footer */
@@ -165,7 +179,7 @@ main {
 
 .event-results {
     text-align: center;
-    height: 30em;
+    min-height: 20em;
     padding: .25em; 
 }
 
@@ -184,3 +198,19 @@ span.test::after {
     font-size: 1.25em;
     font-weight: 500;
 }
+
+#modal1 {
+    z-index: 10;
+    background-color: red;
+    border: 5px white solid;
+}
+
+.error {
+    color: white;
+}
+
+#jackie {
+    width: 25%;
+    height: 25%;
+}
+

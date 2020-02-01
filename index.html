@@ -14,11 +14,11 @@
 
     <div class="container">
         <div class="row no-margin-bottom">
-            <div class="col s12">
+            <div class="col s12" id="hoh">
                 <div class="card">
                     <div class="card-panel center-align" id="title">
                         <h1>LET'S GO...</h1>
-                        <div class="btn buttons right">LOGIN / REGISTER</div>
+                        <div class="btn buttons right" id="login-btn">LOGIN / REGISTER</div>
                     </div>
                 </div>
             </div>
@@ -29,8 +29,8 @@
                 <div class="card" id="welcome">
                     <div class="card-content">
                         <p class="card-title">New In Town?</p>
-                        <p>Select a city below to find out what's going on in the area. Or, if you can't make a
-                            decision, just click GO and let fate steer you on your next adventure!</p>
+                        <p>Select a city below to find out what's going on in the area. Click GO! to find out what's
+                            happening in your neck of the woods.</p>
                     </div>
                 </div>
             </div>
@@ -66,17 +66,17 @@
                         </select>
                     </div>
                 </div>
-                <div class="col s1 pull-s1 m2 ">
+                <div class="col s1 pull-s1 m2 l2 push-l1">
                     <p id="or">OR</p>
                 </div>
                 <div class="col s1 pull-s1 l1 push-l2" id="back-btn">
                     <div class="btn buttons" id="back"><span class="buttons">BACK</span></div>
                 </div>
-                <div class="col s1 pull-s1 l2">
-                    <div class="btn buttons" id="random-btn"><span class="buttons">GO!</span></div>
+                <div class="col s1 pull-s1 m3 pull-m1 le pull-l1">
+                    <div class="btn buttons" id="random-btn">GO!</div>
                 </div>
             </div>
-            <div class="col s1 m2"></div>
+            <div class="col s1 m2 l3"></div>
 
             <!-- select options  -->
 
@@ -107,7 +107,7 @@
                     </div>
 
                     <span class="btn-flat" id="cancel">CANCEL</span>
-                    <span class="btn-flat right" id="option-confirm">OK</span>
+                    <a class="btn-flat right modal-trigger" id="option-confirm" href="#modal1">OK</a>
                 </div>
             </div>
 
@@ -116,127 +116,99 @@
             <div class="row" id="results" style="display: none">
                 <div class="col m1"></div>
                 <div class="col s12 m2">
-                    <div class="card">
-                        <div class="card-panel event-results">
-                            <span id="artist-1" class="event-title"></span><br>
-                            <span id="venue-1"></span><br>
-                            <span id="date-1"></span><br>
-                            <span id="time-1"></span>
-                            <div class="card-image">
-                                <img class="event-pic" id="image-1">
-                            </div>
-                            <div class="food">
-                                <form action="#">
-                                    <p>
-                                        <label>
-                                            <input type="checkbox" />
-                                            <span>Search Restaurants</span>
-                                        </label>
-                                        <div class="btn buttons" id="select-1">SELECT</div>
-                                    </p>
-                                </form>
+                    <a href="" target="_blank" id="info-1">
+                        <div class="card hoverable">
+                            <div class="card-panel event-results">
+                                <span id="artist-1" class="event-title"></span><br>
+                                <span id="venue-1"></span><br>
+                                <span id="date-1"></span><br>
+                                <span id="time-1"></span>
+                                <div class="card-image" id="test">
+                                    <img class="event-pic" id="image-1">
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="col s12 m2">
-                    <div class="card">
-                        <div class="card-panel event-results">
-                            <span id="artist-2" class="event-title"></span><br>
-                            <span id="venue-2"></span><br>
-                            <span id="date-2"></span><br>
-                            <span id="time-2"></span>
-                            <div class="card-image">
-                                <img class="event-pic" id="image-2"></img>
-                            </div>
-                            <div class="food">
-                                <form action="#">
-                                    <p>
-                                        <label>
-                                            <input type="checkbox" />
-                                            <span>Search Restaurants</span>
-                                        </label>
-                                        <div class="btn buttons" id="select-2">SELECT</div>
-                                    </p>
-                                </form>
+                    <a href="" target="_blank" id="info-2">
+                        <div class="card hoverable">
+                            <div class="card-panel event-results">
+                                <span id="artist-2" class="event-title"></span><br>
+                                <span id="venue-2"></span><br>
+                                <span id="date-2"></span><br>
+                                <span id="time-2"></span>
+                                <div class="card-image">
+                                    <img class="event-pic" id="image-2"></img>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="col s12 m2">
-                    <div class="card">
-                        <div class="card-panel event-results">
-                            <span id="artist-3" class="event-title"></span><br>
-                            <span id="venue-3"></span><br>
-                            <span id="date-3"></span><br>
-                            <span id="time-3"></span>
-                            <div class="card-image">
-                                <img class="event-pic" id="image-3"></img>
-                            </div>
-                            <div class="food">
-                                <form action="#">
-                                    <p>
-                                        <label>
-                                            <input type="checkbox" />
-                                            <span>Search Restaurants</span>
-                                        </label>
-                                        <div class="btn buttons" id="select-3">SELECT</div>
-                                    </p>
-                                </form>
+                    <a href="" target="_blank" id="info-3">
+                        <div class="card hoverable">
+                            <div class="card-panel event-results">
+                                <span id="artist-3" class="event-title"></span><br>
+                                <span id="venue-3"></span><br>
+                                <span id="date-3"></span><br>
+                                <span id="time-3"></span>
+                                <div class="card-image">
+                                    <img class="event-pic" id="image-3"></img>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="col s12 m2">
-                    <div class="card">
-                        <div class="card-panel event-results">
-                            <span id="artist-4" class="event-title"></span><br>
-                            <span id="venue-4"></span><br>
-                            <span id="date-4"></span><br>
-                            <span id="time-4"></span>
-                            <div class="card-image">
-                                <img class="event-pic" id="image-4"></img>
-                            </div>
-                            <div class="food">
-                                <form action="#">
-                                    <p>
-                                        <label>
-                                            <input type="checkbox" />
-                                            <span>Search Restaurants</span>
-                                        </label>
-                                        <div class="btn buttons" id="select-4">SELECT</div>
-                                    </p>
-                                </form>
+                    <a href="" target="_blank" id="info-4">
+                        <div class="card hoverable">
+                            <div class="card-panel event-results">
+                                <span id="artist-4" class="event-title"></span><br>
+                                <span id="venue-4"></span><br>
+                                <span id="date-4"></span><br>
+                                <span id="time-4"></span>
+                                <div class="card-image">
+                                    <img class="event-pic" id="image-4"></img>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="col s12 m2">
-                    <div class="card">
-                        <div class="card-panel event-results">
-                            <span id="artist-5" class="event-title"></span><br>
-                            <span id="venue-5"></span><br>
-                            <span id="date-5"></span><br>
-                            <span id="time-5"></span>
-                            <div class="card-image">
-                                <img class="event-pic" id="image-5"></img>
-                            </div>
-                            <div class="food">
-                                <form action="#">
-                                    <p>
-                                        <label>
-                                            <input type="checkbox" />
-                                            <span>Search Restaurants</span>
-                                        </label>
-                                        <div class="btn buttons" id="select-5">SELECT</div>
-                                    </p>
-                                </form>
+                    <a href="" target="_blank" id="info-5">
+                        <div class="card hoverable">
+                            <div class="card-panel event-results">
+                                <span id="artist-5" class="event-title"></span><br>
+                                <span id="venue-5"></span><br>
+                                <span id="date-5"></span><br>
+                                <span id="time-5"></span>
+                                <div class="card-image">
+                                    <img class="event-pic" id="image-5"></img>
+                                </div>
                             </div>
                         </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Modal Structure -->
+            <audio id="play" src="error.mp3"></audio>
+            <div id="modal1" class="modal">
+                <div class="modal-content error">
+                    <div class="center-align">
+                        <h4>OOOPS!</h4>
+                        <p>You forgot to tell us what you want to do. Go back and make a selection.</p><a href="#!"
+                            class="modal-close btn-flat error" id="modal-ok">OK</a>
                     </div>
+                </div>
+                <div class="center-align">
+                    <img src="https://pbs.twimg.com/profile_images/2162709407/Jackie_Chan_400x400.png" alt="Oops!"
+                        id="jackie">
                 </div>
             </div>
         </div>
+
 
         <!-- login form -->
 
@@ -252,14 +224,14 @@
 
                     <div class="row">
                         <div class="input-field col s12">
-                            <input class='validate' type="email" name="email" id="email" />
-                            <label for="email">Enter your email</label>
+                            <input type="text" name="username" id="username" />
+                            <label for="username">Enter your username</label>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="input-field col s12">
-                            <input class="validate" type="password" name="password" id="password" />
+                            <input type="password" name="password" id="password" />
                             <label for="password">Enter your password</label>
                         </div>
                         <label style="float: right;">
@@ -283,41 +255,50 @@
         <div id="featured">
             <div class="row no-margin-bottom">
                 <div class="label">FEATURED</div>
-                <div class="col s12 m3">
-                    <div class="card hoverable">
-                        <div class="card-image">
-                            <img src="https://q-cf.bstatic.com/images/hotel/max1024x768/170/170504164.jpg"
-                                alt="Las Vegas">
-                            <span class="card-title" id="trip-1">Viva Las Vegas</span>
+                <div class="col s12 m6 xl3">
+                    <a href="https://www.visitlasvegas.com/" target="_blank" id="feat-1">
+                        <div class="card hoverable">
+                            <div class="card-image">
+                                <img src="https://q-cf.bstatic.com/images/hotel/max1024x768/170/170504164.jpg"
+                                    alt="Las Vegas">
+                                <span class="card-title ribbon" id="trip-1">Viva Las Vegas</span>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
-                <div class="col s12 m3">
-                    <div class="card hoverable">
-                        <div class="card-image">
-                            <img src="https://images.vailresorts.com/image/upload/c_scale,dpr_3.0,f_auto,q_auto,w_400/v1/Breckenridge/Heros/201902_brk_maguire_yi_7133.jpg"
-                                alt="Breckenridge, Colorado">
-                            <span class="card-title" id="trip-2">Rocky Mountain High</span>
+                <div class="col s12 m6 xl3">
+                    <a href="https://www.coloradoski.com/" target="_blank" id="feat-2">
+                        <div class="card hoverable">
+                            <div class="card-image">
+                                <img src="https://images.vailresorts.com/image/upload/c_scale,dpr_3.0,f_auto,q_auto,w_400/v1/Breckenridge/Heros/201902_brk_maguire_yi_7133.jpg"
+                                    alt="Breckenridge, Colorado">
+                                <span class="card-title ribbon" id="trip-2">Rocky Mountain High</span>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
-                <div class="col s12 m3">
-                    <div class="card hoverable">
-                        <div class="card-image">
-                            <img src="https://www.laweekly.com/wp-content/uploads/2019/05/los-angeles-hates-hollywood-759x500.jpg"
-                                alt="Los Angeles">
-                            <span class="card-title" id="trip-3">It's Hollywood, Baby</span>
+                <div class="col s12 m6 xl3">
+                    <a href="https://www.discoverlosangeles.com/things-to-do/the-beginners-guide-to-hollywood"
+                        target="_blank" id="feat-3">
+                        <div class="card hoverable">
+                            <div class="card-image">
+                                <img src="https://www.laweekly.com/wp-content/uploads/2019/05/los-angeles-hates-hollywood-759x500.jpg"
+                                    alt="Los Angeles">
+                                <span class="card-title ribbon" id="trip-3">It's Hollywood, Baby</span>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
-                <div class="col s12 m3">
-                    <div class="card hoverable">
-                        <div class="card-image">
-                            <img src="https://img.bleacherreport.net/img/images/photos/003/840/550/hi-res-451920753732d221297db742d38157fd_crop_north.jpg?h=533&w=800&q=70&crop_x=center&crop_y=top"
-                                alt="NFL">
-                            <span class="card-title" id="trip-4">Hit The Gridiron</span>
+                <div class="col s12 m6 xl3">
+                    <a href="https://www.nfl.com/" target="_blank" id="feat-4">
+                        <div class="card hoverable">
+                            <div class="card-image">
+                                <img src="https://img.bleacherreport.net/img/images/photos/003/840/550/hi-res-451920753732d221297db742d38157fd_crop_north.jpg?h=533&w=800&q=70&crop_x=center&crop_y=top"
+                                    alt="NFL">
+                                <span class="card-title ribbon" id="trip-4">Hit The Gridiron</span>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -327,35 +308,44 @@
         <div id="landmarks" class="row" style="display: none">
             <div class="label" id="landmark-city"></div>
             <div class="col s12 m3">
-                <div class="card hoverable">
-                    <div class="card-image">
-                        <img id="land-pic1" src="">
-                        <span class="card-title" id="land-1"></span>
+                <a href="" target="_blank" id="land-info1">
+                    <div class="card hoverable">
+                        <div class="card-image">
+                            <img id="land-pic1" src="">
+                            <span class="card-title" id="land-1"></span>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="col s12 m3">
-                <div class="card hoverable">
-                    <div class="card-image">
-                        <img id="land-pic2" src="">
-                        <span class="card-title" id="land-2"></span>
+                <a href="" target="_blank" id="land-info2">
+                    <div class="card hoverable">
+                        <div class="card-image">
+                            <img id="land-pic2" src="">
+                            <span class="card-title" id="land-2"></span>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="col s12 m3">
-                <div class="card hoverable">
-                    <div class="card-image">
-                        <span class="card-title" id="land-3"></span>
+                <a href="" target="_blank" id="land-info3">
+                    <div class="card hoverable">
+                        <div class="card-image">
+                            <img id="land-pic3" src="">
+                            <span class="card-title" id="land-3"></span>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="col s12 m3">
-                <div class="card hoverable">
-                    <div class="card-image">
-                        <img id="land-pic4" src="">
-                        <span class="card-title" id="land-4"></span>
+                <a href="" target="_blank" id="land-info4">
+                    <div class="card hoverable">
+                        <div class="card-image">
+                            <img id="land-pic4" src="">
+                            <span class="card-title" id="land-4"></span>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
 
@@ -373,11 +363,13 @@
         </footer>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"> </script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7VBLGOeT9U8vZksR7T8F1EiPK7nkyGvw" async
         defer></script>
+
 
 </body>
 

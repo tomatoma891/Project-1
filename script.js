@@ -4,8 +4,17 @@ var queryURL;
 var foodQueryURL
 var zipcode;
 var state;
+var city;
+var price;
+var price2;
+var price3;
+var price4;
+var price5;
 var eventType;
 var dinner;
+var prices;
+var priceDivs;
+
 
 
 // Initializing city dropdown
@@ -171,31 +180,41 @@ $("#select").change(function () {
     image = response._embedded.events[0].images[0].url;
     info = response._embedded.events[0].url;
     state = response._embedded.events[0]._embedded.venues[0].state.stateCode;
+    city = response._embedded.events[0]._embedded.venues[0].city.name;
     artistName2 = response._embedded.events[1].name;
     venue2 = response._embedded.events[1]._embedded.venues[0].name;
     date2 = response._embedded.events[1].dates.start.localDate;
     time2 = response._embedded.events[1].dates.start.localTime;
     image2 = response._embedded.events[1].images[0].url;
-    info2 = response._embedded.events[0].url;
+    info2 = response._embedded.events[1].url;
+    state2 = response._embedded.events[1]._embedded.venues[0].state.stateCode;
+    city2 = response._embedded.events[1]._embedded.venues[0].city.name;
     artistName3 = response._embedded.events[2].name;
     venue3 = response._embedded.events[2]._embedded.venues[0].name;
     date3 = response._embedded.events[2].dates.start.localDate;
     time3 = response._embedded.events[2].dates.start.localTime;
     image3 = response._embedded.events[2].images[0].url;
-    info3 = response._embedded.events[0].url;
+    info3 = response._embedded.events[2].url;
+    state3 = response._embedded.events[2]._embedded.venues[0].state.stateCode;
+    city3 = response._embedded.events[2]._embedded.venues[0].city.name;
     artistName4 = response._embedded.events[3].name;
     venue4 = response._embedded.events[3]._embedded.venues[0].name;
     date4 = response._embedded.events[3].dates.start.localDate;
     time4 = response._embedded.events[3].dates.start.localTime;
-    image4 = response._embedded.events[03].images[0].url;
-    info4 = response._embedded.events[0].url;
+    image4 = response._embedded.events[3].images[0].url;
+    info4 = response._embedded.events[3].url;
+    state4 = response._embedded.events[3]._embedded.venues[0].state.stateCode;
+    city4 = response._embedded.events[3]._embedded.venues[0].city.name;
     artistName5 = response._embedded.events[4].name;
     venue5 = response._embedded.events[4]._embedded.venues[0].name;
     date5 = response._embedded.events[4].dates.start.localDate;
     time5 = response._embedded.events[4].dates.start.localTime;
     image5 = response._embedded.events[4].images[0].url;
-    info5 = response._embedded.events[0].url;
-
+    info5 = response._embedded.events[4].url;
+    state5 = response._embedded.events[4]._embedded.venues[0].state.stateCode;
+    city5 = response._embedded.events[4]._embedded.venues[0].city.name;
+    console.log("state", state);
+    console.log("city", city);
   });
 });
 
@@ -468,7 +487,7 @@ function getEvent() {
 
   // opentable API call
 
-  var foodQueryURL = (`https://opentable.herokuapp.com/api/restaurants?state=${state}`);
+  var foodQueryURL = (`https://opentable.herokuapp.com/api/restaurants?city=${city}`);
   console.log("foodQueryURL", foodQueryURL);
 
   $.ajax({
@@ -477,14 +496,19 @@ function getEvent() {
   })
     .then(function (response) {
       food = response.restaurants[0].name;
+      price = response.restaurants[0].price;
       foodRSV = response.restaurants[0].reserve_url;
       food2 = response.restaurants[1].name;
+      price2 = response.restaurants[1].price;
       foodRSV2 = response.restaurants[1].reserve_url;
       food3 = response.restaurants[2].name;
+      price3 = response.restaurants[2].price;
       foodRSV3 = response.restaurants[2].reserve_url;
       food4 = response.restaurants[3].name;
+      price4 = response.restaurants[3].price;
       foodRSV4 = response.restaurants[3].reserve_url;
       food5 = response.restaurants[4].name;
+      price5 = response.restaurants[4].price;
       foodRSV5 = response.restaurants[4].reserve_url;
       $("#restaurant-1").text(food);
       $("#restaurant-info1").attr("href", foodRSV);
@@ -497,8 +521,27 @@ function getEvent() {
       $("#restaurant-5").text(food5);
       $("#restaurant-info5").attr("href", foodRSV5);
       console.log(response);
-    });
+      console.log("price", price);
+      
 
+ // Include price if resturant search is selected
+      prices = [price, price2, price3, price4, price5];
+      console.log("price using array", prices[0]);
+      priceDivs = ["price-1", "price-2", "price-3", "price-4", "price-5"];
+
+      for (var i = 0; i < prices.length; i++) {
+        if (prices[i] == 1) {
+          $("#price1").text("three");
+        } else if (prices[i] == 2) {
+        //$(priceDivs[i]).attr("two");
+        } else if (prices[i] == 3) {
+          $(priceDivs[i]).attr("class", "fa fa-star");
+        } else if (prices[i] >= 4) {
+          $(priceDivs[i]).attr("class", "fa fa-star");
+        }
+      }
+      console.log("last price", price);
+    });
 }
 
 function restaurants() {

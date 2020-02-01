@@ -13,6 +13,8 @@
 
 <body>
 
+
+
     <div class="container">
         <div class="row no-margin-bottom">
             <div class="col s12" id="hoh">
@@ -20,7 +22,7 @@
                     <div class="card-panel center-align" id="title">
                         <h1>YOUR CITY GUIDE</h1>
                         <div class="text-center">
-                            powered by <img src="Ticketmaster.png" style="width: 10em; height: 1.5em">
+                            powered by <img src="./images/Ticketmaster.png" style="width: 10em; height: 1.5em">
                         </div>
                         <a class="btn buttons right" id="login-btn">LOGIN / REGISTER</a>
                     </div>
@@ -39,6 +41,23 @@
                 </div>
             </div>
         </div>
+
+        <!-- Modal Structure -->
+        <audio id="play" src="error.mp3"></audio>
+        <div id="modal1" class="modal">
+            <div class="modal-content error">
+                <div class="center-align">
+                    <h4>OOPS!</h4>
+                    <p>You forgot to tell us what you want to do. Go back and make a selection.</p><a href="#!"
+                        class="modal-close btn-flat error" id="modal-ok">OK</a>
+                </div>
+            </div>
+            <div class="center-align">
+                <img src="https://pbs.twimg.com/profile_images/2162709407/Jackie_Chan_400x400.png" alt="Oops!"
+                    id="jackie">
+            </div>
+        </div>
+
         <div id="cty-img">
             <div class="row" id="selections">
                 <div class="col s1 m2"></div>
@@ -120,21 +139,6 @@
                 </div>
             </div>
 
-             <!-- Modal Structure -->
-             <audio id="play" src="error.mp3"></audio>
-             <div id="modal1" class="modal">
-                 <div class="modal-content error">
-                     <div class="center-align">
-                         <h4>OOPS!</h4>
-                         <p>You forgot to tell us what you want to do. Go back and make a selection.</p><a href="#!"
-                             class="modal-close btn-flat error" id="modal-ok">OK</a>
-                     </div>
-                 </div>
-                 <div class="center-align">
-                     <img src="https://pbs.twimg.com/profile_images/2162709407/Jackie_Chan_400x400.png" alt="Oops!"
-                         id="jackie">
-                 </div>
-             </div>
 
             <!-- search results displayed here -->
 
@@ -156,7 +160,7 @@
                                 <hr>
                                 <span id="restaurant-1" class="bold"></span><br>
                                 <div>
-                                 Price: <span id="price-1"></span>
+                                    Price: <span id="price-1"></span>
                                 </div><br>
                                 <a class="btn buttons reserve" target="_blank" id="restaurant-info1">RESERVE</a>
                             </div>
@@ -181,7 +185,7 @@
                                 <span id="restaurant-2" class="bold"></span><br>
                                 <div>
                                     Price: <span id="price-2"></span>
-                                   </div><br>
+                                </div><br>
                                 <a class="btn buttons reserve" target="_blank" id="restaurant-info2">RESERVE</a>
                             </div>
                         </div>
@@ -204,7 +208,7 @@
                                 <span id="restaurant-3" class="bold"></span><br>
                                 <div>
                                     Price: <span id="price-3"></span>
-                                   </div><br>
+                                </div><br>
                                 <a class="btn buttons reserve" target="_blank" id="restaurant-info3">RESERVE</a>
                             </div>
                         </div>
@@ -228,7 +232,7 @@
                                 <span id="restaurant-4" class="bold"></span><br>
                                 <div>
                                     Price: <span id="price-4"></span>
-                                   </div><br>
+                                </div><br>
                                 <a class="btn buttons reserve" target="_blank" id="restaurant-info4">RESERVE</a>
                             </div>
                         </div>
@@ -251,7 +255,7 @@
                                 <span id="restaurant-5" class="bold"></span><br>
                                 <div>
                                     Price: <span id="price-5"></span>
-                                   </div><br>
+                                </div><br>
                                 <a class="btn buttons reserve" target="_blank" id="restaurant-info5">RESERVE</a>
                             </div>
                         </div>
@@ -259,7 +263,7 @@
                 </div>
             </div>
 
-           
+
         </div>
 
 

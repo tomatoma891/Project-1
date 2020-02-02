@@ -1,6 +1,6 @@
 //IUNITIALIZE CAROUSEL
 
-$(document).ready(function(){
+$(document).ready(function () {
   $('.carousel').carousel();
 });
 
@@ -22,6 +22,7 @@ var eventType;
 var dinner;
 var prices;
 var priceDivs;
+var selectedCity;
 
 // Initializing city dropdown
 $(document).ready(function () {
@@ -30,7 +31,7 @@ $(document).ready(function () {
 // Event listener for city dropdown
 $("select").on("change", function () {
   let x;
-  let selectedCity;
+  // let selectedCity;
   let cityLandmarks = [
     ["Denver Botanic Gardens", "Denver Art Museum", "Downtown Aquarium", "Red Rocks Park and Amphitheatre"],
     ["Space Needle", "Gas Works Park", "Museum of Pop Culture", "The Seattle Great Wheel"],
@@ -91,7 +92,7 @@ $("select").on("change", function () {
 
   if ($(this).val() == "3") {
     selectedCity = "Miami";
-    zipcode = "334";
+    zipcode = "334"; 
     $("#selectedCityDiv").text("What do you want to check out in " + selectedCity + " tonight?");
     $("div#cty-img").attr("class", "miami")
     showLandmarks(x = 2);
@@ -418,7 +419,7 @@ function getEvent() {
 
   // opentable API call
 
-  var foodQueryURL = (`https://opentable.herokuapp.com/api/restaurants?city=${city}`);
+  var foodQueryURL = (`https://opentable.herokuapp.com/api/restaurants?city=${selectedCity}`);
   console.log("foodQueryURL", foodQueryURL);
 
   $.ajax({

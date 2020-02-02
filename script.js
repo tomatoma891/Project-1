@@ -1,3 +1,10 @@
+//IUNITIALIZE CAROUSEL
+
+$(document).ready(function(){
+  $('.carousel').carousel();
+});
+
+
 // hide back button on inital screen load
 $("#back").hide();
 
@@ -393,13 +400,11 @@ function getEvent() {
   $.ajax({
     url: queryURL,
     method: "GET"
-  })
+  }).then(function (response) {
 
-    .then(function (response) {
+    makeDivs(response)
 
-      makeDivs(response)
-
-    });
+  });
 
   // started trying to get weather for events
   console.log(date);
@@ -419,33 +424,196 @@ function getEvent() {
   $.ajax({
     url: foodQueryURL,
     method: "GET"
-  })
-    .then(function (response) {
-      restaurants = response.restaurants;
-      food = response.restaurants[0].name;
-      price = response.restaurants[0].price;
-      foodRSV = response.restaurants[0].reserve_url;
-      food2 = response.restaurants[1].name;
-      price2 = response.restaurants[1].price;
-      foodRSV2 = response.restaurants[1].reserve_url;
-      food3 = response.restaurants[2].name;
-      price3 = response.restaurants[2].price;
-      foodRSV3 = response.restaurants[2].reserve_url;
-      food4 = response.restaurants[3].name;
-      price4 = response.restaurants[3].price;
-      foodRSV4 = response.restaurants[3].reserve_url;
-      $("#restaurant-1").text(food);
-      $("#restaurant-info1").attr("href", foodRSV);
-      $("#restaurant-2").text(food2);
-      $("#restaurant-info2").attr("href", foodRSV2);
-      $("#restaurant-3").text(food3);
-      $("#restaurant-info3").attr("href", foodRSV3);
-      $("#restaurant-4").text(food4);
-      $("#restaurant-info4").attr("href", foodRSV4);
-      console.log(response);
-      console.log("price", price);
+  }).then(function (response) {
+    restaurants = response.restaurants;
+    food = response.restaurants[0].name;
+    price = response.restaurants[0].price;
+    foodRSV = response.restaurants[0].reserve_url;
+    food2 = response.restaurants[1].name;
+    price2 = response.restaurants[1].price;
+    foodRSV2 = response.restaurants[1].reserve_url;
+    food3 = response.restaurants[2].name;
+    price3 = response.restaurants[2].price;
+    foodRSV3 = response.restaurants[2].reserve_url;
+    food4 = response.restaurants[3].name;
+    price4 = response.restaurants[3].price;
+    foodRSV4 = response.restaurants[3].reserve_url;
+    $("#restaurant-1").text(food);
+    $("#restaurant-info1").attr("href", foodRSV);
+    $("#restaurant-2").text(food2);
+    $("#restaurant-info2").attr("href", foodRSV2);
+    $("#restaurant-3").text(food3);
+    $("#restaurant-info3").attr("href", foodRSV3);
+    $("#restaurant-4").text(food4);
+    $("#restaurant-info4").attr("href", foodRSV4);
+    console.log(response);
+    console.log("price", price);
 
-      // Include price if resturant search is selected
+    // Include price if resturant search is selected
+    prices = [price, price2, price3, price4];
+    console.log("price using array", prices[0]);
+    priceDivs = ["#price-1", "#price-2", "#price-3", "#price-4"];
+    function convertToDollarSigns(num) {
+      var dollarSigns = "";
+      for (var i = 0; i < num; i++) {
+        dollarSigns += "$"
+      }
+      return dollarSigns;
+    }
+
+    for (var i = 0; i < prices.length; i++) {
+
+      prices[i] = convertToDollarSigns(prices[i])
+      if (i === 0) {
+        console.log("adding price 1")
+        $(priceDivs[i]).text(prices[i]);
+      } else if (i === 1) {
+        $(priceDivs[i]).text(prices[i]);
+      } else if (i === 2) {
+        $(priceDivs[i]).text(prices[i]);
+      } else if (i === 3) {
+        $(priceDivs[i]).text(prices[i]);
+      }
+      else if (i === 4) {
+        $(priceDivs[i]).text(prices[i]);
+      }
+    }
+
+    // buttons to cycle through restaurants -- Need to make a loop
+    var x = 0;
+
+    $("#right-1").on("click", function (e) {
+      x++;
+      if (x > 17) {
+        x = 17;
+      };
+      food = response.restaurants[x].name;
+      price = response.restaurants[x].price;
+      foodRSV = response.restaurants[x].reserve_url;
+      $("#restaurant-1").text(food);
+      $("#price-1").text(price);
+      $("#restaurant-info1").attr("href", foodRSV);
+      priceChange(); priceChange();
+      console.log("right clicked");
+      console.log(x);
+    });
+
+    $("#left-1").on("click", function (e) {
+      x--;
+      if (x < 0) {
+        x = 0;
+      };
+
+      food = response.restaurants[x].name;
+      price = response.restaurants[x].price;
+      foodRSV = response.restaurants[x].reserve_url;
+      $("#restaurant-1").text(food);
+      $("#price-1").text(price);
+      $("#restaurant-info1").attr("href", foodRSV);
+      priceChange();
+      console.log("left clicked");
+      console.log(x);
+    });
+
+    $("#right-2").on("click", function (e) {
+      x++;
+      if (x > 17) {
+        x = 17;
+      };
+      food2 = response.restaurants[x].name;
+      price2 = response.restaurants[x].price;
+      foodRSV2 = response.restaurants[x].reserve_url;
+      $("#restaurant-2").text(food2);
+      $("#price-2").text(price2);
+      $("#restaurant-info2").attr("href", foodRSV2);
+      priceChange();
+      console.log("right clicked");
+      console.log(x);
+    });
+
+    $("#left-2").on("click", function (e) {
+      x--;
+      if (x < 0) {
+        x = 0;
+      };
+
+      food2 = response.restaurants[x].name;
+      price2 = response.restaurants[x].price;
+      foodRSV2 = response.restaurants[x].reserve_url;
+      $("#restaurant-2").text(food2);
+      $("#price-2").text(price2);
+      $("#restaurant-info2").attr("href", foodRSV2);
+      priceChange();
+      console.log("left clicked");
+      console.log(x);
+    });
+
+    $("#right-3").on("click", function (e) {
+      x++;
+      if (x > 17) {
+        x = 17;
+      };
+      food3 = response.restaurants[x].name;
+      price3 = response.restaurants[x].price;
+      foodRSV3 = response.restaurants[x].reserve_url;
+      $("#restaurant-3").text(food3);
+      $("#price-3").text(price3);
+      $("#restaurant-info3").attr("href", foodRSV3);
+      priceChange();
+      console.log("right clicked");
+      console.log(x);
+    });
+
+    $("#left-3").on("click", function (e) {
+      x--;
+      if (x < 0) {
+        x = 0;
+      };
+
+      food3 = response.restaurants[x].name;
+      price3 = response.restaurants[x].price;
+      foodRSV3 = response.restaurants[x].reserve_url;
+      $("#restaurant-3").text(food3);
+      $("#price-3").text(price3);
+      $("#restaurant-info3").attr("href", foodRSV3);
+      priceChange();
+      console.log("left clicked");
+      console.log(x);
+    });
+
+    $("#right-4").on("click", function (e) {
+      x++;
+      if (x > 17) {
+        x = 17;
+      };
+      food4 = response.restaurants[x].name;
+      price4 = response.restaurants[x].price;
+      foodRSV4 = response.restaurants[x].reserve_url;
+      $("#restaurant-4").text(food4);
+      $("#price-4").text(price4);
+      $("#restaurant-info4").attr("href", foodRSV4);
+      priceChange();
+      console.log("right clicked");
+      console.log(x);
+    });
+
+    $("#left-4").on("click", function (e) {
+      x--;
+      if (x < 0) {
+        x = 0;
+      };
+      food4 = response.restaurants[x].name;
+      price4 = response.restaurants[x].price;
+      foodRSV4 = response.restaurants[x].reserve_url;
+      $("#restaurant-4").text(food4);
+      $("#price-4").text(price4);
+      $("#restaurant-info4").attr("href", foodRSV4);
+      priceChange();
+      console.log("left clicked");
+      console.log(x);
+    });
+
+    function priceChange() {
       prices = [price, price2, price3, price4];
       console.log("price using array", prices[0]);
       priceDivs = ["#price-1", "#price-2", "#price-3", "#price-4"];
@@ -472,151 +640,13 @@ function getEvent() {
         }
         else if (i === 4) {
           $(priceDivs[i]).text(prices[i]);
-        }
-      }
-
-      // buttons to cycle through restaurants -- Need to make a loop
-      var x = 0;
-
-      $("#right-1").on("click", function (e) {
-        x++;
-        if (x > 17) {
-          x = 17;
         };
-        food = response.restaurants[x].name;
-        price = response.restaurants[x].price;
-        foodRSV = response.restaurants[x].reserve_url;
-        $("#restaurant-1").text(food);
-        $("#price-1").text(price);
-        priceChange();
-        console.log("right clicked");
-        console.log(x);
-      });
-
-      $("#left-1").on("click", function (e) {
-        x--;
-        if (x < 0) {
-          x = 0;
-        };
-
-        food = response.restaurants[x].name;
-        price = response.restaurants[x].price;
-        foodRSV = response.restaurants[x].reserve_url;
-        $("#restaurant-1").text(food);
-        $("#price-1").text(price);
-        priceChange();
-        console.log("left clicked");
-        console.log(x);
-      });
-
-      $("#right-2").on("click", function (e) {
-        x++;
-        if (x > 17) {
-          x = 17;
-        };
-        food2 = response.restaurants[x].name;
-        price2 = response.restaurants[x].price;
-        foodRSV2 = response.restaurants[x].reserve_url;
-        $("#restaurant-2").text(food2);
-        $("#price-2").text(price2);
-        console.log("right clicked");
-        console.log(x);
-      });
-
-      $("#left-2").on("click", function (e) {
-        x--;
-        if (x < 0) {
-          x = 0;
-        };
-
-        food2 = response.restaurants[x].name;
-        price2 = response.restaurants[x].price;
-        foodRSV2 = response.restaurants[x].reserve_url;
-        $("#restaurant-2").text(food2);
-        $("#price-2").text(price2);
-        console.log("left clicked");
-        console.log(x);
-      });
-
-      $("#right-3").on("click", function (e) {
-        x++;
-        if (x > 17) {
-          x = 17;
-        };
-        food3 = response.restaurants[x].name;
-        price3 = response.restaurants[x].price;
-        foodRSV3 = response.restaurants[x].reserve_url;
-        $("#restaurant-3").text(food3);
-        $("#price-3").text(price3);
-        console.log("right clicked");
-        console.log(x);
-      });
-
-      $("#left-3").on("click", function (e) {
-        x--;
-        if (x < 0) {
-          x = 0;
-        };
-
-        food3 = response.restaurants[x].name;
-        price3 = response.restaurants[x].price;
-        foodRSV3 = response.restaurants[x].reserve_url;
-        $("#restaurant-3").text(food3);
-        $("#price-3").text(price3);
-        console.log("left clicked");
-        console.log(x);
-      });
-
-      $("#right-4").on("click", function (e) {
-        x++;
-        if (x > 17) {
-          x = 17;
-        };
-        food4 = response.restaurants[x].name;
-        price4 = response.restaurants[x].price;
-        foodRSV4 = response.restaurants[x].reserve_url;
-        $("#restaurant-4").text(food4);
-        $("#price-4").text(price4);
-        console.log("right clicked");
-        console.log(x);
-      });
-
-      $("#left-4").on("click", function (e) {
-        x--;
-        if (x < 0) {
-          x = 0;
-        };
-        food4 = response.restaurants[x].name;
-        price4 = response.restaurants[x].price;
-        foodRSV4 = response.restaurants[x].reserve_url;
-        $("#restaurant-4").text(food4);
-        $("#price-4").text(price4);
-        console.log("left clicked");
-        console.log(x);
-      });
-
-      function priceChange() {
-        for (var i = 0; i < prices.length; i++) {
-
-          prices[i] = convertToDollarSigns(prices[i])
-          if (i === 0) {
-            console.log("adding price 1")
-            $(priceDivs[i]).text(prices[i]);
-          } else if (i === 1) {
-            $(priceDivs[i]).text(prices[i]);
-          } else if (i === 2) {
-            $(priceDivs[i]).text(prices[i]);
-          } else if (i === 3) {
-            $(priceDivs[i]).text(prices[i]);
-          }
-          else if (i === 4) {
-            $(priceDivs[i]).text(prices[i]);
-          }
-        }
       };
 
+    };
 
-    });
+  });
+
 };
 
 function restaurants() {

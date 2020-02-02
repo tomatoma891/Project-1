@@ -30,8 +30,16 @@ e.container {
     margin-top: .5em;
 }
 
+#left-1:hover, #right-1:hover, #left-2:hover, #right-2:hover, #left-3:hover, #right-3:hover, #left-4:hover, #right-4:hover {
+    background-color: rgb(26, 112, 170);
+}
+
 #login-form-btn:hover, .reserve:hover {
     background-color: rgb(26, 112, 170);
+}
+
+.btn {
+    background-color: #84A7D8;
 }
 
 #welcome {

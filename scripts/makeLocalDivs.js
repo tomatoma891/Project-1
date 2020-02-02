@@ -9,7 +9,7 @@ function makeLocalDivs(json) {
 
         // Extract data
         localArtistName = embeddedEvents.name;
-        localVenue = embeddedEvents._embedded.venues[0].name;
+        localVenue = embeddedEvents._embedded.venues[0].name;m
         localDate = embeddedEvents.dates.start.localDate;
         localTime = embeddedEvents.dates.start.dateTime;
         localImage = embeddedEvents.images[0].url;
@@ -25,6 +25,5 @@ function makeLocalDivs(json) {
 
     console.log(localEventObjects);
 
-
-
 }
+

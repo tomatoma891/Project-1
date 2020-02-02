@@ -13,429 +13,425 @@
 
 <body>
 
-
-
     <div class="container">
         <div class="row no-margin-bottom">
-            <div class="col s12" id="hoh">
+            <div class="col s12">
                 <div class="card">
                     <div class="card-panel center-align" id="title">
                         <h1>YOUR CITY GUIDE</h1>
-                        <div class="text-center">
-                            powered by <img src="./images/Ticketmaster.png" style="width: 10em; height: 1.5em">
+                        <div class>
+                            <span id="ticketmaster">powered by <img src="./images/Ticketmaster.png"
+                                    style="width: 10em; height: 1.5em"></span>
+                            <a class="btn buttons right" id="login-btn">LOGIN</a>
                         </div>
-                        <a class="btn buttons right" id="login-btn">LOGIN / REGISTER</a>
+                    </div>
+                    <div id="back">
+                        <a id="back-btn" class="btn-flat">BACK</a>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="row no-margin-bottom">
-            <div class="col s12">
-                <div class="card" id="welcome">
-                    <div class="card-content">
-                        <p class="card-title">New In Town?</p>
-                        <p>Select a city below to find out what's going on in the area. Click GO! to find out what's
-                            happening in your neck of the woods.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Modal Structure -->
-        <audio id="play" src="error.mp3"></audio>
-        <div id="modal1" class="modal">
-            <div class="modal-content error">
-                <div class="center-align">
-                    <h4>OOPS!</h4>
-                    <p>You forgot to tell us what you want to do. Go back and make a selection.</p><a href="#!"
-                        class="modal-close btn-flat error" id="modal-ok">OK</a>
-                </div>
-            </div>
-            <div class="center-align">
-                <img src="https://pbs.twimg.com/profile_images/2162709407/Jackie_Chan_400x400.png" alt="Oops!"
-                    id="jackie">
-            </div>
-        </div>
-
-        <div id="cty-img">
-            <div class="row" id="selections">
-                <div class="col s1 m2"></div>
-                <div class="col s7 pull-s1 m4">
-                    <div class="input-field" id="cities">
-                        <select id="select">
-                            <option value="" disabled selected> -- choose a city --</option>
-                            <option value="1"
-                                data-icon="https://static.greatbigcanvas.com/images/square/raygun/denver-co-skyline-at-night,2522492.jpg?max=128">
-                                Denver</option>
-                            <option value="2"
-                                data-icon="https://static.greatbigcanvas.com/images/square/danita-delimont/washington-seattle-skyline-with-space-needle,2362771.jpg?max=128">
-                                Seattle</option>
-                            <option value="3"
-                                data-icon="https://static.greatbigcanvas.com/images/square/panoramic-images/night-skyline-miami-fl,68906.jpg?max=128">
-                                Miami</option>
-                            <option value="4"
-                                data-icon="https://d26oc3sg82pgk3.cloudfront.net/files/media/edit/image/20634/square_thumb%402x.jpg?max=128">
-                                Los Angeles</option>
-                            <option value="5"
-                                data-icon="https://a.wattpad.com/useravatar/PulpFriction.256.327944.jpg?max=128">Atlanta
-                            </option>
-                            <option value="6"
-                                data-icon="https://www.kialo.com/images/5f0ce0fe-4296-4baf-b96a-bb5a32cb0566_128x128@2x.jpeg?max=128">
-                                New York</option>
-                            <option value="7"
-                                data-icon="https://miro.medium.com/fit/c/256/256/1*YXZ42QpipFUpY8Ne8Um43Q.jpeg?max=128">
-                                Houston</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col s1 pull-s1 m2 l2 push-l1">
-                    <p id="or">OR</p>
-                </div>
-                <div class="col s1 pull-s1 l1 push-l2" id="back-btn">
-                    <a class="btn buttons" id="back"><span class="buttons">BACK</span></a>
-                </div>
-                <div class="col s1 pull-s1 m3 pull-m1 le pull-l1">
-                    <a class="btn buttons" id="random-btn">GO!</a>
-                </div>
-            </div>
-            <div class="col s1 m2 l3"></div>
-
-            <!-- select options  -->
-
-            <div id="options" class="row valign-wrapper" style="display: none">
-                <div class="col s12" id="options-box">
-                    <div class="" id="selectedCityDiv"></div>
-                    <div id="radio-buttons">
-                        <form action="#">
-                            <p>
-                                <label>
-                                    <input name="group1" class="test" type="radio" id="music" />
-                                    <span>Music</span>
-                                </label>
-                            </p>
-                            <p>
-                                <label>
-                                    <input name="group1" type="radio" id="sports" />
-                                    <span>Sports</span>
-                                </label>
-                            </p>
-                            <p>
-                                <label>
-                                    <input name="group1" type="radio" id="art" />
-                                    <span>Art</span>
-                                </label>
-                            </p>
-                            <p>
-                                <label>
-                                    <input type="checkbox" id="dinner" />
-                                    <span>Want to add dinner?</span>
-                                </label>
-                            </p>
-                        </form>
-                    </div>
-                    <span class="btn-flat" id="cancel">CANCEL</span>
-                    <a class="btn-flat right modal-trigger" id="option-confirm" href="#modal1">OK</a>
-                </div>
-            </div>
-
-
-           
-
-        <div class="cardGoesHere"></div>
-
-             <!-- search results displayed here -->
-            <div class="row" id="results" style="display: none">
-               <!-- <div class="col m1"></div> -->
-                <div class="col s12 m3">
-                    <div class="card">
-                        <div class="card-panel event-results">
-                            <span id="artist-1" class="event-title truncate" ></span><br>
-                            <span id="venue-1"></span><br>
-                            <span id="date-1"></span><br>
-                            <span id="time-1"></span>
-                            <a href="" target="_blank" id="info-1">
-                                <div class="card-image hoverable" id="test">
-                                    <img class="event-pic" id="image-1">
-                                </div>
-                            </a>
-                            <div class="dinner-plans">
-                                <hr>
-                                <h2>Food Options:</h2>
-                                <span id="restaurant-1" class="bold"></span><br>
-                                <div>
-                                    Price: <span id="price-1"></span>
-                                </div><br>
-                                <a class="btn buttons reserve" target="_blank" id="restaurant-info1">Reserve Table</a>
-                            </div>
-                        </div>
-                    </div>
-                    </a>
-                </div>
-                <div class="col s12 m3">
-                    <div class="card">
-                        <div class="card-panel event-results">
-                            <span id="artist-2" class="event-title truncate"></span><br>
-                            <span id="venue-2"></span><br>
-                            <span id="date-2"></span><br>
-                            <span id="time-2"></span>
-                            <a href="" target="_blank" id="info-2">
-                                <div class="card-image hoverable">
-                                    <img class="event-pic" id="image-2"></img>
-                                </div>
-                            </a>
-                            <div class="dinner-plans">
-                                <hr>
-                                <h2>Food Options:</h2>
-                                <span id="restaurant-2" class="bold"></span><br>
-                                <div>
-                                    Price: <span id="price-2"></span>
-                                </div><br>
-                                <a class="btn buttons reserve" target="_blank" id="restaurant-info2">Reserve Table</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col s12 m3">
-                    <div class="card">
-                        <div class="card-panel event-results">
-                            <span id="artist-3" class="event-title truncate"></span><br>
-                            <span id="venue-3"></span><br>
-                            <span id="date-3"></span><br>
-                            <span id="time-3"></span>
-                            <a href="" target="_blank" id="info-3"></a>
-                            <div class="card-image hoverable">
-                                <img class="event-pic" id="image-3"></img>
-                            </div>
-                            </a>
-                            <div class="dinner-plans">
-                                <hr>
-                                <h2>Food Options:</h2>
-                                <span id="restaurant-3" class="bold"></span><br>
-                                <div>
-                                    Price: <span id="price-3"></span>
-                                </div><br>
-                                <a class="btn buttons reserve" target="_blank" id="restaurant-info3">Reserve Table </a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col s12 m3">
-                    <div class="card">
-                        <div class="card-panel event-results">
-                            <span id="artist-4" class="event-title truncate"></span><br>
-                            <span id="venue-4"></span><br>
-                            <span id="date-4"></span><br>
-                            <span id="time-4"></span>
-                            <a href="" target="_blank" id="info-4">
-                                <div class="card-image hoverable">
-                                    <img class="event-pic" id="image-4"></img>
-                                </div>
-                            </a>
-                            <div class="dinner-plans">
-                                <hr>
-                                <h2>Food Options:</h2>
-                                <span id="restaurant-4" class="bold"></span><br>
-                                <div>
-                                    Price: <span id="price-4"></span>
-                                </div><br>
-                                <a class="btn buttons reserve" target="_blank" id="restaurant-info4">Reserve Table</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--<div class="col s12 m2">
-                    <div class="card">
-                        <div class="card-panel event-results">
-                            <span id="artist-5" class="event-title truncate"></span><br>
-                            <span id="venue-5"></span><br>
-                            <span id="date-5"></span><br>
-                            <span id="time-5"></span>
-                            <a href="" target="_blank" id="info-5">
-                                <div class="card-image hoverable">
-                                    <img class="event-pic" id="image-5"></img>
-                                </div>
-                            </a>
-                            <div class="dinner-plans">
-                                <hr>
-                                <h2>Food Options:</h2>
-                                <span id="restaurant-5" class="bold"></span><br>
-                                <div>
-                                    Price: <span id="price-5"></span>
-                                </div><br>
-                                <a class="btn buttons reserve" target="_blank" id="restaurant-info5">Reserve Table</a>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-            </div>
-
-
-        </div>
-
-
-        <!-- login form -->
-
-        <div class="container center-align" id="login-form" style="display: none">
-            <div class="z-depth-1 grey lighten-4 row"
-                style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
-
-                <form class="col s12" method="post">
-                    <div class="row">
-                        <div class='col s12'>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input type="text" name="username" id="username" />
-                            <label for="username">Enter your username</label>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input type="password" name="password" id="password" />
-                            <label for="password">Enter your password</label>
-                        </div>
-                        <label style="float: right;">
-                            <a href="#!"><b>Forgot Password?</b></a>
-                        </label>
-                    </div>
-
-                    <div class="row">
-                        <button type="submit" name="btn_login" class="col s12 btn btn-large"
-                            id="login-form-btn">Login</button>
-                    </div>
-                    <div class="center-align">
-                        <a href="#!">Create account</a>
-                    </div>
-                </form>
-            </div>
-        </div>
-
-        <!-- featured destinations -->
-
-        <div id="featured">
             <div class="row no-margin-bottom">
-                <div class="label">FEATURED</div>
-                <div class="col s12 m6 xl3">
-                    <a href="https://www.visitlasvegas.com/" target="_blank" id="feat-1">
+                <div class="col s12">
+                    <div class="card" id="welcome">
+                        <div class="card-content">
+                            <p class="card-title">New In Town?</p>
+                            <p>Select a city below to find out what's going on in the area. Click GO! to find out what's
+                                happening in your neck of the woods.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Structure -->
+            <audio id="play" src="./error.mp3"></audio>
+            <div id="modal1" class="modal">
+                <div class="modal-content error">
+                    <div class="center-align">
+                        <h4>OOPS!</h4>
+                        <p>You forgot to tell us what you want to do. Go back and make a selection.</p><a href="#!"
+                            class="modal-close btn-flat error" id="modal-ok">OK</a>
+                    </div>
+                </div>
+                <div class="center-align">
+                    <img src="https://pbs.twimg.com/profile_images/2162709407/Jackie_Chan_400x400.png" alt="Oops!"
+                        id="jackie">
+                </div>
+            </div>
+
+            <div id="cty-img">
+                <div class="row" id="selections">
+                    <div class="col s1 m2"></div>
+                    <div class="col s7 pull-s1 m4">
+                        <div class="input-field" id="cities">
+                            <select id="select">
+                                <option value="" disabled selected> -- choose a city --</option>
+                                <option value="1"
+                                    data-icon="https://static.greatbigcanvas.com/images/square/raygun/denver-co-skyline-at-night,2522492.jpg?max=128">
+                                    Denver</option>
+                                <option value="2"
+                                    data-icon="https://static.greatbigcanvas.com/images/square/danita-delimont/washington-seattle-skyline-with-space-needle,2362771.jpg?max=128">
+                                    Seattle</option>
+                                <option value="3"
+                                    data-icon="https://static.greatbigcanvas.com/images/square/panoramic-images/night-skyline-miami-fl,68906.jpg?max=128">
+                                    Miami</option>
+                                <option value="4"
+                                    data-icon="https://d26oc3sg82pgk3.cloudfront.net/files/media/edit/image/20634/square_thumb%402x.jpg?max=128">
+                                    Los Angeles</option>
+                                <option value="5"
+                                    data-icon="https://a.wattpad.com/useravatar/PulpFriction.256.327944.jpg?max=128">
+                                    Atlanta
+                                </option>
+                                <option value="6"
+                                    data-icon="https://www.kialo.com/images/5f0ce0fe-4296-4baf-b96a-bb5a32cb0566_128x128@2x.jpeg?max=128">
+                                    New York</option>
+                                <option value="7"
+                                    data-icon="https://miro.medium.com/fit/c/256/256/1*YXZ42QpipFUpY8Ne8Um43Q.jpeg?max=128">
+                                    Houston</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col s1 pull-s1 m2 l2">
+                        <p id="or">OR</p>
+                    </div>
+
+                    <div class="col s2 pull-s1 m3 pull-m1">
+                        <a class="btn buttons" id="random-btn">GO!</a>
+                    </div>
+                </div>
+
+
+                <!-- select event type  -->
+
+                <div id="options" class="row" style="display: none">
+                    <div class="col m4 hideon-small-only" id="options-box">
+                        <div class="col s12 m8">
+                            <div class="" id="selectedCityDiv"></div>
+                            <div id="radio-buttons">
+                                <form action="#">
+                                    <p>
+                                        <label>
+                                            <input name="group1" class="test" type="radio" id="music" />
+                                            <span>Music</span>
+                                        </label>
+                                    </p>
+                                    <p>
+                                        <label>
+                                            <input name="group1" type="radio" id="sports" />
+                                            <span>Sports</span>
+                                        </label>
+                                    </p>
+                                    <p>
+                                        <label>
+                                            <input name="group1" type="radio" id="art" />
+                                            <span>Art</span>
+                                        </label>
+                                    </p>
+                                    <p>
+                                        <label>
+                                            <input type="checkbox" id="dinner" />
+                                            <span>Want to add dinner?</span>
+                                        </label>
+                                    </p>
+                                </form>
+                            </div>
+                            <span class="btn-flat" id="cancel">CANCEL</span>
+                            <a class="btn-flat right modal-trigger" id="option-confirm" href="#modal1">OK</a>
+                        </div>
+                        <div class="col m4 hideon-small-only"></div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="cardGoesHere"></div>
+
+
+
+                <!-- search results are displayed here. This row and the columns within it will be created dynamically and displayed in the DIV above. This will code removed.-->
+
+                <div class="row" id="results" style="display: none">
+                    <!-- <div class="col m1"></div> -->
+                    <div class="col s12 m3">
+                        <div class="card">
+                            <div class="card-panel event-results">
+                                <span id="artist-1" class="event-title truncate"></span><br>
+                                <span id="venue-1"></span><br>
+                                <span id="date-1"></span><br>
+                                <span id="time-1"></span>
+                                <a href="" target="_blank" id="info-1">
+                                    <div class="card-image hoverable" id="test">
+                                        <img class="event-pic" id="image-1">
+                                    </div>
+                                </a>
+                                <div class="dinner-plans">
+                                    <hr>
+                                    <h2>Food Options:</h2>
+                                    <span id="restaurant-1" class="bold truncate"></span>
+                                    <span class="btn-flat" id="left-1">&lt;</span>
+                                    select restaurant
+                                    <span class="btn-flat" id="right-1">&gt;</span><br>
+                                    <div>
+                                        Price: <span id="price-1" class="cost"></span>
+                                    </div><br>
+                                    <a class="btn buttons reserve" target="_blank" id="restaurant-info1">Reserve
+                                        Table</a>
+                                </div>
+                            </div>
+                        </div>
+                        </a>
+                    </div>
+                    <div class="col s12 m3">
+                        <div class="card">
+                            <div class="card-panel event-results">
+                                <span id="artist-2" class="event-title truncate"></span><br>
+                                <span id="venue-2"></span><br>
+                                <span id="date-2"></span><br>
+                                <span id="time-2"></span>
+                                <a href="" target="_blank" id="info-2">
+                                    <div class="card-image hoverable">
+                                        <img class="event-pic" id="image-2"></img>
+                                    </div>
+                                </a>
+                                <div class="dinner-plans">
+                                    <hr>
+                                    <h2>Food Options:</h2>
+                                    <span id="restaurant-2" class="bold truncate"></span>
+                                    <span class="btn-flat" id="left-2">&lt;</span>
+                                    select restaurant
+                                    <span class="btn-flat" id="right-2">&gt;</span><br>
+                                    <div>
+                                        Price: <span id="price-2" class="cost"></span>
+                                    </div><br>
+                                    <a class="btn buttons reserve" target="_blank" id="restaurant-info2">Reserve
+                                        Table</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m3">
+                        <div class="card">
+                            <div class="card-panel event-results">
+                                <span id="artist-3" class="event-title truncate"></span><br>
+                                <span id="venue-3"></span><br>
+                                <span id="date-3"></span><br>
+                                <span id="time-3"></span>
+                                <a href="" target="_blank" id="info-3"></a>
+                                <div class="card-image hoverable">
+                                    <img class="event-pic" id="image-3"></img>
+                                </div>
+                                </a>
+                                <div class="dinner-plans">
+                                    <hr>
+                                    <h2>Food Options:</h2>
+                                    <span id="restaurant-3" class="bold truncate"></span>
+                                    <span class="btn-flat" id="left-3">&lt;</span>
+                                    select restaurant
+                                    <span class="btn-flat" id="right-3">&gt;</span><br>
+                                    <div>
+                                        Price: <span id="price-3" class="cost"></span>
+                                    </div><br>
+                                    <a class="btn buttons reserve" target="_blank" id="restaurant-info3">Reserve
+                                        Table
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col s12 m3">
+                        <div class="card">
+                            <div class="card-panel event-results">
+                                <span id="artist-4" class="event-title truncate"></span><br>
+                                <span id="venue-4"></span><br>
+                                <span id="date-4"></span><br>
+                                <span id="time-4"></span>
+                                <a href="" target="_blank" id="info-4">
+                                    <div class="card-image hoverable">
+                                        <img class="event-pic" id="image-4"></img>
+                                    </div>
+                                </a>
+                                <div class="dinner-plans">
+                                    <hr>
+                                    <h2>Food Options:</h2>                                    
+                                    <span id="restaurant-4" class="bold truncate"></span>
+                                    <span class="btn-flat" id="left-4">&lt;</span>
+                                    select restaurant
+                                    <span class="btn-flat" id="right-4">&gt;</span><br>
+                                    <div>
+                                        Price: <span id="price-4" class="cost"></span>
+                                    </div><br>
+                                    <a class="btn buttons reserve" target="_blank" id="restaurant-info4">Reserve
+                                        Table</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- login form -->
+
+            <div class="container center-align" id="login-form" style="display: none">
+                <div class="z-depth-1 grey lighten-4 row"
+                    style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
+
+                    <form class="col s12" method="post">
+                        <div class="row">
+                            <div class='col s12'>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input type="text" name="username" id="username" />
+                                <label for="username">Enter your username</label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input type="password" name="password" id="password" />
+                                <label for="password">Enter your password</label>
+                            </div>
+                            <label style="float: right;">
+                                <a href="#!"><b>Forgot Password?</b></a>
+                            </label>
+                        </div>
+
+                        <div class="row">
+                            <button type="submit" name="btn_login" class="col s12 btn btn-large"
+                                id="login-form-btn">Login</button>
+                        </div>
+                        <div class="center-align">
+                            <a href="#!">Create account</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- featured destinations -->
+
+            <div id="featured">
+                <div class="row no-margin-bottom">
+                    <div class="label">FEATURED</div>
+                    <div class="col s12 m6 xl3">
+                        <a href="https://www.visitlasvegas.com/" target="_blank" id="feat-1">
+                            <div class="card hoverable">
+                                <div class="card-image">
+                                    <img src="https://q-cf.bstatic.com/images/hotel/max1024x768/170/170504164.jpg"
+                                        alt="Las Vegas">
+                                    <span class="card-title ribbon" id="trip-1">Viva Las Vegas</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col s12 m6 xl3">
+                        <a href="https://www.coloradoski.com/" target="_blank" id="feat-2">
+                            <div class="card hoverable">
+                                <div class="card-image">
+                                    <img src="https://images.vailresorts.com/image/upload/c_scale,dpr_3.0,f_auto,q_auto,w_400/v1/Breckenridge/Heros/201902_brk_maguire_yi_7133.jpg"
+                                        alt="Breckenridge, Colorado">
+                                    <span class="card-title ribbon" id="trip-2">Rocky Mountain High</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col s12 m6 xl3">
+                        <a href="https://www.discoverlosangeles.com/things-to-do/the-beginners-guide-to-hollywood"
+                            target="_blank" id="feat-3">
+                            <div class="card hoverable">
+                                <div class="card-image">
+                                    <img src="https://www.laweekly.com/wp-content/uploads/2019/05/los-angeles-hates-hollywood-759x500.jpg"
+                                        alt="Los Angeles">
+                                    <span class="card-title ribbon" id="trip-3">It's Hollywood, Baby</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col s12 m6 xl3">
+                        <a href="https://www.nfl.com/" target="_blank" id="feat-4">
+                            <div class="card hoverable">
+                                <div class="card-image">
+                                    <img src="https://img.bleacherreport.net/img/images/photos/003/840/550/hi-res-451920753732d221297db742d38157fd_crop_north.jpg?h=533&w=800&q=70&crop_x=center&crop_y=top"
+                                        alt="NFL">
+                                    <span class="card-title ribbon" id="trip-4">Hit The Gridiron</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- landmarks section-->
+
+            <div id="landmarks" class="row" style="display: none">
+                <div class="label" id="landmark-city"></div>
+                <div class="col s12 m3">
+                    <a href="" target="_blank" id="land-info1">
                         <div class="card hoverable">
                             <div class="card-image">
-                                <img src="https://q-cf.bstatic.com/images/hotel/max1024x768/170/170504164.jpg"
-                                    alt="Las Vegas">
-                                <span class="card-title ribbon" id="trip-1">Viva Las Vegas</span>
+                                <img id="land-pic1" src="">
+                                <span class="card-title" id="land-1"></span>
                             </div>
                         </div>
                     </a>
                 </div>
-                <div class="col s12 m6 xl3">
-                    <a href="https://www.coloradoski.com/" target="_blank" id="feat-2">
+                <div class="col s12 m3">
+                    <a href="" target="_blank" id="land-info2">
                         <div class="card hoverable">
                             <div class="card-image">
-                                <img src="https://images.vailresorts.com/image/upload/c_scale,dpr_3.0,f_auto,q_auto,w_400/v1/Breckenridge/Heros/201902_brk_maguire_yi_7133.jpg"
-                                    alt="Breckenridge, Colorado">
-                                <span class="card-title ribbon" id="trip-2">Rocky Mountain High</span>
+                                <img id="land-pic2" src="">
+                                <span class="card-title" id="land-2"></span>
                             </div>
                         </div>
                     </a>
                 </div>
-                <div class="col s12 m6 xl3">
-                    <a href="https://www.discoverlosangeles.com/things-to-do/the-beginners-guide-to-hollywood"
-                        target="_blank" id="feat-3">
+                <div class="col s12 m3">
+                    <a href="" target="_blank" id="land-info3">
                         <div class="card hoverable">
                             <div class="card-image">
-                                <img src="https://www.laweekly.com/wp-content/uploads/2019/05/los-angeles-hates-hollywood-759x500.jpg"
-                                    alt="Los Angeles">
-                                <span class="card-title ribbon" id="trip-3">It's Hollywood, Baby</span>
+                                <img id="land-pic3" src="">
+                                <span class="card-title" id="land-3"></span>
                             </div>
                         </div>
                     </a>
                 </div>
-                <div class="col s12 m6 xl3">
-                    <a href="https://www.nfl.com/" target="_blank" id="feat-4">
+                <div class="col s12 m3">
+                    <a href="" target="_blank" id="land-info4">
                         <div class="card hoverable">
                             <div class="card-image">
-                                <img src="https://img.bleacherreport.net/img/images/photos/003/840/550/hi-res-451920753732d221297db742d38157fd_crop_north.jpg?h=533&w=800&q=70&crop_x=center&crop_y=top"
-                                    alt="NFL">
-                                <span class="card-title ribbon" id="trip-4">Hit The Gridiron</span>
+                                <img id="land-pic4" src="">
+                                <span class="card-title" id="land-4"></span>
                             </div>
                         </div>
                     </a>
                 </div>
             </div>
+
+            <!-- GO button results -->
+
+            <div class="card">
+                <div id="map"></div>
+                <div id="events"></div>
+            </div>
+
+            <footer class="footer-copyright" id="foot">
+                <div class="container">
+                    © 2014 Copyright Code Warriors
+                </div>
+            </footer>
         </div>
 
-        <!-- landmarks section-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"> </script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script type="text/javascript" src="script.js"></script>
 
-        <div id="landmarks" class="row" style="display: none">
-            <div class="label" id="landmark-city"></div>
-            <div class="col s12 m3">
-                <a href="" target="_blank" id="land-info1">
-                    <div class="card hoverable">
-                        <div class="card-image">
-                            <img id="land-pic1" src="">
-                            <span class="card-title" id="land-1"></span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col s12 m3">
-                <a href="" target="_blank" id="land-info2">
-                    <div class="card hoverable">
-                        <div class="card-image">
-                            <img id="land-pic2" src="">
-                            <span class="card-title" id="land-2"></span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col s12 m3">
-                <a href="" target="_blank" id="land-info3">
-                    <div class="card hoverable">
-                        <div class="card-image">
-                            <img id="land-pic3" src="">
-                            <span class="card-title" id="land-3"></span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col s12 m3">
-                <a href="" target="_blank" id="land-info4">
-                    <div class="card hoverable">
-                        <div class="card-image">
-                            <img id="land-pic4" src="">
-                            <span class="card-title" id="land-4"></span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-
-        <!-- GO button results -->
-
-        <div class="card">
-            <div id="map"></div>
-            <div id="events"></div>
-        </div>
-
-        <footer class="footer-copyright" id="foot">
-            <div class="container">
-                © 2014 Copyright Code Warriors
-            </div>
-        </footer>
-    </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"> </script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script type="text/javascript" src="script.js"></script>
-
-    <script type="text/javascript" src="makeDivs.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7VBLGOeT9U8vZksR7T8F1EiPK7nkyGvw" async
-        defer></script>
+        <script type="text/javascript" src="makeDivs.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7VBLGOeT9U8vZksR7T8F1EiPK7nkyGvw" async
+            defer></script>
 
 
 </body>

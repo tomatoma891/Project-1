@@ -1,4 +1,4 @@
-.container {
+e.container {
     width: 100%;
     margin: auto;
 }
@@ -11,7 +11,6 @@
     color: rgb(26, 112, 170);
     margin-top: 0;
     margin-bottom: 0;
-    width: 100%;
 }
 
 #selections {
@@ -67,21 +66,36 @@ span {
 }
 
 #cty-img {
-    padding: 2em 0;
+    padding: 1em 0;
     width: 100%;
 }
 
+#back {
+    text-align: center;
+    background-color: rgb(26, 112, 170);
+   
+}
+
+#back-btn {
+    color: white;
+    font-size: 1.55em;
+    font-weight: 700;
+    margin-left: 5em;
+}
+
 #options {
-    padding-top: .75em;
-    width: 70%;
-    background-color: #EDF4FF;
+    padding-left: 27em;
     margin-bottom: 10em;
+
 }
 
 #options-box {
+    background-color: #EDF4FF;
     border:rgb(26, 112, 170);
     border-width: .75em;
     border-block-end-style: solid;
+    padding: 0;
+    z-index: 10;
 }
 
 #radio-buttons {
@@ -233,4 +247,15 @@ hr {
 
 h2 {
     font-size: 1.25em;
+}
+
+#ticketmaster {
+  
+    margin-left: 45em;
+}
+
+.cost {
+    color: green;
+    font-size: 1.25em;
+    font-weight: 700;
 }

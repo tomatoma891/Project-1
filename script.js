@@ -1,4 +1,4 @@
-// hide bck button on inital screen load
+// hide back button on inital screen load
 $("#back").hide();
 
 //var venueQueryUrl;  --  NEEDED?
@@ -11,13 +11,10 @@ var price;
 var price2;
 var price3;
 var price4;
-var price5;
 var eventType;
 var dinner;
 var prices;
 var priceDivs;
-
-
 
 // Initializing city dropdown
 $(document).ready(function () {
@@ -66,10 +63,10 @@ $("select").on("change", function () {
     $("#selectedCityDiv").text("What do you want to check out in " + selectedCity + " tonight?");
     $("#cty-img").attr("class", "denver");
     showLandmarks(x = 0);
-    $("#land-pic1").attr("src", "colorful-denver.png");
-    $("#land-pic2").attr("src", "art.jpg");
-    $("#land-pic3").attr("src", "aquarium.jpg");
-    $("#land-pic4").attr("src", "poi_gallery_image-image-f901ff25-261a-4163-a727-5f2c315d0d53.jpg");
+    $("#land-pic1").attr("src", "./images/landmarks/colorful-denver.png");
+    $("#land-pic2").attr("src", "./images/landmarks/art.jpg");
+    $("#land-pic3").attr("src", "./images/landmarks/aquarium.jpg");
+    $("#land-pic4").attr("src", "./images/landmarks/poi_gallery_image-image-f901ff25-261a-4163-a727-5f2c315d0d53.jpg");
   }
 
   if ($(this).val() == "2") {
@@ -79,10 +76,10 @@ $("select").on("change", function () {
     $("#selectedCityDiv").text("What do you want to check out in " + selectedCity + " tonight?");
     $("div#cty-img").attr("class", "seattle")
     showLandmarks(x = 1);
-    $("#land-pic1").attr("src", "Seattle-Famous-Landmarks.jpg");
-    $("#land-pic2").attr("src", "f497b4381be03c88098dfb50c4e8e786.jpg");
-    $("#land-pic3").attr("src", "pike_place_market_entrance.jpg");
-    $("#land-pic4").attr("src", "348s.jpg");
+    $("#land-pic1").attr("src", "./images/landmarks/Seattle-Famous-Landmarks.jpg");
+    $("#land-pic2").attr("src", "./images/landmarks/f497b4381be03c88098dfb50c4e8e786.jpg");
+    $("#land-pic3").attr("src", "./images/landmarks/pike_place_market_entrance.jpg");
+    $("#land-pic4").attr("src", "./images/landmarks/348s.jpg");
   };
 
   if ($(this).val() == "3") {
@@ -91,10 +88,10 @@ $("select").on("change", function () {
     $("#selectedCityDiv").text("What do you want to check out in " + selectedCity + " tonight?");
     $("div#cty-img").attr("class", "miami")
     showLandmarks(x = 2);
-    $("#land-pic1").attr("src", "bal-harbour-beach-aerial-340x232.jpg");
-    $("#land-pic2").attr("src", "jungle-island-miami-eco-adventure-zip-line.jpg");
-    $("#land-pic3").attr("src", "ug_1.jpg");
-    $("#land-pic4").attr("src", "IMG_9480 by Fabio.png");
+    $("#land-pic1").attr("src", "./images/landmarks/bal-harbour-beach-aerial-340x232.jpg");
+    $("#land-pic2").attr("src", "./images/landmarks/jungle-island-miami-eco-adventure-zip-line.jpg");
+    $("#land-pic3").attr("src", "./images/landmarks/ug_1.jpg");
+    $("#land-pic4").attr("src", "./images/landmarks/IMG_9480 by Fabio.png");
   };
 
   if ($(this).val() == "4") {
@@ -103,10 +100,10 @@ $("select").on("change", function () {
     $("#selectedCityDiv").text("What do you want to check out in " + selectedCity + " tonight?");
     $("div#cty-img").attr("class", "losangeles")
     showLandmarks(x = 3);
-    $("#land-pic1").attr("src", "OCR-L-DIS-DISNEYLAND-01-JAG-1.jpg");
-    $("#land-pic2").attr("src", "unnamed.jpg");
-    $("#land-pic3").attr("src", "Daniel-Malikyar-740x482.jpg");
-    $("#land-pic4").attr("src", "image.jpg");
+    $("#land-pic1").attr("src", "./images/landmarks/OCR-L-DIS-DISNEYLAND-01-JAG-1.jpg");
+    $("#land-pic2").attr("src", "./images/landmarks/unnamed.jpg");
+    $("#land-pic3").attr("src", "./images/landmarks/Daniel-Malikyar-740x482.jpg");
+    $("#land-pic4").attr("src", "./images/landmarks/image.jpg");
   };
 
   if ($(this).val() == "5") {
@@ -115,10 +112,10 @@ $("select").on("change", function () {
     $("#selectedCityDiv").text("What do you want to check out in " + selectedCity + " tonight?");
     $("div#cty-img").attr("class", "atlanta")
     showLandmarks(x = 4);
-    $("#land-pic1").attr("src", "olympicpark.jpg");
-    $("#land-pic2").attr("src", "c700x420.jpg");
-    $("#land-pic3").attr("src", "cocacola.jpg");
-    $("#land-pic4").attr("src", "foxtheater-750x480.jpg");
+    $("#land-pic1").attr("src", "./images/landmarks/olympicpark.jpg");
+    $("#land-pic2").attr("src", "./images/landmarks/c700x420.jpg");
+    $("#land-pic3").attr("src", "./images/landmarks/cocacola.jpg");
+    $("#land-pic4").attr("src", "./images/landmarks/foxtheater-750x480.jpg");
   };
 
   if ($(this).val() == "6") {
@@ -127,10 +124,10 @@ $("select").on("change", function () {
     $("#selectedCityDiv").text("What do you want to check out in " + selectedCity + " tonight?");
     $("div#cty-img").attr("class", "newyork")
     showLandmarks(x = 5);
-    $("#land-pic1").attr("src", "Times-Square-New-York-City.jpg");
-    $("#land-pic2").attr("src", "topic-statue-of-liberty-gettyimages-960610006-feature.jpg");
-    $("#land-pic3").attr("src", "central-park.jpg");
-    $("#land-pic4").attr("src", "https___www.kitano.com_resourcefiles_snippet-main-img_empire-state-building-in-new-york-top.jpg");
+    $("#land-pic1").attr("src", "./images/landmarks/Times-Square-New-York-City.jpg");
+    $("#land-pic2").attr("src", "./images/landmarks/topic-statue-of-liberty-gettyimages-960610006-feature.jpg");
+    $("#land-pic3").attr("src", "./images/landmarks/central-park.jpg");
+    $("#land-pic4").attr("src", "./images/landmarks/https___www.kitano.com_resourcefiles_snippet-main-img_empire-state-building-in-new-york-top.jpg");
   };
 
   if ($(this).val() == "7") {
@@ -139,10 +136,10 @@ $("select").on("change", function () {
     $("#selectedCityDiv").text("What do you want to check out in " + selectedCity + " tonight?");
     $("div#cty-img").attr("class", "houston")
     showLandmarks(x = 6);
-    $("#land-pic1").attr("src", "Space-Center-Houston-70-6af8c645af6e550_6af8c71b-e678-ba18-17a904130de6ed3f.jpg");
-    $("#land-pic2").attr("src", "museum-of-fine-arts-houston-Beck-Interior-Gallery.jpeg");
-    $("#land-pic3").attr("src", "kemah-boardwalk-houston.jpg");
-    $("#land-pic4").attr("src", "1904036_042217-ktrk-buffalo-bayou-cover-img.jpg");
+    $("#land-pic1").attr("src", "./images/landmarks/Space-Center-Houston-70-6af8c645af6e550_6af8c71b-e678-ba18-17a904130de6ed3f.jpg");
+    $("#land-pic2").attr("src", "./images/landmarks/museum-of-fine-arts-houston-Beck-Interior-Gallery.jpeg");
+    $("#land-pic3").attr("src", "./images/landmarks/kemah-boardwalk-houston.jpg");
+    $("#land-pic4").attr("src", "./images/landmarks/1904036_042217-ktrk-buffalo-bayou-cover-img.jpg");
   };
 
   hideMainPage()
@@ -166,9 +163,6 @@ $("#select").change(function () {
 
   queryURL = (`https://app.ticketmaster.com/discovery/v2/events.json?classificationName=${eventType}&dmaId=${zipcode}&apikey=${apiKey}`);
 
-  // https://app.ticketmaster.com/discovery/v2/events.json?classificationName=music&dmaId=324&
-
-  // `postalCode=${zipcode}classificationName=music&&apikey=${apiKey}`;
 
   // ticketmaster API call
   $.ajax({
@@ -207,17 +201,9 @@ $("#select").change(function () {
     info4 = response._embedded.events[3].url;
     state4 = response._embedded.events[3]._embedded.venues[0].state.stateCode;
     city4 = response._embedded.events[3]._embedded.venues[0].city.name;
-    artistName5 = response._embedded.events[4].name;
-    venue5 = response._embedded.events[4]._embedded.venues[0].name;
-    date5 = response._embedded.events[4].dates.start.localDate;
-    time5 = response._embedded.events[4].dates.start.localTime;
-    image5 = response._embedded.events[4].images[0].url;
-    info5 = response._embedded.events[4].url;
-    state5 = response._embedded.events[4]._embedded.venues[0].state.stateCode;
-    city5 = response._embedded.events[4]._embedded.venues[0].city.name;
     console.log("state", state);
     console.log("city", city);
-
+    console.log("time", time);
   });
 });
 
@@ -244,9 +230,9 @@ $("#option-confirm").on("click", function () {
   $("#options").hide();
   $("#landmarks").hide();
 
-  $(document).ready(function () {
-    $('.modal').modal();
-  });
+  //$(document).ready(function () {
+  //    $('.modal').modal();
+  //  });
 
   if (eventType) {
     $("#modal1").hide();
@@ -254,7 +240,8 @@ $("#option-confirm").on("click", function () {
   } else {
     playSound();
     $("#modal1").show();
-    $("#landmarks").show();
+    $("#cty-img").show();
+    $("#landmarks").hide();
   };
   queryURL = (`https://app.ticketmaster.com/discovery/v2/events.json?classificationName=${eventType}&dmaId=${zipcode}&apikey=${apiKey}`);
 
@@ -399,15 +386,9 @@ var apiKey = "g5rWtTbqzNo8URXzTL6NIcTooO2lU25G"
 
 function getEvent() {
 
-
   if (!eventType) return;
 
-  // https://app.ticketmaster.com/discovery/v2/events.json?classificationName=music&dmaId=324&
-
-  // `postalCode=${zipcode}classificationName=music&&apikey=${apiKey}`;
-
   // ticketmaster API call
-
 
   $.ajax({
     url: queryURL,
@@ -417,13 +398,13 @@ function getEvent() {
     .then(function (response) {
 
       makeDivs(response)
- 
+
     });
 
   // started trying to get weather for events
   console.log(date);
   endDate = moment().add(7, 'days').calendar();
-  console.log(endDate);
+  console.log("end date", endDate);
   if (date2 < endDate) {
     console.log("weather available")
   } else {
@@ -440,6 +421,7 @@ function getEvent() {
     method: "GET"
   })
     .then(function (response) {
+      restaurants = response.restaurants;
       food = response.restaurants[0].name;
       price = response.restaurants[0].price;
       foodRSV = response.restaurants[0].reserve_url;
@@ -452,9 +434,6 @@ function getEvent() {
       food4 = response.restaurants[3].name;
       price4 = response.restaurants[3].price;
       foodRSV4 = response.restaurants[3].reserve_url;
-      food5 = response.restaurants[4].name;
-      price5 = response.restaurants[4].price;
-      foodRSV5 = response.restaurants[4].reserve_url;
       $("#restaurant-1").text(food);
       $("#restaurant-info1").attr("href", foodRSV);
       $("#restaurant-2").text(food2);
@@ -463,17 +442,14 @@ function getEvent() {
       $("#restaurant-info3").attr("href", foodRSV3);
       $("#restaurant-4").text(food4);
       $("#restaurant-info4").attr("href", foodRSV4);
-      $("#restaurant-5").text(food5);
-      $("#restaurant-info5").attr("href", foodRSV5);
       console.log(response);
       console.log("price", price);
-      
 
- // Include price if resturant search is selected
-      prices = [price, price2, price3, price4, price5];
+      // Include price if resturant search is selected
+      prices = [price, price2, price3, price4];
       console.log("price using array", prices[0]);
-      priceDivs = ["price-1", "price-2", "price-3", "price-4", "price-5"];
-      function convertToDollarSigns (num) {
+      priceDivs = ["#price-1", "#price-2", "#price-3", "#price-4"];
+      function convertToDollarSigns(num) {
         var dollarSigns = "";
         for (var i = 0; i < num; i++) {
           dollarSigns += "$"
@@ -481,27 +457,167 @@ function getEvent() {
         return dollarSigns;
       }
 
-
       for (var i = 0; i < prices.length; i++) {
-        
+
         prices[i] = convertToDollarSigns(prices[i])
         if (i === 0) {
           console.log("adding price 1")
-          $("#price-1").text(prices[0]);
+          $(priceDivs[i]).text(prices[i]);
         } else if (i === 1) {
-          $("#price-2").text(prices[1]);
+          $(priceDivs[i]).text(prices[i]);
         } else if (i === 2) {
-          $("#price-3").text(prices[2]);
+          $(priceDivs[i]).text(prices[i]);
         } else if (i === 3) {
-          $("#price-4").text(prices[3]);
-        } 
+          $(priceDivs[i]).text(prices[i]);
+        }
         else if (i === 4) {
-          $("#price-5").text(prices[4]);
+          $(priceDivs[i]).text(prices[i]);
         }
       }
-      console.log("last price", price);
+
+      // buttons to cycle through restaurants -- Need to make a loop
+      var x = 0;
+
+      $("#right-1").on("click", function (e) {
+        x++;
+        if (x > 17) {
+          x = 17;
+        };
+        food = response.restaurants[x].name;
+        price = response.restaurants[x].price;
+        foodRSV = response.restaurants[x].reserve_url;
+        $("#restaurant-1").text(food);
+        $("#price-1").text(price);
+        priceChange();
+        console.log("right clicked");
+        console.log(x);
+      });
+
+      $("#left-1").on("click", function (e) {
+        x--;
+        if (x < 0) {
+          x = 0;
+        };
+
+        food = response.restaurants[x].name;
+        price = response.restaurants[x].price;
+        foodRSV = response.restaurants[x].reserve_url;
+        $("#restaurant-1").text(food);
+        $("#price-1").text(price);
+        priceChange();
+        console.log("left clicked");
+        console.log(x);
+      });
+
+      $("#right-2").on("click", function (e) {
+        x++;
+        if (x > 17) {
+          x = 17;
+        };
+        food2 = response.restaurants[x].name;
+        price2 = response.restaurants[x].price;
+        foodRSV2 = response.restaurants[x].reserve_url;
+        $("#restaurant-2").text(food2);
+        $("#price-2").text(price2);
+        console.log("right clicked");
+        console.log(x);
+      });
+
+      $("#left-2").on("click", function (e) {
+        x--;
+        if (x < 0) {
+          x = 0;
+        };
+
+        food2 = response.restaurants[x].name;
+        price2 = response.restaurants[x].price;
+        foodRSV2 = response.restaurants[x].reserve_url;
+        $("#restaurant-2").text(food2);
+        $("#price-2").text(price2);
+        console.log("left clicked");
+        console.log(x);
+      });
+
+      $("#right-3").on("click", function (e) {
+        x++;
+        if (x > 17) {
+          x = 17;
+        };
+        food3 = response.restaurants[x].name;
+        price3 = response.restaurants[x].price;
+        foodRSV3 = response.restaurants[x].reserve_url;
+        $("#restaurant-3").text(food3);
+        $("#price-3").text(price3);
+        console.log("right clicked");
+        console.log(x);
+      });
+
+      $("#left-3").on("click", function (e) {
+        x--;
+        if (x < 0) {
+          x = 0;
+        };
+
+        food3 = response.restaurants[x].name;
+        price3 = response.restaurants[x].price;
+        foodRSV3 = response.restaurants[x].reserve_url;
+        $("#restaurant-3").text(food3);
+        $("#price-3").text(price3);
+        console.log("left clicked");
+        console.log(x);
+      });
+
+      $("#right-4").on("click", function (e) {
+        x++;
+        if (x > 17) {
+          x = 17;
+        };
+        food4 = response.restaurants[x].name;
+        price4 = response.restaurants[x].price;
+        foodRSV4 = response.restaurants[x].reserve_url;
+        $("#restaurant-4").text(food4);
+        $("#price-4").text(price4);
+        console.log("right clicked");
+        console.log(x);
+      });
+
+      $("#left-4").on("click", function (e) {
+        x--;
+        if (x < 0) {
+          x = 0;
+        };
+        food4 = response.restaurants[x].name;
+        price4 = response.restaurants[x].price;
+        foodRSV4 = response.restaurants[x].reserve_url;
+        $("#restaurant-4").text(food4);
+        $("#price-4").text(price4);
+        console.log("left clicked");
+        console.log(x);
+      });
+
+      function priceChange() {
+        for (var i = 0; i < prices.length; i++) {
+
+          prices[i] = convertToDollarSigns(prices[i])
+          if (i === 0) {
+            console.log("adding price 1")
+            $(priceDivs[i]).text(prices[i]);
+          } else if (i === 1) {
+            $(priceDivs[i]).text(prices[i]);
+          } else if (i === 2) {
+            $(priceDivs[i]).text(prices[i]);
+          } else if (i === 3) {
+            $(priceDivs[i]).text(prices[i]);
+          }
+          else if (i === 4) {
+            $(priceDivs[i]).text(prices[i]);
+          }
+        }
+      };
+
+
     });
-}
+};
 
 function restaurants() {
   // Get the checkbox
@@ -511,4 +627,8 @@ function restaurants() {
   if (checkBox.checked == false) {
     $(".dinner-plans").html("<hr><span>No restaurant selected.</span>");
   };
-}
+};
+
+
+
+

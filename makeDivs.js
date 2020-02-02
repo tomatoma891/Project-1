@@ -11,7 +11,7 @@ console.log("-------------DIV------------")
       artistName = embededEvents.name;
       venue = embededEvents._embedded.venues[0].name;
       date = embededEvents.dates.start.localDate;
-      time = embededEvents.dates.start.localTime;
+      time = embededEvents.dates.start.dateTime;
       image = embededEvents.images[0].url;
       info = embededEvents.url;
       //a

@@ -1,16 +1,12 @@
-e.container {
-    width: 100%;
-    margin: auto;
-}
-
 #title {  
-    background-image: url("https://image.shutterstock.com/image-vector/modern-city-skyline-vector-260nw-341808632.jpg");
-    border-bottom: rgb(26, 112, 170);
-    border-width: 1em;
-    border-block-end-style: solid;
+    background-image: url("./images/header.png");
     color: rgb(26, 112, 170);
     margin-top: 0;
     margin-bottom: 0;
+}
+h1 {
+    font-family: 'Amatic SC', cursive;
+    font-size: 8.5em;
 }
 
 #selections {
@@ -79,13 +75,11 @@ span {
 }
 
 #back {
-    text-align: center;
-    background-color: rgb(26, 112, 170);
-   
+    text-align: center; 
 }
 
 #back-btn {
-    color: white;
+    color: #ADCDFF;
     font-size: 1.55em;
     font-weight: 700;
     margin-left: 5em;
@@ -116,7 +110,7 @@ span {
    color: #ADCDFF;
 }
 
-#option-confirm:hover, #cancel:hover {
+#option-confirm:hover, #cancel:hover, #back-btn:hover {
     color: rgb(26, 112, 170);  
 }
 

@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Let's Go</title>
 </head>
@@ -25,9 +26,10 @@
                             <a class="btn buttons right" id="login-btn">LOGIN</a>
                         </div>
                     </div>
-                    <div id="back">
-                        <a id="back-btn" class="btn-flat">BACK</a>
-                    </div>
+                    
+                </div>
+                <div id="back">
+                    <a id="back-btn" class="btn-flat">BACK</a>
                 </div>
             </div>
 
@@ -44,7 +46,7 @@
             </div>
 
             <!-- Modal Structure -->
-            <audio id="play" src="./error.mp3"></audio>
+            <audio id="play" src="./sounds/error.mp3"></audio>
             <div id="modal1" class="modal">
                 <div class="modal-content error">
                     <div class="center-align">
@@ -254,7 +256,7 @@
                                 </a>
                                 <div class="dinner-plans">
                                     <hr>
-                                    <h2>Food Options:</h2>                                    
+                                    <h2>Food Options:</h2>
                                     <span id="restaurant-4" class="bold truncate"></span>
                                     <span class="btn-flat buttons choose" id="left-4">&lt;</span>
                                     select restaurant
@@ -427,9 +429,9 @@
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"> </script>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <script type="text/javascript" src="script.js"></script>
-
-        <script type="text/javascript" src="makeDivs.js"></script>
+        <script type="text/javascript" src="./scripts/script.js"></script>
+        <script type="text/javascript" src="./scripts/makeDivs.js"></script>
+        <script type="text/javascript" src="./scripts"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7VBLGOeT9U8vZksR7T8F1EiPK7nkyGvw" async
             defer></script>

@@ -26,7 +26,7 @@
                             <a class="btn buttons right" id="login-btn">LOGIN</a>
                         </div>
                     </div>
-                    
+
                 </div>
                 <div id="back">
                     <a id="back-btn" class="btn-flat">BACK</a>
@@ -412,12 +412,46 @@
                 </div>
             </div>
 
+            <div id="local-events">
+                <div class="local">IN YOUR AREA </div>
+                <ul class="collection">
+                    <li class="collection-item avatar">
+                        <div class="local-title">MUSIC</div>
+                        <img id="local-music-image" src="" alt="no image available" class="local-images"><br>
+                        <span id="local-music" style="font-weight: 700"></span><br>
+                        <span id="local-music-venue">Venue </span><br>
+                        <span id="local-music-date"> date </span><br>
+                        <span id="local-music-time"> time </span><br>
+                        <a id="local-music-buy" class="btn-flat buttons local-buy" target="_blank"> buy </a>
+                    </li>
+                    <li class="collection-item avatar">
+                        <div class="local-title">SPORTS</div>
+                        <img id="local-sports-image" src="" alt="no image available" class="local-images"><br>
+                        <span id="local-sports" style="font-weight: 700"></span><br>
+                        <span id="local-sports-venue">Venue </span><br>
+                        <span id="local-sports-date"> date </span><br>
+                        <span id="local-sports-time"> time </span><br>
+                        <a id="local-sports-buy" class="btn-flat buttons local-buy" target="_blank"> buy </a>
+                    </li>
+                    <li class="collection-item avatar">
+                        <div class="local-title">ART</div>
+                        <img id="local-art-image" src="" alt="no image available" class="local-images"><br>
+                        <span id="local-art" style="font-weight: 700"></span><br>
+                        <span id="local-art-venue">Venue </span><br>
+                        <span id="local-art-date"> date </span><br>
+                        <span id="local-art-time"> time </span><br>
+                        <a id="local-art-buy" class="btn-flat buttons local-buy" target="_blank"> buy </a>
+                    </li>
+                </ul>
+                <a id="more" class="btn-flat">SEE MORE RESULTS</a>
+            </div>
 
             <!-- GO button results -->
 
-            <div class="card">
+            <div id="more-events"class="card">
+                <span id="events" style="font-weight: 700"></span>
                 <div id="map"></div>
-                <div id="events"></div>
+                <div id="events2"></div>
             </div>
 
             <footer class="footer-copyright" id="foot">
@@ -435,7 +469,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7VBLGOeT9U8vZksR7T8F1EiPK7nkyGvw" async
             defer></script>
-
 
 </body>
 

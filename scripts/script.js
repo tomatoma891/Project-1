@@ -1,12 +1,9 @@
-//IUNITIALIZE CAROUSEL
-
-$(document).ready(function () {
-  $('.carousel').carousel();
-});
-
-
-// hide back button on inital screen load
+// elements hidden on inital screen load
 $("#back").hide();
+$("#local-events").hide();
+$("#more-events").hide();
+
+
 
 //var venueQueryUrl;  --  NEEDED?
 var queryURL;
@@ -92,7 +89,7 @@ $("select").on("change", function () {
 
   if ($(this).val() == "3") {
     selectedCity = "Miami";
-    zipcode = "334"; 
+    zipcode = "334";
     $("#selectedCityDiv").text("What do you want to check out in " + selectedCity + " tonight?");
     $("div#cty-img").attr("class", "miami")
     showLandmarks(x = 2);
@@ -350,14 +347,46 @@ $("#random-btn").on("click", function (e) {
 
   function showEvents(json) {
     for (var i = 0; i < json.page.size; i++) {
-      $("#events").append("<p>" + json._embedded.events[i].name + "</p>");
+      $("#events").show();
+      $("#events2").append("<p id='full-list'>" + json._embedded.events[i].name + "<br>" + json._embedded.events[i]._embedded.venues[0].name + "<br>" + moment(json._embedded.events[i].dates.start.localDate).format("MMM Do, YYYY") + "</p>");
+      $("#local-music").text(json._embedded.events[i].name);
+      $("#local-music-image").attr("src", json._embedded.events[i].images[0].url);
+      $("#local-music-venue").text(json._embedded.events[i]._embedded.venues[0].name);
+      $("#local-music-date").text(moment(json._embedded.events[i].dates.start.localDate).format("MMM Do, YYYY"));
+      $("#local-music-time").text(moment(json._embedded.events[i].dates.start.dateTime).format("h:mma"));
+      $("#local-music-buy").attr("href", json._embedded.events[i].url);
+      $("#local-sports").text(json._embedded.events[i].name);
+      $("#local-sports-image").attr("src", json._embedded.events[i].images[0].url);
+      $("#local-sports-venue").text(json._embedded.events[i]._embedded.venues[0].name);
+      $("#local-sports-date").text(moment(json._embedded.events[i].dates.start.localDate).format("MMM Do, YYYY"));
+      $("#local-sports-time").text(moment(json._embedded.events[i].dates.start.dateTime).format("h:mma"));
+      $("#local-sports-buy").attr("href", json._embedded.events[i].url);
+      $("#local-art").text(json._embedded.events[i].name);
+      $("#local-art-image").attr("src", json._embedded.events[i].images[0].url);
+      $("#local-art-venue").text(json._embedded.events[i]._embedded.venues[0].name);
+      $("#local-art-date").text(moment(json._embedded.events[i].dates.start.localDate).format("MMM Do, YYYY"));
+      $("#local-art-time").text(moment(json._embedded.events[i].dates.start.dateTime).format("h:mma"));
+      $("#local-art-buy").attr("href", json._embedded.events[i].url);
+      $("#back").show();
+      $("#more").show();
+      $("#local-events").show();
+      $("#events").show();
+      $("#cty-img").hide();
       $("#cities").hide();
       $("#or").hide();
       $("#welcome").hide();
       $("#random-btn").hide();
       $("#featured").hide();
-    }
-  }
+
+
+      // button to see more results
+      $("#more").on("click", function (e) {
+        e.preventDefault();
+        $("#more-events").show();
+        console.log("more button");
+      });
+    };
+  };
 
   function initMap(position, json) {
     var mapDiv = document.getElementById('map');
@@ -367,8 +396,8 @@ $("#random-btn").on("click", function (e) {
     });
     for (var i = 0; i < json.page.size; i++) {
       addMarker(map, json._embedded.events[i]);
-    }
-  }
+    };
+  };
 
   function addMarker(map, event) {
     var marker = new google.maps.Marker({
@@ -377,16 +406,18 @@ $("#random-btn").on("click", function (e) {
     });
     marker.setIcon('http://maps.google.com/mapfiles/ms/icons/red-dot.png');
     console.log(marker);
-  }
+  };
 
   getLocation();
 
 });
 
+
+
 // back button  - clears results from GO button
 $("#back").on("click", function (e) {
   e.preventDefault();
-  window.location.href = "index.html" //temporarily just goes back to homepage
+  window.location.href = "index.html"
 });
 
 var apiKey = "g5rWtTbqzNo8URXzTL6NIcTooO2lU25G"
@@ -458,9 +489,9 @@ function getEvent() {
       var dollarSigns = "";
       for (var i = 0; i < num; i++) {
         dollarSigns += "$"
-      }
+      };
       return dollarSigns;
-    }
+    };
 
     for (var i = 0; i < prices.length; i++) {
 
@@ -477,8 +508,8 @@ function getEvent() {
       }
       else if (i === 4) {
         $(priceDivs[i]).text(prices[i]);
-      }
-    }
+      };
+    };
 
     // buttons to cycle through restaurants -- Need to make a loop
     var x = 0;

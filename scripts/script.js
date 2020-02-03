@@ -348,7 +348,7 @@ $("#random-btn").on("click", function (e) {
   function showEvents(json) {
     for (var i = 0; i < json.page.size; i++) {
       $("#events").show();
-      $("#events2").append("<p id='full-list'>" + json._embedded.events[i].name + "<br>" + json._embedded.events[i]._embedded.venues[0].name + "<br>" + moment(json._embedded.events[i].dates.start.localDate).format("MMM Do, YYYY") + "</p>");
+      $("#events2").append("<p id='full-list'>" + "<span style='font-weight: 700'>" + json._embedded.events[i].name + "</span><br>" + json._embedded.events[i]._embedded.venues[0].name + "<br>" + moment(json._embedded.events[i].dates.start.localDate).format("MMM Do, YYYY") + "</p>");
       $("#local-music").text(json._embedded.events[i].name);
       $("#local-music-image").attr("src", json._embedded.events[i].images[0].url);
       $("#local-music-venue").text(json._embedded.events[i]._embedded.venues[0].name);

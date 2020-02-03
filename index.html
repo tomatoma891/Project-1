@@ -9,7 +9,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>Let's Go</title>
+    <title>Your City Guide</title>
+    <link rel="icon" 
+      type="image/png" 
+      href="./images/favicon.png">
 </head>
 
 <body>
@@ -19,14 +22,13 @@
             <div class="col s12">
                 <div class="card">
                     <div class="card-panel center-align" id="title">
-                        <h1>YOUR CITY GUIDE</h1>
-                        <div class>
-                            <span id="ticketmaster">powered by <img src="./images/Ticketmaster.png"
-                                    style="width: 10em; height: 1.5em"></span>
+                        <img id="logo" src="./images/City-search.png"
+                            style="height: 9em; width: 12em; margin-top: 2em; float: left; margin-left: 30em">
+                        <h1 id="site-name" style="clear:right;">YOUR CITY GUIDE</h1> 
+                        <span id="ticketmaster">powered by <img id="tm-logo" src="./images/Ticketmaster.png"
+                            style="width: 7em; height: 1em"></span>                     
                             <a class="btn buttons right" id="login-btn">LOGIN</a>
-                        </div>
                     </div>
-
                 </div>
                 <div id="back">
                     <a id="back-btn" class="btn-flat">BACK</a>
@@ -64,7 +66,7 @@
             <div id="cty-img">
                 <div class="row" id="selections">
                     <div class="col s1 m2"></div>
-                    <div class="col s7 pull-s1 m4">
+                    <div class="col s7 m4">
                         <div class="input-field" id="cities">
                             <select id="select">
                                 <option value="" disabled selected> -- choose a city --</option>
@@ -93,13 +95,14 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col s1 pull-s1 m2 l2">
+                    <div class="col s1 m2 l2">
                         <p id="or">OR</p>
                     </div>
 
-                    <div class="col s2 pull-s1 m3 pull-m1">
+                    <div class="col s2 m3 pull-m1">
                         <a class="btn buttons" id="random-btn">GO!</a>
                     </div>
+                    <div class="col s-1"></div>
                 </div>
 
 
@@ -448,7 +451,7 @@
 
             <!-- GO button results -->
 
-            <div id="more-events"class="card">
+            <div id="more-events" class="card">
                 <span id="events" style="font-weight: 700"></span>
                 <div id="map"></div>
                 <div id="events2"></div>
@@ -460,15 +463,15 @@
                 </div>
             </footer>
         </div>
-
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"> </script>
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <script type="text/javascript" src="./scripts/script.js"></script>
-        <script type="text/javascript" src="./scripts/makeDivs.js"></script>
-        <script type="text/javascript" src="./scripts/makeLocalDivs.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7VBLGOeT9U8vZksR7T8F1EiPK7nkyGvw" async
-            defer></script>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"> </script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="./scripts/script.js"></script>
+    <script type="text/javascript" src="./scripts/makeDivs.js"></script>
+    <script type="text/javascript" src="./scripts/makeLocalDivs.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7VBLGOeT9U8vZksR7T8F1EiPK7nkyGvw" async
+        defer></script>
 
 </body>
 

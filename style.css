@@ -79,7 +79,7 @@
     }
     #options-box {
         position: relative;
-        left: 17.5em;
+        left: 21.5em;
     }
   }
 
@@ -177,9 +177,6 @@ span {
 }
 
 #options {
-  /*  padding-left: 27em;
-    padding-right: 27em; */
-
     margin-bottom: 10em;
 }
 

@@ -280,15 +280,18 @@ $("#login-btn").click(function () {
 });
 
 // function to accept login input and hide form
-let email;
+function reset(){
+  window.location.href = "index.html"
+};
+
+let username;
 let password;
 $("#login-form-btn").on("click", function (e) {
   e.preventDefault();
-  window.location.href = "index.html" //temporarily just goes back to homepage
-  email = JSON.stringify($("#email"));
-  password = $("#password");
-  console.log("email: ", email);
-  console.log("password: ", password);
+    username = $("#username").val();
+  $("#user").text("Welcome back, " + username);
+  setTimeout(reset, 1500);
+   
 });
 
 

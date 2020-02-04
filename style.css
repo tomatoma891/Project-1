@@ -113,9 +113,6 @@ span {
 }
 
 #options {
-    padding-left: 27em;
-    padding-right: 27em;
-
     margin-bottom: 10em;
 }
 
@@ -131,8 +128,8 @@ span {
     margin-left: 25%;
 
     z-index: 10;
-    width: 100%;
-
+    width: 50%;
+    margin-left: 25%;
 
 }
 

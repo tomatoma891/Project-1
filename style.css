@@ -176,8 +176,7 @@ span {
 #back-btn {
     color: #ADCDFF;
     font-size: 1.55em;
-    font-weight: 700;
-   
+    font-weight: 700; 
 }
 
 #options {
@@ -193,6 +192,11 @@ span {
     z-index: 10;
     min-width: 30em;
     margin-right: 50%;
+}
+
+#user{
+    color: rgb(26, 112, 170);
+    font-size: 1.25em;
 }
 
 #radio-buttons {

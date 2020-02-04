@@ -86,9 +86,7 @@ span {
 }
 
 #options {
-    padding-left: 27em;
     margin-bottom: 10em;
-
 }
 
 #options-box {
@@ -96,8 +94,10 @@ span {
     border:rgb(26, 112, 170);
     border-width: .75em;
     border-block-end-style: solid;
-    padding: 0;
+    padding-top: 15px;
     z-index: 10;
+    width: 50%;
+    margin-left: 25%;
 }
 
 #radio-buttons {

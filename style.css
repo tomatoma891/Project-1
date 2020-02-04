@@ -6,23 +6,87 @@
     padding-bottom: 3em;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 360px) {
+    #title {
+      background-repeat: repeat;
+    }
+    #site-name {
+      font-size: 5em;
+    }
+    #ticketmaster {
+      margin-left: 4em;
+    }
+    #tm-logo {
+      margin-top: .75em;
+    }
+  #logo {
+      display: none;
+    }
+  }
+
+
+@media only screen and (max-width: 625px) {
   #title {
-    background-repeat: no-repeat;
+    background-repeat: repeat;
   }
   #site-name {
     font-size: 5em;
   }
   #ticketmaster {
-      display: none
+    margin-left: 4em;
   }
   #tm-logo {
-    display: none
-}
+    margin-top: .75em;
+  }
 #logo {
-    display: none
+    display: none;
+  }
 }
-}
+
+@media only screen and (max-width: 800px) {
+    #title {
+      background-repeat: repeat;
+    }
+    #site-name {
+      font-size: 5em;
+    }
+    #options-box {
+        position: relative;
+        left: 19em;     
+    }
+  } 
+
+
+ @media only screen and (max-width: 900px) {
+    #title {
+      background-repeat: repeat;
+    }
+    #site-name {
+      font-size: 5em;
+    }
+    #options-box {
+        position: relative;
+        left: 19em;     
+    }
+  } 
+
+@media only screen and (max-width: 3840px) {
+    #title {
+      background-repeat: repeat;
+    }
+    #site-name {
+      font-size: 5em;
+    }
+    #options-box {
+        position: relative;
+        left: 21.5em;
+    }
+  }
+
+
+
+
+
 
 .clearfix::after {
     content: "";
@@ -121,16 +185,9 @@ span {
     border:rgb(26, 112, 170);
     border-width: .75em;
     border-block-end-style: solid;
-
     padding-top: 15px;
     z-index: 10;
-    width: 50%;
-    margin-left: 25%;
-
-    z-index: 10;
-    width: 50%;
-    margin-left: 25%;
-
+    min-width: 30em;
 }
 
 #radio-buttons {
@@ -286,7 +343,7 @@ h2 {
 }
 
 #ticketmaster {  
-    margin-left: 68em;
+    margin-left: 6em;
 }
 
 .cost {

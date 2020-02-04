@@ -396,3 +396,7 @@ h2 {
 #full-list {
     padding-left: 1em;
 }
+
+.container {
+    width: 100%;
+}

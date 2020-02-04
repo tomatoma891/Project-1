@@ -83,10 +83,14 @@
     }
   }
 
+#pages {
+    text-align: center;
+    padding-left: 2em;
+}
 
-
-
-
+#page-1, #page-2, #page-3 {
+    font-size: 1.5em; 
+}
 
 .clearfix::after {
     content: "";
@@ -173,7 +177,7 @@ span {
     color: #ADCDFF;
     font-size: 1.55em;
     font-weight: 700;
-    margin-left: 5em;
+   
 }
 
 #options {

@@ -1,9 +1,35 @@
 #title {  
     background-image: url("./images/header.png");
+    background-repeat: no-repeat;
     color: rgb(26, 112, 170);
     margin-top: 0;
-    margin-bottom: 0;
+    padding-bottom: 3em;
 }
+
+@media only screen and (max-width: 600px) {
+  #title {
+    background-repeat: no-repeat;
+  }
+  #site-name {
+    font-size: 5em;
+  }
+  #ticketmaster {
+      display: none
+  }
+  #tm-logo {
+    display: none
+}
+#logo {
+    display: none
+}
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
 h1 {
     font-family: 'Amatic SC', cursive;
     font-size: 8.5em;
@@ -44,14 +70,15 @@ h1 {
     text-align: center;
 }
 
+#random-btn{
+    margin-top: 1.5em;
+}
+
 #random-btn, #login-btn {
     background-color: #84A7D8;
-    margin: 1em 0 1em;
-    padding-bottom: 0em;
 }
 
 #random-btn:hover, #login-btn:hover {
-    background-color: #84A7D8;
     background-color: rgb(26, 112, 170);
 }
 
@@ -86,6 +113,9 @@ span {
 }
 
 #options {
+    padding-left: 27em;
+    padding-right: 27em;
+
     margin-bottom: 10em;
 }
 
@@ -94,10 +124,16 @@ span {
     border:rgb(26, 112, 170);
     border-width: .75em;
     border-block-end-style: solid;
+
     padding-top: 15px;
     z-index: 10;
     width: 50%;
     margin-left: 25%;
+
+    z-index: 10;
+    width: 100%;
+
+
 }
 
 #radio-buttons {
@@ -121,6 +157,7 @@ span {
 #or {
     color: rgb(26, 112, 170);
     font-size: 1.25em;
+    margin-top: 1.75em;
 }
 
 .denver {
@@ -252,7 +289,7 @@ h2 {
 }
 
 #ticketmaster {  
-    margin-left: 45em;
+    margin-left: 68em;
 }
 
 .cost {

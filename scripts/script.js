@@ -2,6 +2,7 @@
 $("#back").hide();
 $("#local-events").hide();
 $("#more-events").hide();
+$("#pages").hide();
 
 
 
@@ -20,6 +21,7 @@ var dinner;
 var prices;
 var priceDivs;
 var selectedCity;
+var pageNum;
 
 // Initializing city dropdown
 $(document).ready(function () {
@@ -234,6 +236,7 @@ function playSound() {
 $("#option-confirm").on("click", function () {
   $("#options").hide();
   $("#landmarks").hide();
+  $("#pages").show();
 
   //$(document).ready(function () {
   //    $('.modal').modal();
@@ -263,7 +266,6 @@ $("#modal-ok").on("click", function () {
   $("#modal1").hide();
 });
 
-
 // cancel from options screen
 $("#cancel").on("click", function () {
   window.location.href = "index.html"
@@ -282,7 +284,7 @@ let email;
 let password;
 $("#login-form-btn").on("click", function (e) {
   e.preventDefault();
-  //window.location.href = "index.html" //temporarily just goes back to homepage
+  window.location.href = "index.html" //temporarily just goes back to homepage
   email = JSON.stringify($("#email"));
   password = $("#password");
   console.log("email: ", email);
@@ -377,8 +379,7 @@ $("#random-btn").on("click", function (e) {
       $("#welcome").hide();
       $("#random-btn").hide();
       $("#featured").hide();
-
-
+    
       // button to see more results
       $("#more").on("click", function (e) {
         e.preventDefault();
@@ -387,6 +388,7 @@ $("#random-btn").on("click", function (e) {
       });
     };
   };
+
 
   function initMap(position, json) {
     var mapDiv = document.getElementById('map');
@@ -434,7 +436,7 @@ function getEvent() {
     method: "GET"
   }).then(function (response) {
 
-    makeDivs(response)
+  makeDivs(response)
 
   });
 
@@ -525,7 +527,7 @@ function getEvent() {
       $("#restaurant-1").text(food);
       $("#price-1").text(price);
       $("#restaurant-info1").attr("href", foodRSV);
-      priceChange(); priceChange();
+      priceChange();
       console.log("right clicked");
       console.log(x);
     });
@@ -691,6 +693,49 @@ function restaurants() {
   };
 };
 
+// cycle through event pages
+$("#page-1").on("click", function () {
+  pageNum = 1;
+  $("#page-1").attr("style", "color: rgb(26, 112, 170)")
+  $("#page-2").attr("style", "color: 84A7D8")
+  $("#page-3").attr("style", "color: 84A7D8")
+  getEvent();
+ // pageCheck();
+})
+
+$("#page-2").on("click", function () {
+  pageNum = 2;
+  $("#page-1").attr("style", "color: 84A7D8")
+  $("#page-2").attr("style", "color: rgb(26, 112, 170)")
+  $("#page-3").attr("style", "color: 84A7D8")
+  getEventPage2();
+ // pageCheck();
+})
+
+$("#page-3").on("click", function () {
+  pageNum = 3;
+  $("#page-1").attr("style", "color: 84A7D8")
+  $("#page-2").attr("style", "color: 84A7D8")
+  $("#page-3").attr("style", "color: rgb(26, 112, 170)")
+  getEventPage3();
+ //pageCheck();
+})
 
 
-
+function pageCheck(){
+  if (page = 1){
+    $("#page-1").attr("style", "color: rgb(26, 112, 170)")
+    $("#page-2").attr("style", "color: 84A7D8")
+    $("#page-3").attr("style", "color: 84A7D8")
+  }
+  if (page = 2){
+    $("#page-1").attr("style", "color: 84A7D8")
+    $("#page-2").attr("style", "color: rgb(26, 112, 170)")
+    $("#page-3").attr("style", "color: 84A7D8")
+  }
+  if (page = 3){
+    $("#page-1").attr("style", "color: 84A7D8")
+    $("#page-2").attr("style", "color: 84A7D8")
+    $("#page-3").attr("style", "color: rgb(26, 112, 170)")
+  }
+}
